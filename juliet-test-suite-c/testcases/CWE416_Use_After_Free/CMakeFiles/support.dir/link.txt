@@ -1,0 +1,2 @@
+/usr/bin/ar qc /local/scratch/yw737/cheri_poison/juliet-test-suite-c/bin/support/libsupport.a "CMakeFiles/support.dir/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcasesupport/io.c.o" "CMakeFiles/support.dir/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcasesupport/std_thread.c.o"
+/usr/bin/ranlib /local/scratch/yw737/cheri_poison/juliet-test-suite-c/bin/support/libsupport.a

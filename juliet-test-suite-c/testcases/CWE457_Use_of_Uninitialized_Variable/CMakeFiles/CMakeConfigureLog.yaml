@@ -1,0 +1,339 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      The system is: Linux - 6.17.0-19-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /local/scratch/yw737/cheri_poison/output/sdk/bin/clang 
+      Build flags: -O0;-target;riscv64-unknown-freebsd;-march=rv64gcxcheri;-mabi=l64pc128d;-mno-relax;--sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /local/scratch/yw737/cheri_poison/output/sdk/bin/clang++ 
+      Build flags: -O0;-target;riscv64-unknown-freebsd;-march=rv64gcxcheri;-mabi=l64pc128d;-mno-relax;--sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:27 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU"
+      binary: "/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/local/scratch/yw737/cheri_poison/output/sdk/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: "-O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_04815/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_04815.dir/build.make CMakeFiles/cmTC_04815.dir/build
+        gmake[1]: Entering directory '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU'
+        Building C object CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o
+        /local/scratch/yw737/cheri_poison/output/sdk/bin/clang   -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap    -v -MD -MT CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)
+        Target: riscv64-unknown-freebsd
+        Thread model: posix
+        InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin
+         (in-process)
+         "/local/scratch/yw737/cheri_poison/output/sdk/bin/clang-17" -cc1 -triple riscv64-unknown-freebsd -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic-rv64 -target-feature +m -target-feature +a -target-feature +f -target-feature +d -target-feature +c -target-feature +zicsr -target-feature +zifencei -target-feature +xcheri -target-feature -e -target-feature -h -target-feature -svinval -target-feature -svnapot -target-feature -svpbmt -target-feature -v -target-feature -xcvbitmanip -target-feature -xcvmac -target-feature -xsfcie -target-feature -xsfvcp -target-feature -xtheadba -target-feature -xtheadbb -target-feature -xtheadbs -target-feature -xtheadcmo -target-feature -xtheadcondmov -target-feature -xtheadfmemidx -target-feature -xtheadmac -target-feature -xtheadmemidx -target-feature -xtheadmempair -target-feature -xtheadsync -target-feature -xtheadvdot -target-feature -xventanacondops -target-feature -zawrs -target-feature -zba -target-feature -zbb -target-feature -zbc -target-feature -zbkb -target-feature -zbkc -target-feature -zbkx -target-feature -zbs -target-feature -zca -target-feature -zcb -target-feature -zcd -target-feature -zce -target-feature -zcf -target-feature -zcmp -target-feature -zcmt -target-feature -zdinx -target-feature -zfh -target-feature -zfhmin -target-feature -zfinx -target-feature -zhinx -target-feature -zhinxmin -target-feature -zicbom -target-feature -zicbop -target-feature -zicboz -target-feature -zicntr -target-feature -zihintpause -target-feature -zihpm -target-feature -zk -target-feature -zkn -target-feature -zknd -target-feature -zkne -target-feature -zknh -target-feature -zkr -target-feature -zks -target-feature -zksed -target-feature -zksh -target-feature -zkt -target-feature -zmmul -target-feature -zve32f -target-feature -zve32x -target-feature -zve64d -target-feature -zve64f -target-feature -zve64x -target-feature -zvfh -target-feature -zvl1024b -target-feature -zvl128b -target-feature -zvl16384b -target-feature -zvl2048b -target-feature -zvl256b -target-feature -zvl32768b -target-feature -zvl32b -target-feature -zvl4096b -target-feature -zvl512b -target-feature -zvl64b -target-feature -zvl65536b -target-feature -zvl8192b -target-feature -experimental-smaia -target-feature -experimental-ssaia -target-feature -experimental-zacas -target-feature -experimental-zfa -target-feature -experimental-zfbfmin -target-feature -experimental-zicond -target-feature -experimental-zihintntl -target-feature -experimental-ztso -target-feature -experimental-zvbb -target-feature -experimental-zvbc -target-feature -experimental-zvfbfmin -target-feature -experimental-zvfbfwma -target-feature -experimental-zvkg -target-feature -experimental-zvkn -target-feature -experimental-zvknc -target-feature -experimental-zvkned -target-feature -experimental-zvkng -target-feature -experimental-zvknha -target-feature -experimental-zvknhb -target-feature -experimental-zvks -target-feature -experimental-zvksc -target-feature -experimental-zvksed -target-feature -experimental-zvksg -target-feature -experimental-zvksh -target-feature -experimental-zvkt -target-feature -relax -target-feature -save-restore -target-feature +cap-mode -target-abi l64pc128d -msmall-data-limit 8 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU -resource-dir /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17 -dependency-file CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -internal-isystem /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include -internal-externc-isystem /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include -O0 -fdebug-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 17.0.0 based upon LLVM 17.0.0git default target x86_64-unknown-linux-gnu
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include
+         /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include
+        End of search list.
+        Linking C executable cmTC_04815
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04815.dir/link.txt --verbose=1
+        /local/scratch/yw737/cheri_poison/output/sdk/bin/clang -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap   -v CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -o cmTC_04815 
+        clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)
+        Target: riscv64-unknown-freebsd
+        Thread model: posix
+        InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin
+         "/local/scratch/yw737/cheri_poison/output/sdk/bin/riscv64-unknown-freebsd-ld" --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -pie --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --enable-new-dtags -m elf64lriscv -X --no-warn-mismatch -o cmTC_04815 /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o -L/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o --start-group -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed --end-group /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o
+        gmake[1]: Leaving directory '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include]
+          add: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+        end of search list found
+        collapse include dir [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include] ==> [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include]
+        collapse include dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include] ==> [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+        implicit include dirs: [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include;/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_04815/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_04815.dir/build.make CMakeFiles/cmTC_04815.dir/build]
+        ignore line: [gmake[1]: Entering directory '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU']
+        ignore line: [Building C object CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/local/scratch/yw737/cheri_poison/output/sdk/bin/clang   -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap    -v -MD -MT CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)]
+        ignore line: [Target: riscv64-unknown-freebsd]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/local/scratch/yw737/cheri_poison/output/sdk/bin/clang-17" -cc1 -triple riscv64-unknown-freebsd -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic-rv64 -target-feature +m -target-feature +a -target-feature +f -target-feature +d -target-feature +c -target-feature +zicsr -target-feature +zifencei -target-feature +xcheri -target-feature -e -target-feature -h -target-feature -svinval -target-feature -svnapot -target-feature -svpbmt -target-feature -v -target-feature -xcvbitmanip -target-feature -xcvmac -target-feature -xsfcie -target-feature -xsfvcp -target-feature -xtheadba -target-feature -xtheadbb -target-feature -xtheadbs -target-feature -xtheadcmo -target-feature -xtheadcondmov -target-feature -xtheadfmemidx -target-feature -xtheadmac -target-feature -xtheadmemidx -target-feature -xtheadmempair -target-feature -xtheadsync -target-feature -xtheadvdot -target-feature -xventanacondops -target-feature -zawrs -target-feature -zba -target-feature -zbb -target-feature -zbc -target-feature -zbkb -target-feature -zbkc -target-feature -zbkx -target-feature -zbs -target-feature -zca -target-feature -zcb -target-feature -zcd -target-feature -zce -target-feature -zcf -target-feature -zcmp -target-feature -zcmt -target-feature -zdinx -target-feature -zfh -target-feature -zfhmin -target-feature -zfinx -target-feature -zhinx -target-feature -zhinxmin -target-feature -zicbom -target-feature -zicbop -target-feature -zicboz -target-feature -zicntr -target-feature -zihintpause -target-feature -zihpm -target-feature -zk -target-feature -zkn -target-feature -zknd -target-feature -zkne -target-feature -zknh -target-feature -zkr -target-feature -zks -target-feature -zksed -target-feature -zksh -target-feature -zkt -target-feature -zmmul -target-feature -zve32f -target-feature -zve32x -target-feature -zve64d -target-feature -zve64f -target-feature -zve64x -target-feature -zvfh -target-feature -zvl1024b -target-feature -zvl128b -target-feature -zvl16384b -target-feature -zvl2048b -target-feature -zvl256b -target-feature -zvl32768b -target-feature -zvl32b -target-feature -zvl4096b -target-feature -zvl512b -target-feature -zvl64b -target-feature -zvl65536b -target-feature -zvl8192b -target-feature -experimental-smaia -target-feature -experimental-ssaia -target-feature -experimental-zacas -target-feature -experimental-zfa -target-feature -experimental-zfbfmin -target-feature -experimental-zicond -target-feature -experimental-zihintntl -target-feature -experimental-ztso -target-feature -experimental-zvbb -target-feature -experimental-zvbc -target-feature -experimental-zvfbfmin -target-feature -experimental-zvfbfwma -target-feature -experimental-zvkg -target-feature -experimental-zvkn -target-feature -experimental-zvknc -target-feature -experimental-zvkned -target-feature -experimental-zvkng -target-feature -experimental-zvknha -target-feature -experimental-zvknhb -target-feature -experimental-zvks -target-feature -experimental-zvksc -target-feature -experimental-zvksed -target-feature -experimental-zvksg -target-feature -experimental-zvksh -target-feature -experimental-zvkt -target-feature -relax -target-feature -save-restore -target-feature +cap-mode -target-abi l64pc128d -msmall-data-limit 8 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU -resource-dir /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17 -dependency-file CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -internal-isystem /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include -internal-externc-isystem /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include -O0 -fdebug-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-2JZrSU -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 17.0.0 based upon LLVM 17.0.0git default target x86_64-unknown-linux-gnu]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include]
+        ignore line: [ /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_04815]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04815.dir/link.txt --verbose=1]
+        ignore line: [/local/scratch/yw737/cheri_poison/output/sdk/bin/clang -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap   -v CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o -o cmTC_04815 ]
+        ignore line: [clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)]
+        ignore line: [Target: riscv64-unknown-freebsd]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin]
+        link line: [ "/local/scratch/yw737/cheri_poison/output/sdk/bin/riscv64-unknown-freebsd-ld" --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -pie --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --enable-new-dtags -m elf64lriscv -X --no-warn-mismatch -o cmTC_04815 /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o -L/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o --start-group -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed --end-group /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o]
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/bin/riscv64-unknown-freebsd-ld] ==> ignore
+          arg [--sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap] ==> ignore
+          arg [-pie] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/libexec/ld-elf.so.1] ==> ignore
+          arg [--enable-new-dtags] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf64lriscv] ==> ignore
+          arg [-X] ==> ignore
+          arg [--no-warn-mismatch] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_04815] ==> ignore
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o] ==> obj [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o]
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o] ==> obj [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o]
+          arg [-L/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c] ==> dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c]
+          arg [CMakeFiles/cmTC_04815.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [--start-group] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [--end-group] ==> ignore
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o] ==> obj [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o]
+        collapse library dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c] ==> [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o;/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o;/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o]
+        implicit dirs: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:27 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet"
+      binary: "/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/local/scratch/yw737/cheri_poison/output/sdk/bin/clang-scan-deps"
+      CMAKE_CXX_FLAGS: "-O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_67c45/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_67c45.dir/build.make CMakeFiles/cmTC_67c45.dir/build
+        gmake[1]: Entering directory '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet'
+        Building CXX object CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o
+        /local/scratch/yw737/cheri_poison/output/sdk/bin/clang++   -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap    -v -MD -MT CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)
+        Target: riscv64-unknown-freebsd
+        Thread model: posix
+        InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin
+         (in-process)
+         "/local/scratch/yw737/cheri_poison/output/sdk/bin/clang-17" -cc1 -triple riscv64-unknown-freebsd -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic-rv64 -target-feature +m -target-feature +a -target-feature +f -target-feature +d -target-feature +c -target-feature +zicsr -target-feature +zifencei -target-feature +xcheri -target-feature -e -target-feature -h -target-feature -svinval -target-feature -svnapot -target-feature -svpbmt -target-feature -v -target-feature -xcvbitmanip -target-feature -xcvmac -target-feature -xsfcie -target-feature -xsfvcp -target-feature -xtheadba -target-feature -xtheadbb -target-feature -xtheadbs -target-feature -xtheadcmo -target-feature -xtheadcondmov -target-feature -xtheadfmemidx -target-feature -xtheadmac -target-feature -xtheadmemidx -target-feature -xtheadmempair -target-feature -xtheadsync -target-feature -xtheadvdot -target-feature -xventanacondops -target-feature -zawrs -target-feature -zba -target-feature -zbb -target-feature -zbc -target-feature -zbkb -target-feature -zbkc -target-feature -zbkx -target-feature -zbs -target-feature -zca -target-feature -zcb -target-feature -zcd -target-feature -zce -target-feature -zcf -target-feature -zcmp -target-feature -zcmt -target-feature -zdinx -target-feature -zfh -target-feature -zfhmin -target-feature -zfinx -target-feature -zhinx -target-feature -zhinxmin -target-feature -zicbom -target-feature -zicbop -target-feature -zicboz -target-feature -zicntr -target-feature -zihintpause -target-feature -zihpm -target-feature -zk -target-feature -zkn -target-feature -zknd -target-feature -zkne -target-feature -zknh -target-feature -zkr -target-feature -zks -target-feature -zksed -target-feature -zksh -target-feature -zkt -target-feature -zmmul -target-feature -zve32f -target-feature -zve32x -target-feature -zve64d -target-feature -zve64f -target-feature -zve64x -target-feature -zvfh -target-feature -zvl1024b -target-feature -zvl128b -target-feature -zvl16384b -target-feature -zvl2048b -target-feature -zvl256b -target-feature -zvl32768b -target-feature -zvl32b -target-feature -zvl4096b -target-feature -zvl512b -target-feature -zvl64b -target-feature -zvl65536b -target-feature -zvl8192b -target-feature -experimental-smaia -target-feature -experimental-ssaia -target-feature -experimental-zacas -target-feature -experimental-zfa -target-feature -experimental-zfbfmin -target-feature -experimental-zicond -target-feature -experimental-zihintntl -target-feature -experimental-ztso -target-feature -experimental-zvbb -target-feature -experimental-zvbc -target-feature -experimental-zvfbfmin -target-feature -experimental-zvfbfwma -target-feature -experimental-zvkg -target-feature -experimental-zvkn -target-feature -experimental-zvknc -target-feature -experimental-zvkned -target-feature -experimental-zvkng -target-feature -experimental-zvknha -target-feature -experimental-zvknhb -target-feature -experimental-zvks -target-feature -experimental-zvksc -target-feature -experimental-zvksed -target-feature -experimental-zvksg -target-feature -experimental-zvksh -target-feature -experimental-zvkt -target-feature -relax -target-feature -save-restore -target-feature +cap-mode -target-abi l64pc128d -msmall-data-limit 8 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet -resource-dir /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17 -dependency-file CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -internal-isystem /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1 -internal-isystem /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include -internal-externc-isystem /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include -O0 -fdeprecated-macro -fdebug-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 17.0.0 based upon LLVM 17.0.0git default target x86_64-unknown-linux-gnu
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1
+         /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include
+         /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include
+        End of search list.
+        Linking CXX executable cmTC_67c45
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67c45.dir/link.txt --verbose=1
+        /local/scratch/yw737/cheri_poison/output/sdk/bin/clang++ -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap   -v CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_67c45 
+        clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)
+        Target: riscv64-unknown-freebsd
+        Thread model: posix
+        InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin
+         "/local/scratch/yw737/cheri_poison/output/sdk/bin/riscv64-unknown-freebsd-ld" --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -pie --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --enable-new-dtags -m elf64lriscv -X --no-warn-mismatch -o cmTC_67c45 /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o -L/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o --start-group -lc++ -lm -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed --end-group /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o
+        gmake[1]: Leaving directory '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1]
+          add: [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include]
+          add: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+        end of search list found
+        collapse include dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1] ==> [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1]
+        collapse include dir [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include] ==> [/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include]
+        collapse include dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include] ==> [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+        implicit include dirs: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1;/local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include;/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:27 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_67c45/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_67c45.dir/build.make CMakeFiles/cmTC_67c45.dir/build]
+        ignore line: [gmake[1]: Entering directory '/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet']
+        ignore line: [Building CXX object CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/local/scratch/yw737/cheri_poison/output/sdk/bin/clang++   -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap    -v -MD -MT CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)]
+        ignore line: [Target: riscv64-unknown-freebsd]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/local/scratch/yw737/cheri_poison/output/sdk/bin/clang-17" -cc1 -triple riscv64-unknown-freebsd -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic-rv64 -target-feature +m -target-feature +a -target-feature +f -target-feature +d -target-feature +c -target-feature +zicsr -target-feature +zifencei -target-feature +xcheri -target-feature -e -target-feature -h -target-feature -svinval -target-feature -svnapot -target-feature -svpbmt -target-feature -v -target-feature -xcvbitmanip -target-feature -xcvmac -target-feature -xsfcie -target-feature -xsfvcp -target-feature -xtheadba -target-feature -xtheadbb -target-feature -xtheadbs -target-feature -xtheadcmo -target-feature -xtheadcondmov -target-feature -xtheadfmemidx -target-feature -xtheadmac -target-feature -xtheadmemidx -target-feature -xtheadmempair -target-feature -xtheadsync -target-feature -xtheadvdot -target-feature -xventanacondops -target-feature -zawrs -target-feature -zba -target-feature -zbb -target-feature -zbc -target-feature -zbkb -target-feature -zbkc -target-feature -zbkx -target-feature -zbs -target-feature -zca -target-feature -zcb -target-feature -zcd -target-feature -zce -target-feature -zcf -target-feature -zcmp -target-feature -zcmt -target-feature -zdinx -target-feature -zfh -target-feature -zfhmin -target-feature -zfinx -target-feature -zhinx -target-feature -zhinxmin -target-feature -zicbom -target-feature -zicbop -target-feature -zicboz -target-feature -zicntr -target-feature -zihintpause -target-feature -zihpm -target-feature -zk -target-feature -zkn -target-feature -zknd -target-feature -zkne -target-feature -zknh -target-feature -zkr -target-feature -zks -target-feature -zksed -target-feature -zksh -target-feature -zkt -target-feature -zmmul -target-feature -zve32f -target-feature -zve32x -target-feature -zve64d -target-feature -zve64f -target-feature -zve64x -target-feature -zvfh -target-feature -zvl1024b -target-feature -zvl128b -target-feature -zvl16384b -target-feature -zvl2048b -target-feature -zvl256b -target-feature -zvl32768b -target-feature -zvl32b -target-feature -zvl4096b -target-feature -zvl512b -target-feature -zvl64b -target-feature -zvl65536b -target-feature -zvl8192b -target-feature -experimental-smaia -target-feature -experimental-ssaia -target-feature -experimental-zacas -target-feature -experimental-zfa -target-feature -experimental-zfbfmin -target-feature -experimental-zicond -target-feature -experimental-zihintntl -target-feature -experimental-ztso -target-feature -experimental-zvbb -target-feature -experimental-zvbc -target-feature -experimental-zvfbfmin -target-feature -experimental-zvfbfwma -target-feature -experimental-zvkg -target-feature -experimental-zvkn -target-feature -experimental-zvknc -target-feature -experimental-zvkned -target-feature -experimental-zvkng -target-feature -experimental-zvknha -target-feature -experimental-zvknhb -target-feature -experimental-zvks -target-feature -experimental-zvksc -target-feature -experimental-zvksed -target-feature -experimental-zvksg -target-feature -experimental-zvksh -target-feature -experimental-zvkt -target-feature -relax -target-feature -save-restore -target-feature +cap-mode -target-abi l64pc128d -msmall-data-limit 8 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet -resource-dir /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17 -dependency-file CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -internal-isystem /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1 -internal-isystem /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include -internal-externc-isystem /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include -O0 -fdeprecated-macro -fdebug-compilation-dir=/local/scratch/yw737/cheri_poison/juliet-test-suite-c/testcases/CWE457_Use_of_Uninitialized_Variable/CMakeFiles/CMakeScratch/TryCompile-BJtWet -ferror-limit 19 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 17.0.0 based upon LLVM 17.0.0git default target x86_64-unknown-linux-gnu]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include/c++/v1]
+        ignore line: [ /local/scratch/yw737/cheri_poison/output/sdk/lib/clang/17/include]
+        ignore line: [ /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_67c45]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67c45.dir/link.txt --verbose=1]
+        ignore line: [/local/scratch/yw737/cheri_poison/output/sdk/bin/clang++ -O0 -target riscv64-unknown-freebsd -march=rv64gcxcheri -mabi=l64pc128d -mno-relax --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap   -v CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_67c45 ]
+        ignore line: [clang version 17.0.0 (git@github.com:CTSRD-CHERI/llvm-project.git b34041a38135b9594e3a8ec203af4a0713b4ceda)]
+        ignore line: [Target: riscv64-unknown-freebsd]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /local/scratch/yw737/cheri_poison/output/sdk/bin]
+        link line: [ "/local/scratch/yw737/cheri_poison/output/sdk/bin/riscv64-unknown-freebsd-ld" --sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap -pie --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --enable-new-dtags -m elf64lriscv -X --no-warn-mismatch -o cmTC_67c45 /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o -L/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o --start-group -lc++ -lm -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed --end-group /local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o]
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/bin/riscv64-unknown-freebsd-ld] ==> ignore
+          arg [--sysroot=/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap] ==> ignore
+          arg [-pie] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/libexec/ld-elf.so.1] ==> ignore
+          arg [--enable-new-dtags] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf64lriscv] ==> ignore
+          arg [-X] ==> ignore
+          arg [--no-warn-mismatch] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_67c45] ==> ignore
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o] ==> obj [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o]
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o] ==> obj [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o]
+          arg [-L/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c] ==> dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c]
+          arg [CMakeFiles/cmTC_67c45.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [--start-group] ==> ignore
+          arg [-lc++] ==> lib [c++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [--end-group] ==> ignore
+          arg [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o] ==> obj [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o]
+        collapse library dir [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c] ==> [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c]
+        implicit libs: [c++;m;gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/Scrt1.o;/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtbeginS.o;/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c/crtendS.o]
+        implicit dirs: [/local/scratch/yw737/cheri_poison/output/sdk/sysroot-riscv64-purecap/usr/lib64c]
+        implicit fwks: []
+      
+      
+...
