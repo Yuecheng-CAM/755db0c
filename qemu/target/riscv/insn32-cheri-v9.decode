@@ -1,0 +1,216 @@
+#
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2020 Alex Richardson
+# All rights reserved.
+#
+# This software was developed by SRI International and the University of
+# Cambridge Computer Laboratory (Department of Computer Science and
+# Technology) under DARPA contract HR0011-18-C-0016 ("ECATS"), as part of the
+# DARPA SSITH research programme.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+
+# This is concatenated with insn32.decode for risc64 targets.
+# Most of the fields and formats are there.
+
+%cs2       20:5
+%cs1       15:5
+%cd         7:5
+
+&ccr cd cs1 rs2
+@ccr .......   ..... ..... ... ..... ....... &ccr %cd %cs1 %rs2
+&rcc rd cs1 cs2
+@rcc .......   ..... ..... ... ..... ....... &rcc %rd %cs1 %cs2
+&ccc cd cs1 cs2
+@ccc .......   ..... ..... ... ..... ....... &ccc %cd %cs1 %cs2
+
+&rc rd cs1
+@rc .......  ..... ..... ... ..... ....... &rc %rd %cs1
+@cc .......  ..... ..... ... ..... ....... &cc %cd %cs1
+
+### Three operand instructions
+# 0000000 unused
+cspecialrw  0000001  ..... ..... 000 ..... 1011011 @ccc
+# 0000010-0000111 unused
+csetbounds  0001000  ..... ..... 000 ..... 1011011 @ccr
+csetboundsexact 0001001  ..... ..... 000 ..... 1011011 @ccr
+# 0001010 unused
+cseal       0001011  ..... ..... 000 ..... 1011011 @ccc
+cunseal     0001100  ..... ..... 000 ..... 1011011 @ccc
+candperm    0001101  ..... ..... 000 ..... 1011011 @ccr
+csetflags   0001110  ..... ..... 000 ..... 1011011 @ccr
+csetoffset  0001111  ..... ..... 000 ..... 1011011 @ccr
+csetaddr    0010000  ..... ..... 000 ..... 1011011 @ccr
+cincoffset  0010001  ..... ..... 000 ..... 1011011 @ccr
+ctoptr      0010010  ..... ..... 000 ..... 1011011 @rcc
+cfromptr    0010011  ..... ..... 000 ..... 1011011 @ccr
+csub        0010100  ..... ..... 000 ..... 1011011 @rcc
+csethigh    0010110  ..... ..... 000 ..... 1011011 @ccr
+csetmte     0010111  ..... ..... 000 ..... 1011011 @ccr
+csettloc    0011000  ..... ..... 000 ..... 1011011 @ccr
+csetmemmte  0011001  ..... ..... 000 ..... 1011011 @ccr
+csettmode  0011010  ..... ..... 000 ..... 1011011 @ccr
+
+# 0010101-0011100 unused
+cbuildcap   0011101  ..... ..... 000 ..... 1011011 @ccc
+ccopytype   0011110  ..... ..... 000 ..... 1011011 @ccc
+ccseal      0011111  ..... ..... 000 ..... 1011011 @ccc
+ctestsubset 0100000  ..... ..... 000 ..... 1011011 @rcc
+cseqx       0100001  ..... ..... 000 ..... 1011011 @rcc
+# 1111011 unused
+# 1111100 Used for Stores (see below)
+# 1111101 Used for Loads (see below)
+# 1111110 Used for two source ops
+# 1111111 Used for Source & Dest ops (see below)
+
+
+### Two operands (source and dest)
+cgetperm    1111111  00000 ..... 000 ..... 1011011 @rc
+cgettype    1111111  00001 ..... 000 ..... 1011011 @rc
+cgetbase    1111111  00010 ..... 000 ..... 1011011 @rc
+cgetlen     1111111  00011 ..... 000 ..... 1011011 @rc
+cgettag     1111111  00100 ..... 000 ..... 1011011 @rc
+cgetsealed  1111111  00101 ..... 000 ..... 1011011 @rc
+cgetoffset  1111111  00110 ..... 000 ..... 1011011 @rc
+cgetflags   1111111  00111 ..... 000 ..... 1011011 @rc
+crrl        1111111  01000 ..... 000 ..... 1011011 @r2
+cram        1111111  01001 ..... 000 ..... 1011011 @r2
+cmv         1111111  01010 ..... 000 ..... 1011011 @cc
+ccleartag   1111111  01011 ..... 000 ..... 1011011 @cc
+jalr_cap    1111111  01100 ..... 000 ..... 1011011 @cc
+# clear     1111111  01101 ..... 000 ..... 1011011 @r2
+# cclear    1111111  01110 ..... 000 ..... 1011011 @r2
+cgetaddr    1111111  01111 ..... 000 ..... 1011011 @rc
+# fpclear   1111111  10000 ..... 000 ..... 1011011 @r2
+csealentry  1111111  10001 ..... 000 ..... 1011011 @cc
+cloadtags   1111111  10010 ..... 000 ..... 1011011 @rc
+jalr_pcc    1111111  10100 ..... 000 ..... 1011011 @r2
+cgethigh    1111111  10111 ..... 000 ..... 1011011 @rc
+cgetmte     1111111  11000 ..... 000 ..... 1011011 @rc
+cgettloc    1111111  11001 ..... 000 ..... 1011011 @rc
+cgetmemmte  1111111  11010 ..... 000 ..... 1011011 @rc
+cgettmode   1111111  11011 ..... 000 ..... 1011011 @rc
+
+
+# There is an existing @sfence_vma format with rs1+rs2 fields, but let's define a new name
+@r_2source ....... ..... .....   ... ..... ....... %rs2 %rs1
+
+### Two operands (source1 and source2)
+cinvoke  1111110  ..... ..... 000 00001 1011011 @r_2source
+
+
+### Instructions with 12-bit immediates:
+@cci            ............    ..... ... ..... ....... &cci %cd %cs1 imm=%imm_i
+# We have to add a new i format with unsigned immediate for csetboundsimm:
+%imm_i_unsigned    20:12
+@cci_unsigned   ............    ..... ... ..... ....... &cci imm=%imm_i_unsigned %cs1 %cd
+
+# Explicit capability/DDC atomics:
+@atom_ld_cap_or_ddc .......   ..... ..... ... ..... ....... &atomic aq=1 rl=1 rs2=0  %rs1 %rd
+@atom_st_cap_or_ddc .......   ..... ..... ... ..... ....... &atomic aq=1 rl=1 rd=0   %rs2 %rs1
+
+# Instead of cincoffsetimm, we reuse the standard name caddi to reduce the diff
+caddi         ............     ..... 001 ..... 1011011 @cci
+csetboundsimm ............     ..... 010 ..... 1011011 @cci_unsigned
+
+### Memory Loads (including Load-Reserved) with Explicit Address Type
+ld_b_ddc       1111101  00000 ..... 000 ..... 1011011 @r2
+ld_h_ddc       1111101  00001 ..... 000 ..... 1011011 @r2
+ld_w_ddc       1111101  00010 ..... 000 ..... 1011011 @r2
+#                       00011 is ld_d_ddc for RV64/ld_c_ddc for RV32
+ld_bu_ddc      1111101  00100 ..... 000 ..... 1011011 @r2
+ld_hu_ddc      1111101  00101 ..... 000 ..... 1011011 @r2
+#                      00110 is ld_wu_ddc for RV64/ld_c_ddc for RV32
+ld_b_cap       1111101  01000 ..... 000 ..... 1011011 @r2
+ld_h_cap       1111101  01001 ..... 000 ..... 1011011 @r2
+ld_w_cap       1111101  01010 ..... 000 ..... 1011011 @r2
+#                       01011 is ldcap for RV64/lccap for RV32
+ld_bu_cap      1111101  01100 ..... 000 ..... 1011011 @r2
+ld_hu_cap      1111101  01101 ..... 000 ..... 1011011 @r2
+#                       01110 is ld_wu_cap for RV64
+#                       01111 would be ld_du_cap for RV128
+lr_b_ddc       1111101  10000 ..... 000 ..... 1011011 @atom_ld_cap_or_ddc
+lr_h_ddc       1111101  10001 ..... 000 ..... 1011011 @atom_ld_cap_or_ddc
+lr_w_ddc       1111101  10010 ..... 000 ..... 1011011 @atom_ld_cap_or_ddc
+#                       10011 is lr_d_ddc for RV64/lr_c_ddc for RV32
+#                       10100 is lr_c_ddc for RV64
+#                       10101 is reserved
+#                       10110 is reserved
+#                       10111 is ld_c_ddc for RV64 (would be ld_du_ddc for RV128)
+lr_b_cap       1111101  11000 ..... 000 ..... 1011011 @atom_ld_cap_or_ddc
+lr_h_cap       1111101  11001 ..... 000 ..... 1011011 @atom_ld_cap_or_ddc
+lr_w_cap       1111101  11010 ..... 000 ..... 1011011 @atom_ld_cap_or_ddc
+#                       11011 is lr_d_cap for RV64/lr_c_cap for RV32
+#                       11100 is lr_c_cap for RV64
+#                       11101 is reserved
+#                       11110 is reserved
+#                       11111 is ld_c_cap for RV64
+
+### Memory Stores (including Store-Conditional) with Explicit Address Type
+st_b_ddc       1111100  ..... ..... 000 00000 1011011 @r_2source
+st_h_ddc       1111100  ..... ..... 000 00001 1011011 @r_2source
+st_w_ddc       1111100  ..... ..... 000 00010 1011011 @r_2source
+#                                       00011 is st_d_ddc for RV64/st_c_ddc for RV32
+#                                       00100 is st_c_ddc for RV64
+#                                       00101 is reserved
+#                                       00110 is reserved
+#                                       00111 is reserved
+st_b_cap       1111100  ..... ..... 000 01000 1011011 @r_2source
+st_h_cap       1111100  ..... ..... 000 01001 1011011 @r_2source
+st_w_cap       1111100  ..... ..... 000 01010 1011011 @r_2source
+#                                       01011 is st_d_cap for RV64/st_c_cap for RV32
+#                                       01100 is st_c_cap for RV64
+#                                       01101 is reserved
+#                                       01110 is reserved
+#                                       01111 is reserved
+sc_b_ddc       1111100  ..... ..... 000 10000 1011011 @atom_st_cap_or_ddc
+sc_h_ddc       1111100  ..... ..... 000 10001 1011011 @atom_st_cap_or_ddc
+sc_w_ddc       1111100  ..... ..... 000 10010 1011011 @atom_st_cap_or_ddc
+#                                       10011 is sc_d_ddc for RV64/sc_c_ddc for RV32
+#                                       10100 is sc_c_ddc for RV64
+#                                       10101 is reserved
+#                                       10110 is reserved
+#                                       10111 is reserved
+sc_b_cap       1111100  ..... ..... 000 11000 1011011 @atom_st_cap_or_ddc
+sc_h_cap       1111100  ..... ..... 000 11001 1011011 @atom_st_cap_or_ddc
+sc_w_cap       1111100  ..... ..... 000 11010 1011011 @atom_st_cap_or_ddc
+#                                       11011 is sc_d_cap for RV64/sc_c_cap for RV32
+#                                       11100 is sc_c_cap for RV64
+#                                       11101 is reserved
+#                                       11110 is reserved
+#                                       11111 is reserved
+
+# Support the new standard encoding of LC as well (different from RV64 V9)
+lc       ............    ..... 100 ..... 0001111 @i
+# The standard encoding of SC/atomics are the same as RV64 V9.
+# Support them for RV32 as well so we can eventually GC the old encodings.
+sc        ....... .....   ..... 100 ..... 0100011 @s
+amoswap_c 00001 . . ..... ..... 100 ..... 0101111 @atom_st
+lr_c      00010 . . 00000 ..... 100 ..... 0101111 @atom_ld
+sc_c      00011 . . ..... ..... 100 ..... 0101111 @atom_st
+
+### Zero operands
+# These are CHERI standard only instruction but we expose them to v9
+modesw_cap 0001001 00000 00000 001 00000 0110011 ?pred_hybrid
+modesw_int 0001010 00000 00000 001 00000 0110011 ?pred_hybrid

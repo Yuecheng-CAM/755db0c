@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/CTSRD-CHERI/libunwind
+	branch = monorepo-mirror
+	commit = a0f79f19de448bffa184937f983e352fa548041c
+	method = rebase
+	cmdver = 0.4.9
+	parent = 6c98a4a0e5c286f501c7f431e21cc6039cf20fbc

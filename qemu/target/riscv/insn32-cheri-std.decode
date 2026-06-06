@@ -1,0 +1,105 @@
+#
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2020 Alex Richardson
+# All rights reserved.
+#
+# This software was developed by SRI International and the University of
+# Cambridge Computer Laboratory (Department of Computer Science and
+# Technology) under DARPA contract HR0011-18-C-0016 ("ECATS"), as part of the
+# DARPA SSITH research programme.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+
+# This is concatenated with insn32.decode for risc64 targets.
+# Most of the fields and formats are there.
+
+%cs2       20:5
+%cs1       15:5
+%cd         7:5
+
+&ccr cd cs1 rs2
+@ccr .......   ..... ..... ... ..... ....... &ccr %cd %cs1 %rs2
+&rcc rd cs1 cs2
+@rcc .......   ..... ..... ... ..... ....... &rcc %rd %cs1 %cs2
+&ccc cd cs1 cs2
+@ccc .......   ..... ..... ... ..... ....... &ccc %cd %cs1 %cs2
+
+&rc rd cs1
+@rc .......  ..... ..... ... ..... ....... &rc %rd %cs1
+@cc .......  ..... ..... ... ..... ....... &cc %cd %cs1
+
+
+### Three operand instructions
+{
+  cmv   0000110  00000 ..... 000 ..... 0110011 @cc  ?pred_cre
+  cadd  0000110  ..... ..... 000 ..... 0110011 @ccr ?pred_cre
+}
+scaddr  0000110  ..... ..... 001 ..... 0110011 @ccr ?pred_cre
+acperm  0000110  ..... ..... 010 ..... 0110011 @ccr ?pred_cre
+schi    0000110  ..... ..... 011 ..... 0110011 @ccr ?pred_cre
+sceq    0000110  ..... ..... 100 ..... 0110011 @rcc ?pred_cre
+cbld    0000110  ..... ..... 101 ..... 0110011 @ccc ?pred_cre
+scss    0000110  ..... ..... 110 ..... 0110011 @rcc ?pred_cre
+scbnds  0000111  ..... ..... 000 ..... 0110011 @ccr ?pred_cre
+scbndsr 0000111  ..... ..... 001 ..... 0110011 @ccr ?pred_cre
+scmode  0000110  ..... ..... 111 ..... 0110011 @ccr ?pred_hybrid ?pred_cre
+
+### Two operand instructions
+gctag       0001000  00000 ..... 000 ..... 0110011 @rc ?pred_cre
+gcperm      0001000  00001 ..... 000 ..... 0110011 @rc ?pred_cre
+gctype      0001000  00010 ..... 000 ..... 0110011 @rc ?pred_cre
+gcmode      0001000  00011 ..... 000 ..... 0110011 @rc ?pred_hybrid ?pred_cre
+gchi        0001000  00100 ..... 000 ..... 0110011 @rc ?pred_cre
+gcbase      0001000  00101 ..... 000 ..... 0110011 @rc ?pred_cre
+gclen       0001000  00110 ..... 000 ..... 0110011 @rc ?pred_cre
+cram        0001000  00111 ..... 000 ..... 0110011 @r2 ?pred_cre
+sentry      0001000  01000 ..... 000 ..... 0110011 @cc ?pred_cre
+
+### Zero operand instructions
+modesw_cap 0001001 00000 00000 001 00000 0110011 ?pred_hybrid ?pred_cre
+modesw_int 0001010 00000 00000 001 00000 0110011 ?pred_hybrid ?pred_cre
+
+### Instructions with immediate operands
+@cci ............    ..... ... ..... ....... &cci %cd %cs1 imm=%imm_i
+caddi         ............   ..... 010 ..... 0011011 @cci ?pred_cre
+
+# The RISC-V CHERI spec adds a new R format with a scaled unsigned immediate for scbndsi
+%imm5_unsigned 20:5
+%imm_scale     25:1
+@is_unsigned  ...... . ..... ..... ... ..... ....... scale=%imm_scale imm=%imm5_unsigned %cs1 %cd
+scbndsi       000001 . ..... ..... 101 ..... 0010011 @is_unsigned ?pred_cre
+
+
+# Loads and stores
+lc       ............   ..... 100 ..... 0001111 @i ?pred_cre
+sc       ....... .....  ..... 100 ..... 0100011 @s ?pred_cre
+
+# Atomic instructions
+amoswap_c 00001 . . ..... ..... 100 ..... 0101111 @atom_st ?pred_cre
+lr_c      00010 . . 00000 ..... 100 ..... 0101111 @atom_ld ?pred_cre
+sc_c      00011 . . ..... ..... 100 ..... 0101111 @atom_st ?pred_cre
+
+# Pre-0.9.6 mode-dependent sh4add instructions (sh4addy starting in 0.9.6)
+sh4add     0010000 .......... 111 ..... 0110011 @r
+sh4add_uw  0010000 .......... 111 ..... 0111011 @r
