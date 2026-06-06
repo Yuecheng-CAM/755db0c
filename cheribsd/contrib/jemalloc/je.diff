@@ -1,0 +1,71 @@
+diff --git a/contrib/jemalloc/src/arena.c b/contrib/jemalloc/src/arena.c
+index 3a1b2c3..8f9d1aa 100644
+--- a/contrib/jemalloc/src/arena.c
++++ b/contrib/jemalloc/src/arena.c
+@@ -1,6 +1,12 @@
+ #include "jemalloc/internal/jemalloc_internal.h"
+
++/* ============================================================
++ * CHERI per-page tail reservation
++ * ============================================================ */
++#define PAGE_SIZE 4096
++#define PAGE_TAIL_RESERVE 64
++#define PAGE_USABLE (PAGE_SIZE - PAGE_TAIL_RESERVE)
+
+@@ -1234,12 +1240,34 @@ arena_slab_data_init(tsdn_t *tsdn, arena_t *arena,
+     bin_info_t *bin_info = &arena->bins[binind];
+     size_t run_size = extent_size_get(extent);
+
++    /*
++     * CHERI SAFETY:
++     * We do NOT modify jemalloc internal structs.
++     * Instead we adjust slab geometry locally.
++     */
++    size_t reg_size = bin_info->reg_size;
++
++    size_t pages = run_size >> LG_PAGE;
++
++    /*
++     * Each page loses last 64 bytes from allocation universe.
++     */
++    size_t usable_per_page = PAGE_USABLE;
++
++    /*
++     * Compute total usable bytes in slab.
++     * (CHERI-safe: no struct mutation)
++     */
++    size_t usable_bytes = pages * usable_per_page;
++
++    /*
++     * Override region count locally (used only for bitmap init below)
++     */
++    size_t nregs = usable_bytes / reg_size;
+
+     /*
+      * Existing jemalloc logic continues below, but must use modified
+      * nregs for bitmap initialization.
+      */
+
+@@ -1255,7 +1283,7 @@ arena_slab_data_init(tsdn_t *tsdn, arena_t *arena,
+      * Initialize bitmap for slab allocation.
+      * MUST use adjusted nregs.
+      */
+-    bitmap_init(bin_info->bitmap, nregs);
++    bitmap_init(bin_info->bitmap, nregs);
+
+@@ -1302,6 +1330,21 @@ arena_slab_regind(const extent_t *slab, const bin_info_t *bin_info,
+     uintptr_t base = (uintptr_t)extent_addr_get(slab);
+     uintptr_t offset = (uintptr_t)ptr - base;
+
++    /*
++     * CHERI SAFETY CHECK:
++     * Reject access into reserved tail of each page.
++     */
++    uintptr_t page_off = offset & (PAGE_SIZE - 1);
++    if (page_off >= PAGE_USABLE) {
++        return (size_t)-1;
++    }
+
+     size_t reg_size = bin_info->reg_size;
+     return offset / reg_size;
+ }

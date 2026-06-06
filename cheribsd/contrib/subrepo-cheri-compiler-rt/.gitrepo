@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/CTSRD-CHERI/compiler-rt.git
+	branch = monorepo-mirror
+	commit = c34d2cb2e4a9fee4b2d668a6218504896269f8db
+	parent = d1984cf461afdc0661133909513dc255821d9c66
+	method = rebase
+	cmdver = 0.4.1

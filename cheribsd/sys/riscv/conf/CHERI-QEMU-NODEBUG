@@ -1,0 +1,6 @@
+#NO_UNIVERSE
+
+include "CHERI-QEMU"
+include "std.nodebug"
+
+ident CHERI-QEMU-NODEBUG

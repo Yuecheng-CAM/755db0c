@@ -1,0 +1,18 @@
+# Add a new line containing a larger number than the last (e.g. YYYYMMDD) for
+# every change that breaks ABI or requires a full rebuild for some other reason.
+# Only the last entry is required, but having the full list may be useful for
+# looking at frequency of ABI breakage, etc.
+
+# https://github.com/CTSRD-CHERI/cheribsd/commit/cc876df741e840569cc3032f2536fe8abbe39030
+20200526  # Building everything as CHERI hybrid for MIPS
+# https://github.com/CTSRD-CHERI/cheribsd/commit/f48c494e0574e77b72b11183e4da2bbe434aa8e8
+# https://github.com/CTSRD-CHERI/cheribsd/commit/e5c4980cdaf260f2092eb2ed1a2c44ea5fde7526
+20200624  # Sentry capabilities and MK_LIB64 on CHERI-RISC-V
+20201117  # OpenZFS import
+# https://github.com/CTSRD-CHERI/cheribsd/commit/97059f6a18084befde0d486914d337a0c927e967
+20210910  # libcheri -> lib64c rename
+# https://github.com/CTSRD-CHERI/cheribsd/commit/fbbed9d1eb296c1a38c8be1f627aede717da6dfe
+# https://github.com/CTSRD-CHERI/cheribsd/commit/6d95323f57bc4def4fadc889e766a0c08ffe5994
+20220512  # TLS and varargs ABI changes on Morello
+# https://github.com/CTSRD-CHERI/cheribsd/commit/6a6e2329153bab6126dc36d3c74871ca75b0c75f
+20240315  # Switch to final ABI for passing memory arguments on Morello

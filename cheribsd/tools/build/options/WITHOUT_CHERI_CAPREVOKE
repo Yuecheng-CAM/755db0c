@@ -1,0 +1,2 @@
+.\" $FreeBSD$
+Do not build userspace with CHERI capability revocation support.

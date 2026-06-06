@@ -1,0 +1,100 @@
+.include <src.opts.mk>
+
+SRCS=	cheribsdtest.c
+
+SRCS+=	cheribsdtest_bounds_globals.c					\
+	cheribsdtest_bounds_globals_x.c					\
+	cheribsdtest_bounds_heap.c					\
+	cheribsdtest_bounds_stack.c					\
+	cheribsdtest_cidcap.c						\
+	cheribsdtest_context.c						\
+	cheribsdtest_fault.c						\
+	cheribsdtest_flag_captured.c					\
+	cheribsdtest_fs.c						\
+	cheribsdtest_kbounce.c						\
+	cheribsdtest_ipc.c						\
+	cheribsdtest_internal.c 					\
+	cheribsdtest_local_global.c					\
+	cheribsdtest_longjmp.c						\
+	cheribsdtest_printf.c						\
+	cheribsdtest_ptrace.c						\
+	cheribsdtest_registers.c					\
+	cheribsdtest_sealcap.c						\
+	cheribsdtest_signal.c						\
+	cheribsdtest_strfcap.c						\
+	cheribsdtest_string.c						\
+	cheribsdtest_syscall.c						\
+	cheribsdtest_tls.c						\
+	cheribsdtest_util.c						\
+	cheribsdtest_util_vm.c						\
+	cheribsdtest_vm.c						\
+	cheribsdtest_zlib.c
+.if ${MACHINE_ABI:Mpurecap}
+SRCS+=	cheribsdtest_bounds_subobject.c					\
+	cheribsdtest_bounds_varargs.c					\
+	cheribsdtest_malloc.c						\
+	cheribsdtest_sentries.c
+.if ${MACHINE_ARCH:Mriscv*c*}
+SRCS+=	cheribsdtest_capid.c
+.endif
+.endif
+
+CHERIBSDTEST_DIR:=	${.PARSEDIR}
+.PATH: ${CHERIBSDTEST_DIR}
+CFLAGS+=	-I${CHERIBSDTEST_DIR}/${MACHINE}
+
+CFLAGS+=	'-DPROG="${PROG}"' '-DPROG_SUFFIX="${PROG:S/^cheribsdtest//}"'
+
+.if ${MACHINE_ABI:Mpurecap}
+SRCS+=	cheribsdtest_cheriabi.c
+SRCS+=	cheribsdtest_cheriabi_libc.c
+SRCS+=	cheribsdtest_cheriabi_open.c
+.endif
+
+.if ${MACHINE_ABI:Mpurecap} && ${MK_CHERI_CAPREVOKE} == "yes"
+LIBADD+=	cheri_caprevoke
+CFLAGS+=	-DCHERIBSDTEST_CHERI_REVOKE_TESTS
+.endif
+
+# This test is broken as written
+#SRCS+=	cheribsdtest_vm_swap.c
+#CFLAGS.cheribsdtest_vm_swap.c+=-Wno-cheri-capability-misuse
+
+.sinclude "${CHERIBSDTEST_DIR}/${MACHINE}/Makefile.cheribsdtest"
+
+# Enable sub-object bounds only in tests specifically designed for them.
+CFLAGS.cheribsdtest_bounds_subobject.c+=-cheri-bounds=subobject-safe
+
+MAN=
+
+LIBADD+=	procstat util xo z
+
+.ifdef CHERIBSD_DYNAMIC_TESTS
+CFLAGS+=	-DCHERIBSD_DYNAMIC_TESTS
+CFLAGS+=	'-DLIBM_SONAME="libm.so.5"'
+CFLAGS+=	-I${SRCTOP}/lib/libcheribsdtest_dynamic
+LIBADD+=	cheribsdtest_dynamic
+SRCS+=		cheribsdtest_fptr_canon.c				\
+		cheribsdtest_lazy_bind.c
+.else
+NO_SHARED?=	YES
+.endif
+
+.ifdef CHERIBSD_IFUNC_TESTS
+SRCS+=		cheribsdtest_ifunc.c
+.endif
+
+# Both variants exist so we can test with and without libthr's interposition on
+# things like signals.
+.ifdef CHERIBSD_THREAD_TESTS
+CFLAGS+=	-DCHERIBSD_THREAD_TESTS
+LIBADD+=	pthread
+SRCS+=		cheribsdtest_tls_threads.c
+.endif
+
+.ifdef CHERIBSD_C18N_TESTS
+CFLAGS+=	-DCHERIBSD_C18N_TESTS
+ELF_FEATURES+=	+cheric18n
+.endif
+
+.include <bsd.prog.mk>

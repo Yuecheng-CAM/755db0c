@@ -1,0 +1,6 @@
+#NO_UNIVERSE
+
+include "SPIKE"
+include "std.nodebug"
+
+ident SPIKE-NODEBUG

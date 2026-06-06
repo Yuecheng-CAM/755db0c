@@ -1,0 +1,4 @@
+include	"GENERIC-MORELLO"
+include	"std.nodebug"
+
+ident	GENERIC-MORELLO-NODEBUG

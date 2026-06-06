@@ -1,0 +1,150 @@
+.\" Copyright (c) 2022 Dapeng Gao <dapeng.gao@cl.cam.ac.uk>
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd March 22 2024
+.Dt COMPARTMENTALIZATION 7
+.Os
+.Sh NAME
+.Nm compartmentalization ,
+.Nm c18n
+.Nd library-based software compartmentalization
+.Sh DESCRIPTION
+This document contains instructions for using the library-based
+compartmentalization (c18n) prototype.
+.Pp
+Library-based compartmentalization contains a set of features provided by
+.Xr rtld 1
+and other system libraries that enhances the security of existing
+dynamically-linked pure-capability programs.
+.Pp
+A new process inherits the compartmentalization setting of its parent.
+To enable c18n for all new processes across the entire system, run
+.Dl sysctl security.cheri.lib_based_c18n_default=1
+.Pp
+To override this and permanently enable or disable c18n for a particular
+executable, use the
+.Xr elfctl 1
+tool to write the setting into the executable.
+.Pp
+To override this and temporarily enable or disable c18n for a particular
+executable, run
+.Dl proccontrol -m cheric18n -s enable Ar executable
+or
+.Dl proccontrol -m cheric18n -s disable Ar executable
+as appropriate.
+.Pp
+Overriding this still are the environment variables
+.Ev LD_COMPARTMENT_ENABLE
+and
+.Ev LD_COMPARTMENT_DISABLE .
+If both environtment variables are set, c18n is disabled.
+Note that environment variables are not reliable inherited when processes fork.
+.Pp
+Compartmentalization depends on modified versions of
+.Lb libc
+and
+.Lb libthr .
+These are located in
+.Pa /usr/lib/c18n .
+.Xr rtld 1
+automatically searches from this path first when c18n is enabled.
+.Ss COMPARTMENT TRANSITION TRACING
+Compartment transitions can be traced with the
+.Xr ktrace 1
+facility.
+To generate a trace, set the environment variable
+.Ev LD_UTRACE_COMPARTMENT
+and invoke the executable with
+.Xr ktrace 1 .
+.Pp
+.Sy CAUTION:
+Compartment transition tracing is only intended for debugging and analysis
+purposes.
+Turning it on will reduce security.
+.Ss COMPARTMENT TRANSITION OVERHEAD SIMULATION
+To simulate the overhead of making a system call during each compartment
+transition, set the environment variable
+.Ev LD_COMPARTMENT_OVERHEAD
+and invoke the executable.
+Each compartment transition will then make a
+.Xr getpid 2
+system call.
+.Pp
+.Sy CAUTION:
+Compartment transition overhead simulation is only intended for performance
+analysis purposes.
+Turning it on will reduce security.
+.Ss BENCHMARK ABI VARIANT
+The benchmark ABI variant of the runtime linker also supports c18n.
+Note that environment variables recognized by this variant need to be prefixed
+with LD_64CB_ instead of LD_.
+.Pp
+.Sy NOTE:
+Because the purecap variant uses some of Morello's architectural features that
+are unavailable under the benchmark ABI, the benchmark ABI variant is not a
+mere translation of the purecap variant but has a slightly different
+implementation.
+The best effort has been made to ensure that such a divergence
+does not bias performance estimates under almost all circumstances.
+.Sh COMPATIBILITY
+.Bl -bullet
+.It
+Calling
+.Xr vfork 2
+is identical to calling
+.Xr fork 2 ,
+that is, no memory sharing will take place between the parent and child
+processes.
+.It
+Calling
+.Xr rfork 2
+with flags
+.Dv RFMEM
+or
+.Dv RFSIGSHARE
+will return -1.
+.It
+.Xr sigaltstack 2
+does not work as expected.
+This impacts some applications that use an alternative stack to handle
+stack-overflow exceptions.
+.It
+.Xr getcontext 3 ,
+.Xr setcontext 3 ,
+and related functions do not work as expected.
+This impacts certain threading and coroutine libraries.
+.El
+.Sh SECURITY
+This work is of an experimental nature.
+It
+.Em does not
+provide complete isolation between compartments.
+For example, they are allowed to make arbitrary system calls to obtain
+privileges and access other compartments' thread local data even when said data
+has static linkage.
+Calling function pointers in other compartments may also unexpectedly leak
+capabilities.
+.Sh AUTHORS
+.An Dapeng Gao Aq Mt dapeng.gao@cl.cam.ac.uk

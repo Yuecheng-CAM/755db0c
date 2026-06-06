@@ -1,0 +1,6 @@
+#NO_UNIVERSE
+
+include "CHERI-PURECAP-GFE"
+include "std.nodebug"
+
+ident CHERI-PURECAP-GFE-NODEBUG
