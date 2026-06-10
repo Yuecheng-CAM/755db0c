@@ -1,3 +1,0 @@
-[submodule "SocketPacketUtils"]
-	path = SocketPacketUtils
-	url = https://github.com/CTSRD-CHERI/SocketPacketUtils.git
