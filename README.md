@@ -4,8 +4,7 @@ This is a repository of all artifacts associated with our CHERI-D paper submissi
 
 ## Relevant Files
 ### CHERI-Toooba: 
-- `Toooba/src_Core/RISCY_OOO/coherence/src/`, contains CHERI-D changes to memory subsystem include inline ID mode detection on memory store paths.
-- `Toooba/src_Core/RISCY_OOO/procs`, contains the implementations of CHERI-D related instructions, ID buffer and ID detection logic for both load and store. 
+- `Toooba/src_Core/RISCY_OOO/procs`, contains the implementations of CHERI-D related instructions, ID buffer and ID detection logic on both load and store. 
 - `Toooba/libs/cheri-cap-lib`, contains the implementation of CHERI-D changes to CHERI capability format
 
 ### QEMU: 
