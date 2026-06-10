@@ -1,0 +1,32 @@
+=== Generated schedule for mkXilinxFpFmaIP ===
+
+Method schedule
+---------------
+Method: request_put
+Ready signal: fpFma.RDY_enqA &&
+	      fpFma.RDY_enqB && fpFma.RDY_enqC && init_init && init_rg_ready
+Conflict-free: response_get
+Conflicts: request_put
+ 
+Method: response_get
+Ready signal: fpFma.RDY_deq &&
+	      fpFma.RDY_resp && fpFma.RDY_excep && init_init && init_rg_ready
+Conflict-free: request_put
+Conflicts: response_get
+ 
+Rule schedule
+-------------
+Rule: init_rg_rl_ready
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: init_doInit
+Predicate: ! init_init
+Blocking rules: (none)
+ 
+Logical execution order: request_put,
+			 response_get,
+			 init_doInit,
+			 init_rg_rl_ready
+
+===============================================

@@ -1,0 +1,11 @@
+=== Generated schedule for module_specialRWALU ===
+
+Method schedule
+---------------
+Method: specialRWALU
+Ready signal: True
+Conflict-free: specialRWALU
+ 
+Logical execution order: specialRWALU
+
+===================================================

@@ -1,0 +1,61 @@
+=== Generated schedule for mkTourPred ===
+
+Method schedule
+---------------
+Method: nextPc
+Ready signal: True
+Conflict-free: update, flush, flush_done
+Sequenced before (restricted): nextPc
+Sequenced after: pred_0_pred, pred_1_pred
+ 
+Method: pred_0_pred
+Ready signal: True
+Conflict-free: update, flush, flush_done
+Sequenced before: nextPc, pred_1_pred
+Conflicts: pred_0_pred
+ 
+Method: pred_1_pred
+Ready signal: True
+Conflict-free: update, flush, flush_done
+Sequenced before: nextPc
+Sequenced after: pred_0_pred
+Conflicts: pred_1_pred
+ 
+Method: update
+Ready signal: True
+Conflict-free: nextPc, pred_0_pred, pred_1_pred, flush, flush_done
+Conflicts: update
+ 
+Method: flush
+Ready signal: True
+Conflict-free: nextPc, pred_0_pred, pred_1_pred, update, flush, flush_done
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: nextPc, pred_0_pred, pred_1_pred, update, flush, flush_done
+ 
+Rule schedule
+-------------
+Rule: predCnt_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: predRes_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: canonGlobalHist
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: pred_0_pred,
+			 pred_1_pred,
+			 nextPc,
+			 update,
+			 flush,
+			 flush_done,
+			 canonGlobalHist,
+			 predCnt_canon,
+			 predRes_canon
+
+==========================================

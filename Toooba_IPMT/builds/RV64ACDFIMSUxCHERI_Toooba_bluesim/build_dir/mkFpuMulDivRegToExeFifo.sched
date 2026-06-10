@@ -1,0 +1,80 @@
+=== Generated schedule for mkFpuMulDivRegToExeFifo ===
+
+Method schedule
+---------------
+Method: enq
+Ready signal: (m_m_valid_0_lat_0.whas
+	       ? ! m_m_valid_0_lat_0.wget
+	       : (! m_m_valid_0_rl)) &&
+	      (! m_m_wrongSpec_enq_conflict.whas)
+Conflict-free: notFull, notEmpty
+Sequenced before: specUpdate_correctSpeculation
+Sequenced after: deq, first
+Sequenced after (restricted): specUpdate_incorrectSpeculation
+Conflicts: enq
+ 
+Method: notFull
+Ready signal: True
+Conflict-free: enq, notFull, first, notEmpty, specUpdate_correctSpeculation
+Sequenced after: deq, specUpdate_incorrectSpeculation
+ 
+Method: deq
+Ready signal: m_m_valid_0_rl && (! m_m_wrongSpec_deq_conflict.whas)
+Conflict-free: first, notEmpty, specUpdate_correctSpeculation
+Sequenced before: enq, notFull
+Conflicts: deq, specUpdate_incorrectSpeculation
+ 
+Method: first
+Ready signal: m_m_valid_0_rl
+Conflict-free: notFull,
+	       deq,
+	       first,
+	       notEmpty,
+	       specUpdate_incorrectSpeculation,
+	       specUpdate_correctSpeculation
+Sequenced before: enq
+ 
+Method: notEmpty
+Ready signal: True
+Conflict-free: enq,
+	       notFull,
+	       deq,
+	       first,
+	       notEmpty,
+	       specUpdate_incorrectSpeculation,
+	       specUpdate_correctSpeculation
+ 
+Method: specUpdate_incorrectSpeculation
+Ready signal: True
+Conflict-free: first, notEmpty, specUpdate_correctSpeculation
+Sequenced before: notFull
+Sequenced before (restricted): enq
+Conflicts: deq, specUpdate_incorrectSpeculation
+ 
+Method: specUpdate_correctSpeculation
+Ready signal: True
+Conflict-free: notFull, deq, first, notEmpty, specUpdate_incorrectSpeculation
+Sequenced after: enq
+Conflicts: specUpdate_correctSpeculation
+ 
+Rule schedule
+-------------
+Rule: m_m_valid_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_specBits_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: first,
+			 notEmpty,
+			 specUpdate_incorrectSpeculation,
+			 deq,
+			 enq,
+			 notFull,
+			 specUpdate_correctSpeculation,
+			 m_m_valid_0_canon,
+			 m_m_specBits_0_canon
+
+=======================================================

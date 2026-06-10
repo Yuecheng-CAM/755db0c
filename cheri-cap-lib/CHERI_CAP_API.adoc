@@ -1,0 +1,562 @@
+:toc: macro
+:toclevels: 4
+:toc-title:
+:toc-placement!:
+:source-highlighter:
+
+Given that HDL languages are not all as expressive as each other when it comes
+to capturing an API, we express the CHERI CAP API in terms of pseudo-code, with
+constructs that can at least map to Verilog, as well as higher level HDLs
+(System Verilog, Bluespec System Verilog, Blarney...). Verilog does *NOT*
+support structured types (or types for that matter), so we will first explicitly
+describe collections of relevant information about capability fields which would
+typically be expressed as a typdef or equivalent in a language capable of it.
+Where relevant, we enrich function's pseudo code descriptions with comments
+mentioning these "types".
+
+The CHERI CAP API provide functions to manipulate "black-box" capability values
+*AND* to observe CHERI capability fields. Indeed, it often is necessary to
+perform some transformation on the format used to implement CHERI capabilities
+to access a "field" of a capability. It is *NOT* advisable to simply reach for
+a bitslice of a capability's bit representation (or a field of a struct) and
+expect it to provide something directly relevant. This is why RTL code using
+capabilities should perform *BOTH* capability manipulations *AND* capability
+fields observation through the methods provided in the CHERI CAP API.
+
+A Verilog implementation can only capture this as a set of functions. We aim for
+the higher level HDLs wrappers to make use of more advanced language features
+where appropriate (structured types, typeclasses...).
+
+[discrete]
+== Contents
+
+toc::[]
+
+=== CHERI CAP API "types"
+
+==== Software permission bits
+
+These permission bits can be freely used by software. The actually supported
+bit-width is smaller than 16.
+
+[source, pseudo-code]
+----
+// Maps to a 16-bit Verilog value
+typedef Bit #(16) SoftPerms;
+----
+
+==== Hardware permission bits
+
+[source, pseudo-code]
+----
+// Maps to a 12-bit Verilog value
+typedef struct {
+  Bool permitSetCID;
+  Bool accessSysRegs;
+  Bool permitUnseal;
+  Bool permitCCall;
+  Bool permitSeal;
+  Bool permitStoreLocalCap;
+  Bool permitStoreCap;
+  Bool permitLoadCap;
+  Bool permitStore;
+  Bool permitLoad;
+  Bool permitExecute;
+  Bool global;
+} HardPerms;
+----
+
+==== Exact/Inexact CHERI capability value
+
+This helps to return the CHERI capability result of an operation along with
+whether the operation yielded an exact CHERI capability. In cases where no
+sensible inexact representation exists, the only guarantee is that the validity
+tag bit of the CHERI capability is not set.
+
+[source, pseudo-code]
+----
+// Maps to a (n+1)-bit Verilog value, where n is the bit width of a CHERI
+// capability, and where the extra bit holds the information of whether it is
+// exact
+typedef struct {
+  Bool exact;
+  cheri_cap value;
+} Exact #(type cheri_cap);
+----
+
+==== CHERI capability Kind
+
+The kind of a CHERI capability expresses whether it is "sealed" with a given
+"type", or if it is a "sentry" or simply "unsealed".
+
+[source, pseudo-code]
+----
+// Maps to a (n+3)-bit Verilog value (3 as there currently are 5 different
+// constructors for a kind), where n is the bit width of a CHERI capability
+// "type"
+typedef union {
+  void UNSEALED;
+  void SENTRY;
+  void RES0;
+  void RES1;
+  Bit #(type_width) SEALED_WITH_TYPE;
+} Kind #(numeric type type_width);
+----
+
+==== Container for SetBounds operations' returned values
+
+As part of a SetBounds operation, several derived values of interest are
+derived as well as a new capability. This construct encapsulates the returned
+CHER capability together with whether it is exact, as well as with the computed
+length and mask.
+
+[source, pseudo-code]
+----
+// Maps to a (m+1+2n)-bit Verilog value, where m is the bit width of a CHERI
+// capability and n the bit width of the derived length and mask
+typedef struct {
+  cheri_cap cap;
+  Bool exact;
+  Bit #(n) length;
+  Bit #(n) mask;
+} SetBoundsReturn #(type cheri_cap, numeric type n);
+----
+
+=== CHERI CAP API "methods"
+
+==== isValidCap
+
+This method returns whether the Cheri capability is valid.
+
+[source, pseudo-code]
+----
+function Bool isValidCap (t cap);
+----
+
+==== setValidCap
+
+This method sets the CHERI capability as valid. The CHERI capability is
+otherwise unchanged.
+
+[source, pseudo-code]
+----
+function t setValidCap (t cap, Bool valid);
+----
+
+==== getFlags
+
+Get the flags field of a CHERI capability. The `flags` field can include
+information such as whether we are currently executing in capability mode,
+changing the interpretation of certain instructions (memory operations in
+particular).
+
+[source, pseudo-code]
+----
+function Bit#(flg) getFlags (t cap);
+----
+
+==== setFlags
+
+Set the flags field of a CHERI capability.
+
+[source, pseudo-code]
+----
+function t setFlags (t cap, Bit#(flg) flags);
+----
+
+==== getHardPerms
+
+Get the hardware permissions field of a CHERI capability.
+
+[source, pseudo-code]
+----
+function HardPerms getHardPerms (t cap);
+----
+
+==== setHardPerms
+
+Set the hardware permissions field of a CHERI capability.
+
+[source, pseudo-code]
+----
+function t setHardPerms (t cap, HardPerms hardperms);
+----
+
+==== getSoftPerms
+
+Get the software permissions of a CHERI capability.
+
+[source, pseudo-code]
+----
+function SoftPerms getSoftPerms (t cap);
+----
+
+==== setSoftPerms
+
+Set the software permissions of a CHERI capability.
+
+[source, pseudo-code]
+----
+function t setSoftPerms (t cap, SoftPerms softperms);
+----
+
+==== getPerms
+
+Get the architectural permissions of a CHERI capability.
+
+[source, pseudo-code]
+----
+function Bit#(31) getPerms (t cap);
+----
+
+Note:
+[source, pseudo-code]
+----
+function Bit#(31) getPerms (t cap) =
+  zeroExtend({pack(getSoftPerms(cap)), 3'h0, pack(getHardPerms(cap))});
+----
+
+==== setPerms
+
+Set the architectural permissions of a CHERI capability.
+
+[source, pseudo-code]
+----
+function t setPerms (t cap, Bit#(31) perms) =
+----
+
+Note:
+[source, pseudo-code]
+----
+function t setPerms (t cap, Bit#(31) perms) =
+  setSoftPerms ( setHardPerms(cap, unpack(perms[11:0]))
+               , unpack(truncate(perms[30:15])) );
+----
+
+==== getKind
+
+Get the kind of a CHERI capability.
+
+[source, pseudo-code]
+----
+function Kind#(ot) getKind (t cap);
+----
+
+==== setKind
+
+Set the kind of a CHERI capability.
+
+[source, pseudo-code]
+----
+function t setKind (t cap, Kind#(ot) kind);
+----
+
+==== getMetadata
+
+Get the in-memory architectural representation of the CHERI capability's
+metadata.
+
+[source, pseudo-code]
+----
+function Bit #(TSub #(mem_sz, n)) getMeta (t cap);
+----
+
+==== getAddr
+
+Get the in-memory architectural representation of the CHERI capability's
+address.
+
+[source, pseudo-code]
+----
+function Bit #(n) getAddr (t cap);
+----
+
+===== Note on `getMetadata` and `getAddr`
+
+[source, pseudo-code]
+----
+fromMem ({isValidCap (cap), getMeta (cap), getAddr (cap)}) == cap
+----
+
+==== setAddr
+
+Set the address of the CHERI capability. The result will be invalid if it is not
+representable.
+
+[source, pseudo-code]
+----
+function Exact#(t) setAddr (t cap, Bit#(n) addr);
+----
+
+==== setAddrUnsafe
+
+Set the address of the CHERI capability, assumed to be representable.
+
+This is explicitly labeled as unsafe as, in order to still provide all the CHERI
+guaranties, one will need to perform extra checks.
+
+[source, pseudo-code]
+----
+function t setAddrUnsafe (t cap, Bit#(n) addr);
+----
+
+==== addAddrUnsafe
+
+Add to the address of the CHERI capability, assumed to be representable.
+
+This is explicitly labeled as unsafe as, in order to still provide all the CHERI
+guaranties, one will need to perform extra checks.
+
+[source, pseudo-code]
+----
+function t addAddrUnsafe (t cap, Bit#(maskable_bits) inc);
+----
+
+==== getOffset
+
+Get the offset of the CHERI capability.
+
+[source, pseudo-code]
+----
+function Bit#(n) getOffset (t cap);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Bit#(n) getOffset (t cap) = getAddr(cap) - getBase(cap);
+----
+
+==== modifyOffset
+
+Modify the offset of the CHERI capability (either by setting it to or
+incrementing it by the value provided).
+
+The result captures whether it is representable or not.
+
+[source, pseudo-code]
+----
+function Exact#(t) modifyOffset (t cap, Bit#(n) offset, Bool doInc);
+----
+
+==== setOffset
+
+Set the offset of the CHERI capability.
+
+The result captures whether it is representable or not.
+
+[source, pseudo-code]
+----
+function Exact#(t) setOffset (t cap, Bit#(n) offset);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Exact#(t) setOffset (t cap, Bit#(n) offset) =
+  modifyOffset(cap, offset, False);
+----
+
+==== incOffset
+
+Increment the offset of the CHERI capability.
+
+The result captures whether it is representable or not.
+
+[source, pseudo-code]
+----
+function Exact#(t) incOffset (t cap, Bit#(n) inc);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Exact#(t) incOffset (t cap, Bit#(n) inc) =
+  modifyOffset(cap, inc, True);
+----
+
+==== getBase
+
+Get the base of the CHERI capability.
+
+[source, pseudo-code]
+----
+function Bit#(n) getBase (t cap);
+----
+
+==== getTop
+
+Get the top of the CHERI capability.
+
+[source, pseudo-code]
+----
+function Bit#(TAdd#(n, 1)) getTop (t cap);
+----
+
+==== getLength
+
+Get the length of the CHERI capability.
+
+[source, pseudo-code]
+----
+function Bit#(TAdd#(n, 1)) getLength (t cap);
+----
+
+==== isInBounds
+
+Assert that the address of the CHERI capability is between its base and its top.
+
+[source, pseudo-code]
+----
+function Bool isInBounds (t cap, Bool isTopIncluded);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Bool isInBounds (t cap, Bool isTopIncluded);
+  Bool isNotTooHigh = isTopIncluded ? zeroExtend(getAddr(cap)) <= getTop(cap)
+                                    : zeroExtend(getAddr(cap)) < getTop(cap);
+  Bool isNotTooLow = getAddr(cap) >= getBase(cap);
+  return isNotTooLow && isNotTooHigh;
+endfunction
+----
+
+==== setBounds and setBoundsCombined
+
+Set the bounds of the CHERI capability by providing a desired length. Based on
+the initial CHERI capability, the result length may not match the requested one.
+
+[source, pseudo-code]
+----
+function SetBoundsReturn#(t, n) setBoundsCombined (t cap, Bit#(n) length);
+function Exact#(t) setBounds (t cap, Bit#(n) length);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Exact#(t) setBounds (t cap, Bit#(n) length);
+  let combinedResult = setBoundsCombined(cap, length);
+  return Exact {exact: combinedResult.exact, value: combinedResult.cap};
+endfunction
+----
+
+==== nullCap
+
+The "null" CHERI capability.
+
+[source, pseudo-code]
+----
+function t nullCap;
+----
+
+==== nullWithAddr
+
+A "null" CHERI capability with an address set to the argument.
+
+[source, pseudo-code]
+----
+function t nullWithAddr (Bit#(n) addr);
+----
+
+==== almightyCap
+
+A "maximally permissive" CHERI capability (initial register state).
+
+[source, pseudo-code]
+----
+function t almightyCap;
+----
+
+==== validAsType
+
+Check if a value can be used as a type for the CHERI capability.
+
+All bit patterns are not necessarily legal types (some will overlap with the bit
+patterns used to represent sentry capabilities, unsealed capabilities...).
+
+[source, pseudo-code]
+----
+function Bool validAsType (Bit#(n) checkType);
+----
+
+==== fromMem and toMem
+
+Convert from and to bit memory representation of the CHERI capability.
+
+[source, pseudo-code]
+----
+function t fromMem (Tuple2#(Bool, Bit#(mem_sz)) mem_cap);
+function Tuple2#(Bool, Bit#(mem_sz)) toMem (t cap);
+----
+
+Note: Composing these two functions (in either order) is the identity.
+
+==== maskAddr
+
+Mask the least significant bits of a CHERI capability address with a mask which
+should be small enough to make this safe with respect to representability.
+
+[source, pseudo-code]
+----
+function t maskAddr (t cap, Bit#(maskable_bits) mask);
+----
+
+==== getBaseAlignment
+
+Get the alignment of the base of the CHERI capability, giving the least
+significant 2 bits.
+
+[source, pseudo-code]
+----
+function Bit#(2) getBaseAlignment (t cap);
+----
+
+==== getRepresentableAlignmentMask
+
+Get the representable alignment mask for a requested length.
+
+[source, pseudo-code]
+----
+function Bit#(n) getRepresentableAlignmentMask (Bit#(n) length_request);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Bit#(n) getRepresentableAlignmentMask (Bit#(n) length_request) =
+  setBoundsCombined(nullCap, length_request).mask;
+----
+
+==== getRepresentableLength
+
+Get the representable length from a requested length.
+
+[source, pseudo-code]
+----
+function Bit#(n) getRepresentableLength (Bit#(n) length_request);
+----
+
+Note:
+
+[source, pseudo-code]
+----
+function Bit#(n) getRepresentableLength (Bit#(n) length_request) =
+  setBoundsCombined(nullCap, length_request).length;
+----
+
+==== isDerivable
+
+Assert that a provided bit pattern is a valid encoding of a CHERI capability.
+
+[source, pseudo-code]
+----
+function Bool isDerivable (t cap);
+----

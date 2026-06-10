@@ -1,0 +1,236 @@
+=== Generated schedule for mkDPRqMshrWrapper ===
+
+Method schedule
+---------------
+Method: getEmptyEntryInit
+Ready signal: m_m_inited && m_m_emptyEntryQ.i_notEmpty
+Conflict-free: sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       pipelineResp_releaseEntry,
+	       pipelineResp_setDone_setData,
+	       stuck_get
+Conflicts: getEmptyEntryInit
+ 
+Method: sendRsToP_pRq_getRq
+Ready signal: True
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       pipelineResp_releaseEntry,
+	       pipelineResp_setDone_setData,
+	       stuck_get
+ 
+Method: sendRsToP_pRq_getData
+Ready signal: True
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       pipelineResp_releaseEntry,
+	       stuck_get
+Sequenced before: pipelineResp_setDone_setData
+ 
+Method: sendRsToP_pRq_releaseEntry
+Ready signal: (! m_m_releaseEntryQ_sendRsToP_pRq_full_rl) && m_m_inited
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       pipelineResp_getRq,
+	       pipelineResp_releaseEntry,
+	       pipelineResp_setDone_setData,
+	       stuck_get
+Sequenced before: pipelineResp_getState
+Conflicts: sendRsToP_pRq_releaseEntry
+ 
+Method: pipelineResp_getRq
+Ready signal: True
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       pipelineResp_releaseEntry,
+	       pipelineResp_setDone_setData,
+	       stuck_get
+ 
+Method: pipelineResp_getState
+Ready signal: True
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       pipelineResp_releaseEntry,
+	       pipelineResp_setDone_setData,
+	       stuck_get
+Sequenced after: sendRsToP_pRq_releaseEntry
+ 
+Method: pipelineResp_releaseEntry
+Ready signal: (! m_m_releaseEntryQ_pipelineResp_full_rl) && m_m_inited
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       stuck_get
+Conflicts: pipelineResp_releaseEntry, pipelineResp_setDone_setData
+ 
+Method: pipelineResp_setDone_setData
+Ready signal: True
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       stuck_get
+Sequenced after: sendRsToP_pRq_getData
+Conflicts: pipelineResp_releaseEntry, pipelineResp_setDone_setData
+ 
+Method: stuck_get
+Ready signal: False
+Conflict-free: getEmptyEntryInit,
+	       sendRsToP_pRq_getRq,
+	       sendRsToP_pRq_getData,
+	       sendRsToP_pRq_releaseEntry,
+	       pipelineResp_getRq,
+	       pipelineResp_getState,
+	       pipelineResp_releaseEntry,
+	       pipelineResp_setDone_setData,
+	       stuck_get
+ 
+Rule schedule
+-------------
+Rule: m_m_stateVec_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_stateVec_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_stateVec_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_stateVec_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_reqVec_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_reqVec_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_reqVec_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_reqVec_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_dataValidVec_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_dataValidVec_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_dataValidVec_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_dataValidVec_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_releaseEntryQ_sendRsToP_pRq_data_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_releaseEntryQ_sendRsToP_pRq_empty_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_releaseEntryQ_sendRsToP_pRq_full_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_releaseEntryQ_pipelineResp_data_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_releaseEntryQ_pipelineResp_empty_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_releaseEntryQ_pipelineResp_full_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_m_initEmptyEntry
+Predicate: m_m_emptyEntryQ.i_notFull && (! m_m_inited)
+Blocking rules: (none)
+ 
+Rule: m_m_doReleaseEntry_sendRsToP_pRq
+Predicate: (m_m_releaseEntryQ_sendRsToP_pRq_empty_lat_0.whas
+	    ? ! m_m_releaseEntryQ_sendRsToP_pRq_empty_lat_0.wget
+	    : (! m_m_releaseEntryQ_sendRsToP_pRq_empty_rl)) &&
+	   m_m_emptyEntryQ.i_notFull &&
+	   m_m_inited
+Blocking rules: (none)
+ 
+Rule: m_m_doReleaseEntry_pipelineResp
+Predicate: (m_m_releaseEntryQ_pipelineResp_empty_lat_0.whas
+	    ? ! m_m_releaseEntryQ_pipelineResp_empty_lat_0.wget
+	    : (! m_m_releaseEntryQ_pipelineResp_empty_rl)) &&
+	   m_m_emptyEntryQ.i_notFull &&
+	   m_m_inited
+Blocking rules: m_m_doReleaseEntry_sendRsToP_pRq
+ 
+Logical execution order: getEmptyEntryInit,
+			 sendRsToP_pRq_getRq,
+			 sendRsToP_pRq_getData,
+			 sendRsToP_pRq_releaseEntry,
+			 pipelineResp_getRq,
+			 pipelineResp_getState,
+			 pipelineResp_releaseEntry,
+			 pipelineResp_setDone_setData,
+			 stuck_get,
+			 m_m_initEmptyEntry,
+			 m_m_doReleaseEntry_sendRsToP_pRq,
+			 m_m_doReleaseEntry_pipelineResp,
+			 m_m_stateVec_0_canon,
+			 m_m_stateVec_1_canon,
+			 m_m_stateVec_2_canon,
+			 m_m_stateVec_3_canon,
+			 m_m_reqVec_0_canon,
+			 m_m_reqVec_1_canon,
+			 m_m_reqVec_2_canon,
+			 m_m_reqVec_3_canon,
+			 m_m_dataValidVec_0_canon,
+			 m_m_dataValidVec_1_canon,
+			 m_m_dataValidVec_2_canon,
+			 m_m_dataValidVec_3_canon,
+			 m_m_releaseEntryQ_sendRsToP_pRq_data_0_canon,
+			 m_m_releaseEntryQ_sendRsToP_pRq_empty_canon,
+			 m_m_releaseEntryQ_sendRsToP_pRq_full_canon,
+			 m_m_releaseEntryQ_pipelineResp_data_0_canon,
+			 m_m_releaseEntryQ_pipelineResp_empty_canon,
+			 m_m_releaseEntryQ_pipelineResp_full_canon
+
+=================================================

@@ -1,0 +1,60 @@
+=== Generated schedule for mkDoubleSqrt ===
+
+Method schedule
+---------------
+Method: request_put
+Ready signal: fpu_fOperand_S0.i_notFull
+Sequenced after (restricted): response_get
+Conflicts: request_put
+ 
+Method: response_get
+Ready signal: fpu_fResult_S5.i_notEmpty
+Sequenced before (restricted): request_put
+Conflicts: response_get
+ 
+Rule schedule
+-------------
+Rule: int_sqrt_work
+Predicate: int_sqrt_rg_busy
+Blocking rules: (none)
+ 
+Rule: fpu_s1_stage
+Predicate: fpu_fOperand_S0.i_notEmpty && fpu_fState_S1.i_notFull
+Blocking rules: (none)
+ 
+Rule: fpu_s2_stage
+Predicate: fpu_fState_S1.i_notEmpty &&
+	   fpu_fState_S2.i_notFull &&
+	   (fpu_fState_S1.first[194] || (! int_sqrt_rg_busy))
+Blocking rules: int_sqrt_work
+ 
+Rule: fpu_s3_stage_sqrt
+Predicate: fpu_fState_S2.i_notEmpty &&
+	   int_sqrt_crg_done.port0__read && fpu_fState_S3.i_notFull &&
+	   (! fpu_fState_S2.first[136])
+Blocking rules: (none)
+ 
+Rule: fpu_s3_stage_no_sqrt
+Predicate: fpu_fState_S2.i_notEmpty && fpu_fState_S3.i_notFull &&
+	   fpu_fState_S2.first[136]
+Blocking rules: (none)
+ 
+Rule: fpu_s4_stage
+Predicate: fpu_fState_S3.i_notEmpty && fpu_fState_S4.i_notFull
+Blocking rules: (none)
+ 
+Rule: fpu_s5_stage
+Predicate: fpu_fState_S4.i_notEmpty && fpu_fResult_S5.i_notFull
+Blocking rules: (none)
+ 
+Logical execution order: response_get,
+			 fpu_s5_stage,
+			 fpu_s4_stage,
+			 fpu_s3_stage_sqrt,
+			 int_sqrt_work,
+			 fpu_s3_stage_no_sqrt,
+			 fpu_s2_stage,
+			 fpu_s1_stage,
+			 request_put
+
+============================================

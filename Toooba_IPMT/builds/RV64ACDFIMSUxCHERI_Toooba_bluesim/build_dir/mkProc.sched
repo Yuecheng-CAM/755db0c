@@ -1,0 +1,4655 @@
+=== Generated schedule for mkProc ===
+
+Method schedule
+---------------
+Method: start
+Ready signal: True
+Conflict-free: master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Conflicts: start
+ 
+Method: master0_aw_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master0_aw_drop
+Sequenced before (restricted): master0_b_put
+ 
+Method: master0_aw_peek
+Ready signal: llc_axi4_adapter_masterPortShim_shim_awff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master0_aw_drop
+ 
+Method: master0_aw_drop
+Ready signal: llc_axi4_adapter_masterPortShim_shim_awff.i_notEmpty
+Conflict-free: start,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: master0_aw_canPeek, master0_aw_peek
+Conflicts: master0_aw_drop
+ 
+Method: master0_w_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_b_canPut,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master0_w_drop
+Sequenced before (restricted): master0_b_put
+ 
+Method: master0_w_peek
+Ready signal: llc_axi4_adapter_masterPortShim_shim_wff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master0_w_drop
+ 
+Method: master0_w_drop
+Ready signal: llc_axi4_adapter_masterPortShim_shim_wff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: master0_w_canPeek, master0_w_peek
+Conflicts: master0_w_drop
+ 
+Method: master0_b_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): master0_b_put
+ 
+Method: master0_b_put
+Ready signal: llc_axi4_adapter_masterPortShim_shim_bff.i_notFull
+Conflict-free: start,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): master0_aw_canPeek,
+			      master0_w_canPeek,
+			      master0_b_canPut
+Conflicts: master0_b_put
+ 
+Method: master0_ar_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master0_ar_drop
+ 
+Method: master0_ar_peek
+Ready signal: llc_axi4_adapter_masterPortShim_shim_arff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master0_ar_drop
+ 
+Method: master0_ar_drop
+Ready signal: llc_axi4_adapter_masterPortShim_shim_arff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: master0_ar_canPeek, master0_ar_peek
+Conflicts: master0_ar_drop
+ 
+Method: master0_r_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): master0_r_put
+ 
+Method: master0_r_put
+Ready signal: llc_axi4_adapter_masterPortShim_shim_rff.i_notFull
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): master0_r_canPut
+Conflicts: master0_r_put
+ 
+Method: master1_aw_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master1_aw_drop
+Sequenced before (restricted): master1_b_put
+ 
+Method: master1_aw_peek
+Ready signal: mmio_axi4_adapter_master_shim_shim_awff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master1_aw_drop
+ 
+Method: master1_aw_drop
+Ready signal: mmio_axi4_adapter_master_shim_shim_awff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: master1_aw_canPeek, master1_aw_peek
+Conflicts: master1_aw_drop
+ 
+Method: master1_w_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_b_canPut,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master1_w_drop
+Sequenced before (restricted): master1_b_put
+ 
+Method: master1_w_peek
+Ready signal: mmio_axi4_adapter_master_shim_shim_wff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master1_w_drop
+ 
+Method: master1_w_drop
+Ready signal: mmio_axi4_adapter_master_shim_shim_wff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: master1_w_canPeek, master1_w_peek
+Conflicts: master1_w_drop
+ 
+Method: master1_b_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): master1_b_put
+ 
+Method: master1_b_put
+Ready signal: mmio_axi4_adapter_master_shim_shim_bff.i_notFull
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): master1_aw_canPeek,
+			      master1_w_canPeek,
+			      master1_b_canPut
+Conflicts: master1_b_put
+ 
+Method: master1_ar_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master1_ar_drop
+ 
+Method: master1_ar_peek
+Ready signal: mmio_axi4_adapter_master_shim_shim_arff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: master1_ar_drop
+ 
+Method: master1_ar_drop
+Ready signal: mmio_axi4_adapter_master_shim_shim_arff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: master1_ar_canPeek, master1_ar_peek
+Conflicts: master1_ar_drop
+ 
+Method: master1_r_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): master1_r_put
+ 
+Method: master1_r_put
+Ready signal: mmio_axi4_adapter_master_shim_shim_rff.i_notFull
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): master1_r_canPut
+Conflicts: master1_r_put
+ 
+Method: m_external_interrupt_req
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): m_external_interrupt_req
+ 
+Method: s_external_interrupt_req
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): s_external_interrupt_req
+ 
+Method: non_maskable_interrupt_req
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+ 
+Method: set_verbosity
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+ 
+Method: debug_module_mem_server_aw_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): debug_module_mem_server_aw_put,
+			       debug_module_mem_server_w_put
+ 
+Method: debug_module_mem_server_aw_put
+Ready signal: llc_mem_server_slavePortShim_shim_awff.i_notFull
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): debug_module_mem_server_aw_canPut,
+			      debug_module_mem_server_w_canPut
+Conflicts: debug_module_mem_server_aw_put
+ 
+Method: debug_module_mem_server_w_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): debug_module_mem_server_aw_put,
+			       debug_module_mem_server_w_put
+ 
+Method: debug_module_mem_server_w_put
+Ready signal: llc_mem_server_slavePortShim_shim_wff.i_notFull
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): debug_module_mem_server_aw_canPut,
+			      debug_module_mem_server_w_canPut
+Conflicts: debug_module_mem_server_w_put
+ 
+Method: debug_module_mem_server_b_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: debug_module_mem_server_b_drop
+ 
+Method: debug_module_mem_server_b_peek
+Ready signal: llc_mem_server_slavePortShim_shim_bff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before: debug_module_mem_server_b_drop
+ 
+Method: debug_module_mem_server_b_drop
+Ready signal: llc_mem_server_slavePortShim_shim_bff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after: debug_module_mem_server_b_canPeek,
+		 debug_module_mem_server_b_peek
+Conflicts: debug_module_mem_server_b_drop
+ 
+Method: debug_module_mem_server_ar_canPut
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced before (restricted): debug_module_mem_server_ar_put
+ 
+Method: debug_module_mem_server_ar_put
+Ready signal: llc_mem_server_slavePortShim_shim_arff.i_notFull
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop,
+	       events_tgc
+Sequenced after (restricted): debug_module_mem_server_ar_canPut
+Conflicts: debug_module_mem_server_ar_put
+ 
+Method: debug_module_mem_server_r_canPeek
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       events_tgc
+Sequenced before: debug_module_mem_server_r_drop
+ 
+Method: debug_module_mem_server_r_peek
+Ready signal: llc_mem_server_slavePortShim_shim_rff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       events_tgc
+Sequenced before: debug_module_mem_server_r_drop
+ 
+Method: debug_module_mem_server_r_drop
+Ready signal: llc_mem_server_slavePortShim_shim_rff.i_notEmpty
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       events_tgc
+Sequenced after: debug_module_mem_server_r_canPeek,
+		 debug_module_mem_server_r_peek
+Conflicts: debug_module_mem_server_r_drop
+ 
+Method: events_tgc
+Ready signal: True
+Conflict-free: start,
+	       master0_aw_canPeek,
+	       master0_aw_peek,
+	       master0_aw_drop,
+	       master0_w_canPeek,
+	       master0_w_peek,
+	       master0_w_drop,
+	       master0_b_canPut,
+	       master0_b_put,
+	       master0_ar_canPeek,
+	       master0_ar_peek,
+	       master0_ar_drop,
+	       master0_r_canPut,
+	       master0_r_put,
+	       master1_aw_canPeek,
+	       master1_aw_peek,
+	       master1_aw_drop,
+	       master1_w_canPeek,
+	       master1_w_peek,
+	       master1_w_drop,
+	       master1_b_canPut,
+	       master1_b_put,
+	       master1_ar_canPeek,
+	       master1_ar_peek,
+	       master1_ar_drop,
+	       master1_r_canPut,
+	       master1_r_put,
+	       m_external_interrupt_req,
+	       s_external_interrupt_req,
+	       non_maskable_interrupt_req,
+	       set_verbosity,
+	       debug_module_mem_server_aw_canPut,
+	       debug_module_mem_server_aw_put,
+	       debug_module_mem_server_w_canPut,
+	       debug_module_mem_server_w_put,
+	       debug_module_mem_server_b_canPeek,
+	       debug_module_mem_server_b_peek,
+	       debug_module_mem_server_b_drop,
+	       debug_module_mem_server_ar_canPut,
+	       debug_module_mem_server_ar_put,
+	       debug_module_mem_server_r_canPeek,
+	       debug_module_mem_server_r_peek,
+	       debug_module_mem_server_r_drop
+Sequenced before (restricted): events_tgc
+ 
+Rule schedule
+-------------
+Rule: mmio_axi4_adapter_rl_handle_read_req
+Predicate: mmio_axi4_adapter_f_reqs_from_core.i_notEmpty &&
+	   (mmio_axi4_adapter_soc_map.m_is_IO_addr(mmio_axi4_adapter_f_reqs_from_core.first[215:152], 1'd0)
+	    ? mmio_axi4_adapter_master_shim_shim_arff.i_notFull
+	    : mmio_axi4_adapter_f_rsps_to_core.i_notFull) &&
+	   (mmio_axi4_adapter_f_reqs_from_core.first[151:150] == 2'd1) &&
+	   (mmio_axi4_adapter_ctr_wr_rsps_pending_crg.port1__read == 4'd0)
+Blocking rules: mmio_axi4_adapter_rl_handle_read_rsps
+ 
+Rule: mmio_axi4_adapter_rl_handle_read_rsps
+Predicate: mmio_axi4_adapter_master_shim_shim_rff.notEmpty &&
+	   mmio_axi4_adapter_master_shim_shim_rff.i_notEmpty &&
+	   ((! mmio_axi4_adapter_master_shim_shim_rff.first[4]) ||
+	    mmio_axi4_adapter_f_rsps_to_core.i_notFull)
+Blocking rules: (none)
+ 
+Rule: mmio_axi4_adapter_rl_handle_write_req
+Predicate: mmio_axi4_adapter_f_reqs_from_core.i_notEmpty &&
+	   (mmio_axi4_adapter_soc_map.m_is_IO_addr(mmio_axi4_adapter_f_reqs_from_core.first[215:152], 1'd0)
+	    ? mmio_axi4_adapter_master_shim_shim_wff.i_notFull &&
+	      (((((((mmio_axi4_adapter_f_reqs_from_core.first[130]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[131]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[132]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[133]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[134]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[135]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[136]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[137]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[138]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[139]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[140]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[141]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[142]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[143]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[144]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[145]
+		     ? 5'd1
+		     : 5'd0)) ==
+		   5'd1) ||
+		  (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[131]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[132]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[133]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[134]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[135]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[136]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[137]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[138]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[139]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[140]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[141]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[142]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[143]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[144]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[145]
+		     ? 5'd1
+		     : 5'd0)) ==
+		   5'd2) ||
+		  (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[131]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[132]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[133]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[134]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[135]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[136]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[137]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[138]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[139]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[140]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[141]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[142]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[143]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[144]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[145]
+		     ? 5'd1
+		     : 5'd0)) ==
+		   5'd4) ||
+		  (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[131]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[132]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[133]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[134]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[135]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[136]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[137]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[138]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[139]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[140]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[141]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[142]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[143]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[144]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[145]
+		     ? 5'd1
+		     : 5'd0)) ==
+		   5'd8) ||
+		  (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[131]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[132]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[133]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[134]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[135]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[136]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[137]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[138]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[139]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[140]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[141]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[142]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[143]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[144]
+		     ? 5'd1
+		     : 5'd0) +
+		    (mmio_axi4_adapter_f_reqs_from_core.first[145]
+		     ? 5'd1
+		     : 5'd0)) ==
+		   5'd16))
+		 ? (! (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[131]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[132]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[133]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[134]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[135]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[136]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[137]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[138]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[139]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[140]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[141]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[142]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[143]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[144]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[145]
+			 ? 5'd1
+			 : 5'd0)) ==
+		       5'd1)) &&
+		   (! (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[131]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[132]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[133]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[134]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[135]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[136]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[137]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[138]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[139]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[140]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[141]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[142]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[143]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[144]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[145]
+			 ? 5'd1
+			 : 5'd0)) ==
+		       5'd2)) &&
+		   (! (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[131]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[132]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[133]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[134]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[135]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[136]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[137]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[138]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[139]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[140]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[141]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[142]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[143]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[144]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[145]
+			 ? 5'd1
+			 : 5'd0)) ==
+		       5'd4)) &&
+		   (! (((mmio_axi4_adapter_f_reqs_from_core.first[130]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[131]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[132]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[133]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[134]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[135]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[136]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[137]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[138]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[139]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[140]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[141]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[142]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[143]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[144]
+			 ? 5'd1
+			 : 5'd0) +
+			(mmio_axi4_adapter_f_reqs_from_core.first[145]
+			 ? 5'd1
+			 : 5'd0)) ==
+		       5'd8))
+		 : (! ((_ :: Bit 3) <= 3'b11))) &&
+		mmio_axi4_adapter_rg_wr_req_beat) ||
+	       ((! (mmio_axi4_adapter_ctr_wr_rsps_pending_crg.port0__read ==
+		    4'd15)) &&
+		mmio_axi4_adapter_master_shim_shim_awff.i_notFull))
+	    : mmio_axi4_adapter_f_rsps_to_core.i_notFull) &&
+	   (mmio_axi4_adapter_f_reqs_from_core.first[151:150] == 2'd2)
+Blocking rules: mmio_axi4_adapter_rl_handle_read_rsps
+ 
+Rule: mmio_axi4_adapter_rl_discard_write_rsp
+Predicate: (! (mmio_axi4_adapter_ctr_wr_rsps_pending_crg.port1__read ==
+	       4'd0)) &&
+	   mmio_axi4_adapter_f_rsps_to_core.i_notFull &&
+	   mmio_axi4_adapter_master_shim_shim_bff.notEmpty &&
+	   mmio_axi4_adapter_master_shim_shim_bff.i_notEmpty
+Blocking rules: mmio_axi4_adapter_rl_handle_write_req,
+		mmio_axi4_adapter_rl_handle_read_rsps
+ 
+Rule: mmio_axi4_adapter_rl_handle_non_Ld_St
+Predicate: mmio_axi4_adapter_f_reqs_from_core.i_notEmpty &&
+	   (! (mmio_axi4_adapter_f_reqs_from_core.first[151:150] == 2'd1)) &&
+	   (! (mmio_axi4_adapter_f_reqs_from_core.first[151:150] == 2'd2))
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_toHostQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_toHostQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_toHostQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_toHostQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_fromHostQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_fromHostQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_fromHostQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_fromHostQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_propagateTime
+Predicate: ! (mmioPlatform_state == 2'd0)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_incCycle
+Predicate: (! (mmioPlatform_state == 2'd0)) && (mmioPlatform_cycle < 7'd99)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_incTime
+Predicate: (mmioPlatform_state == 2'd1) && (! (mmioPlatform_cycle < 7'd99))
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_selectReq
+Predicate: (mmioPlatform_mtip_0 ||
+	    (! (mmioPlatform_mtimecmp_0 <= mmioPlatform_mtime)) ||
+	    core_0.RDY_mmioToPlatform_pRq_enq) &&
+	   (((! mmioPlatform_mtip_0) &&
+	     (mmioPlatform_mtimecmp_0 <= mmioPlatform_mtime)) ||
+	    (! core_0.mmioToPlatform_cRq_notEmpty) ||
+	    (core_0.RDY_mmioToPlatform_cRq_deq &&
+	     core_0.RDY_mmioToPlatform_cRq_first)) &&
+	   (mmioPlatform_state == 2'd1)
+Blocking rules: mmioPlatform_incTime
+ 
+Rule: mmioPlatform_waitTimerInterruptDone
+Predicate: ((! mmioPlatform_waitMTIPCRs) ||
+	    core_0.RDY_mmioToPlatform_cRs_deq) &&
+	   (mmioPlatform_state == 2'd3) &&
+	   (mmioPlatform_curReq[67:64] == 4'd1)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_processLoadTags
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   (mmioPlatform_curReq[67:64] == 4'd8) &&
+	   (mmioPlatform_state == 2'd2)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_processMSIP
+Predicate: (((mmioPlatform_reqFunc[5:4] == 2'd0) || mmioPlatform_reqBE[4])
+	    ? core_0.RDY_mmioToPlatform_pRs_enq
+	    : ((mmioPlatform_reqFunc[5:4] == 2'd3)
+	       ? mmioPlatform_reqBE[0]
+		 ? core_0.RDY_mmioToPlatform_pRq_enq
+		 : core_0.RDY_mmioToPlatform_pRs_enq
+	       : ((! mmioPlatform_reqBE[0]) ||
+		  core_0.RDY_mmioToPlatform_pRq_enq))) &&
+	   (mmioPlatform_curReq[67:64] == 4'd2) &&
+	   (mmioPlatform_state == 2'd2)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_waitMSIPDone
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   (mmioPlatform_waitLowerMSIPCRs
+	    ? core_0.RDY_mmioToPlatform_cRs_deq &&
+	      core_0.RDY_mmioToPlatform_cRs_first
+	    : (((! mmioPlatform_waitUpperMSIPCRs) ||
+		core_0.RDY_mmioToPlatform_cRs_deq) &&
+	       ((! mmioPlatform_waitUpperMSIPCRs) ||
+		core_0.RDY_mmioToPlatform_cRs_first))) &&
+	   (mmioPlatform_curReq[67:64] == 4'd2) &&
+	   (mmioPlatform_state == 2'd3)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_processMTimeCmp
+Predicate: (((mmioPlatform_reqFunc[5:4] == 2'd0) ||
+	     (mmioPlatform_reqFunc[5:4] == 2'd1))
+	    ? core_0.RDY_mmioToPlatform_pRs_enq
+	    : ((((((mmioPlatform_reqFunc[5:4] == 2'd3)
+		   ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+								 8'd0) &&
+								(mmioPlatform_reqBE[15:8] ==
+								 8'd0))
+							       ? 8'd0
+							       : ((mmioPlatform_reqBE[7:0] ==
+								   8'd0)
+								  ? mmioPlatform_reqBE[15:8]
+								  : mmioPlatform_reqBE[7:0]))[4] &&
+							      (((mmioPlatform_reqBE[7:0] ==
+								 8'd0) &&
+								(mmioPlatform_reqBE[15:8] ==
+								 8'd0))
+							       ? 8'd0
+							       : ((mmioPlatform_reqBE[7:0] ==
+								   8'd0)
+								  ? mmioPlatform_reqBE[15:8]
+								  : mmioPlatform_reqBE[7:0]))[0])
+							     ? 2'd1
+							     : 2'd2, 2'd0},
+				 {1'd0, (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					  (mmioPlatform_reqBE[15:8] == 8'd0))
+					 ? 8'd0
+					 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					    ? mmioPlatform_reqBE[15:8]
+					    : mmioPlatform_reqBE[7:0]))[4] &&
+					(! (((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 8'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqBE[15:8]
+					       : mmioPlatform_reqBE[7:0]))[0])},
+				 {65'd0, mmioPlatform_mtimecmp_0},
+				 {65'd0, ((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					  (mmioPlatform_reqBE[15:8] == 8'd0))
+					 ? 64'd0
+					 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					    ? mmioPlatform_reqData[127:64]
+					    : mmioPlatform_reqData[63:0])})[63:0]
+		   : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			(mmioPlatform_reqBE[15:8] == 8'd0))
+		       ? 8'd0
+		       : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			  ? mmioPlatform_reqBE[15:8]
+			  : mmioPlatform_reqBE[7:0]))[7]
+		      ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			  (mmioPlatform_reqBE[15:8] == 8'd0))
+			 ? 64'd0
+			 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			    ? mmioPlatform_reqData[127:64]
+			    : mmioPlatform_reqData[63:0]))[63:56]
+		      : mmioPlatform_mtimecmp_0[63:56], (((mmioPlatform_reqBE[7:0] ==
+							   8'd0) &&
+							  (mmioPlatform_reqBE[15:8] ==
+							   8'd0))
+							 ? 8'd0
+							 : ((mmioPlatform_reqBE[7:0] ==
+							     8'd0)
+							    ? mmioPlatform_reqBE[15:8]
+							    : mmioPlatform_reqBE[7:0]))[6]
+							? (((mmioPlatform_reqBE[7:0] ==
+							     8'd0) &&
+							    (mmioPlatform_reqBE[15:8] ==
+							     8'd0))
+							   ? 64'd0
+							   : ((mmioPlatform_reqBE[7:0] ==
+							       8'd0)
+							      ? mmioPlatform_reqData[127:64]
+							      : mmioPlatform_reqData[63:0]))[55:48]
+							: mmioPlatform_mtimecmp_0[55:48], (((mmioPlatform_reqBE[7:0] ==
+											     8'd0) &&
+											    (mmioPlatform_reqBE[15:8] ==
+											     8'd0))
+											   ? 8'd0
+											   : ((mmioPlatform_reqBE[7:0] ==
+											       8'd0)
+											      ? mmioPlatform_reqBE[15:8]
+											      : mmioPlatform_reqBE[7:0]))[5]
+											  ? (((mmioPlatform_reqBE[7:0] ==
+											       8'd0) &&
+											      (mmioPlatform_reqBE[15:8] ==
+											       8'd0))
+											     ? 64'd0
+											     : ((mmioPlatform_reqBE[7:0] ==
+												 8'd0)
+												? mmioPlatform_reqData[127:64]
+												: mmioPlatform_reqData[63:0]))[47:40]
+											  : mmioPlatform_mtimecmp_0[47:40], (((mmioPlatform_reqBE[7:0] ==
+															       8'd0) &&
+															      (mmioPlatform_reqBE[15:8] ==
+															       8'd0))
+															     ? 8'd0
+															     : ((mmioPlatform_reqBE[7:0] ==
+																 8'd0)
+																? mmioPlatform_reqBE[15:8]
+																: mmioPlatform_reqBE[7:0]))[4]
+															    ? (((mmioPlatform_reqBE[7:0] ==
+																 8'd0) &&
+																(mmioPlatform_reqBE[15:8] ==
+																 8'd0))
+															       ? 64'd0
+															       : ((mmioPlatform_reqBE[7:0] ==
+																   8'd0)
+																  ? mmioPlatform_reqData[127:64]
+																  : mmioPlatform_reqData[63:0]))[39:32]
+															    : mmioPlatform_mtimecmp_0[39:32], (((mmioPlatform_reqBE[7:0] ==
+																				 8'd0) &&
+																				(mmioPlatform_reqBE[15:8] ==
+																				 8'd0))
+																			       ? 8'd0
+																			       : ((mmioPlatform_reqBE[7:0] ==
+																				   8'd0)
+																				  ? mmioPlatform_reqBE[15:8]
+																				  : mmioPlatform_reqBE[7:0]))[3]
+																			      ? (((mmioPlatform_reqBE[7:0] ==
+																				   8'd0) &&
+																				  (mmioPlatform_reqBE[15:8] ==
+																				   8'd0))
+																				 ? 64'd0
+																				 : ((mmioPlatform_reqBE[7:0] ==
+																				     8'd0)
+																				    ? mmioPlatform_reqData[127:64]
+																				    : mmioPlatform_reqData[63:0]))[31:24]
+																			      : mmioPlatform_mtimecmp_0[31:24], (((mmioPlatform_reqBE[7:0] ==
+																								   8'd0) &&
+																								  (mmioPlatform_reqBE[15:8] ==
+																								   8'd0))
+																								 ? 8'd0
+																								 : ((mmioPlatform_reqBE[7:0] ==
+																								     8'd0)
+																								    ? mmioPlatform_reqBE[15:8]
+																								    : mmioPlatform_reqBE[7:0]))[2]
+																								? (((mmioPlatform_reqBE[7:0] ==
+																								     8'd0) &&
+																								    (mmioPlatform_reqBE[15:8] ==
+																								     8'd0))
+																								   ? 64'd0
+																								   : ((mmioPlatform_reqBE[7:0] ==
+																								       8'd0)
+																								      ? mmioPlatform_reqData[127:64]
+																								      : mmioPlatform_reqData[63:0]))[23:16]
+																								: mmioPlatform_mtimecmp_0[23:16], (((mmioPlatform_reqBE[7:0] ==
+																												     8'd0) &&
+																												    (mmioPlatform_reqBE[15:8] ==
+																												     8'd0))
+																												   ? 8'd0
+																												   : ((mmioPlatform_reqBE[7:0] ==
+																												       8'd0)
+																												      ? mmioPlatform_reqBE[15:8]
+																												      : mmioPlatform_reqBE[7:0]))[1]
+																												  ? (((mmioPlatform_reqBE[7:0] ==
+																												       8'd0) &&
+																												      (mmioPlatform_reqBE[15:8] ==
+																												       8'd0))
+																												     ? 64'd0
+																												     : ((mmioPlatform_reqBE[7:0] ==
+																													 8'd0)
+																													? mmioPlatform_reqData[127:64]
+																													: mmioPlatform_reqData[63:0]))[15:8]
+																												  : mmioPlatform_mtimecmp_0[15:8], (((mmioPlatform_reqBE[7:0] ==
+																																      8'd0) &&
+																																     (mmioPlatform_reqBE[15:8] ==
+																																      8'd0))
+																																    ? 8'd0
+																																    : ((mmioPlatform_reqBE[7:0] ==
+																																	8'd0)
+																																       ? mmioPlatform_reqBE[15:8]
+																																       : mmioPlatform_reqBE[7:0]))[0]
+																																   ? (((mmioPlatform_reqBE[7:0] ==
+																																	8'd0) &&
+																																       (mmioPlatform_reqBE[15:8] ==
+																																	8'd0))
+																																      ? 64'd0
+																																      : ((mmioPlatform_reqBE[7:0] ==
+																																	  8'd0)
+																																	 ? mmioPlatform_reqData[127:64]
+																																	 : mmioPlatform_reqData[63:0]))[7:0]
+																																   : mmioPlatform_mtimecmp_0[7:0]}) <=
+		  mmioPlatform_mtime) &&
+		 (! mmioPlatform_mtip_0)) ||
+		((! (((mmioPlatform_reqFunc[5:4] == 2'd3)
+		      ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+								    8'd0) &&
+								   (mmioPlatform_reqBE[15:8] ==
+								    8'd0))
+								  ? 8'd0
+								  : ((mmioPlatform_reqBE[7:0] ==
+								      8'd0)
+								     ? mmioPlatform_reqBE[15:8]
+								     : mmioPlatform_reqBE[7:0]))[4] &&
+								 (((mmioPlatform_reqBE[7:0] ==
+								    8'd0) &&
+								   (mmioPlatform_reqBE[15:8] ==
+								    8'd0))
+								  ? 8'd0
+								  : ((mmioPlatform_reqBE[7:0] ==
+								      8'd0)
+								     ? mmioPlatform_reqBE[15:8]
+								     : mmioPlatform_reqBE[7:0]))[0])
+								? 2'd1
+								: 2'd2, 2'd0},
+				    {1'd0, (((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 8'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqBE[15:8]
+					       : mmioPlatform_reqBE[7:0]))[4] &&
+					   (! (((mmioPlatform_reqBE[7:0] ==
+						 8'd0) &&
+						(mmioPlatform_reqBE[15:8] ==
+						 8'd0))
+					       ? 8'd0
+					       : ((mmioPlatform_reqBE[7:0] ==
+						   8'd0)
+						  ? mmioPlatform_reqBE[15:8]
+						  : mmioPlatform_reqBE[7:0]))[0])},
+				    {65'd0, mmioPlatform_mtimecmp_0},
+				    {65'd0, ((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 64'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqData[127:64]
+					       : mmioPlatform_reqData[63:0])})[63:0]
+		      : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			   (mmioPlatform_reqBE[15:8] == 8'd0))
+			  ? 8'd0
+			  : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			     ? mmioPlatform_reqBE[15:8]
+			     : mmioPlatform_reqBE[7:0]))[7]
+			 ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			     (mmioPlatform_reqBE[15:8] == 8'd0))
+			    ? 64'd0
+			    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			       ? mmioPlatform_reqData[127:64]
+			       : mmioPlatform_reqData[63:0]))[63:56]
+			 : mmioPlatform_mtimecmp_0[63:56], (((mmioPlatform_reqBE[7:0] ==
+							      8'd0) &&
+							     (mmioPlatform_reqBE[15:8] ==
+							      8'd0))
+							    ? 8'd0
+							    : ((mmioPlatform_reqBE[7:0] ==
+								8'd0)
+							       ? mmioPlatform_reqBE[15:8]
+							       : mmioPlatform_reqBE[7:0]))[6]
+							   ? (((mmioPlatform_reqBE[7:0] ==
+								8'd0) &&
+							       (mmioPlatform_reqBE[15:8] ==
+								8'd0))
+							      ? 64'd0
+							      : ((mmioPlatform_reqBE[7:0] ==
+								  8'd0)
+								 ? mmioPlatform_reqData[127:64]
+								 : mmioPlatform_reqData[63:0]))[55:48]
+							   : mmioPlatform_mtimecmp_0[55:48], (((mmioPlatform_reqBE[7:0] ==
+												8'd0) &&
+											       (mmioPlatform_reqBE[15:8] ==
+												8'd0))
+											      ? 8'd0
+											      : ((mmioPlatform_reqBE[7:0] ==
+												  8'd0)
+												 ? mmioPlatform_reqBE[15:8]
+												 : mmioPlatform_reqBE[7:0]))[5]
+											     ? (((mmioPlatform_reqBE[7:0] ==
+												  8'd0) &&
+												 (mmioPlatform_reqBE[15:8] ==
+												  8'd0))
+												? 64'd0
+												: ((mmioPlatform_reqBE[7:0] ==
+												    8'd0)
+												   ? mmioPlatform_reqData[127:64]
+												   : mmioPlatform_reqData[63:0]))[47:40]
+											     : mmioPlatform_mtimecmp_0[47:40], (((mmioPlatform_reqBE[7:0] ==
+																  8'd0) &&
+																 (mmioPlatform_reqBE[15:8] ==
+																  8'd0))
+																? 8'd0
+																: ((mmioPlatform_reqBE[7:0] ==
+																    8'd0)
+																   ? mmioPlatform_reqBE[15:8]
+																   : mmioPlatform_reqBE[7:0]))[4]
+															       ? (((mmioPlatform_reqBE[7:0] ==
+																    8'd0) &&
+																   (mmioPlatform_reqBE[15:8] ==
+																    8'd0))
+																  ? 64'd0
+																  : ((mmioPlatform_reqBE[7:0] ==
+																      8'd0)
+																     ? mmioPlatform_reqData[127:64]
+																     : mmioPlatform_reqData[63:0]))[39:32]
+															       : mmioPlatform_mtimecmp_0[39:32], (((mmioPlatform_reqBE[7:0] ==
+																				    8'd0) &&
+																				   (mmioPlatform_reqBE[15:8] ==
+																				    8'd0))
+																				  ? 8'd0
+																				  : ((mmioPlatform_reqBE[7:0] ==
+																				      8'd0)
+																				     ? mmioPlatform_reqBE[15:8]
+																				     : mmioPlatform_reqBE[7:0]))[3]
+																				 ? (((mmioPlatform_reqBE[7:0] ==
+																				      8'd0) &&
+																				     (mmioPlatform_reqBE[15:8] ==
+																				      8'd0))
+																				    ? 64'd0
+																				    : ((mmioPlatform_reqBE[7:0] ==
+																					8'd0)
+																				       ? mmioPlatform_reqData[127:64]
+																				       : mmioPlatform_reqData[63:0]))[31:24]
+																				 : mmioPlatform_mtimecmp_0[31:24], (((mmioPlatform_reqBE[7:0] ==
+																								      8'd0) &&
+																								     (mmioPlatform_reqBE[15:8] ==
+																								      8'd0))
+																								    ? 8'd0
+																								    : ((mmioPlatform_reqBE[7:0] ==
+																									8'd0)
+																								       ? mmioPlatform_reqBE[15:8]
+																								       : mmioPlatform_reqBE[7:0]))[2]
+																								   ? (((mmioPlatform_reqBE[7:0] ==
+																									8'd0) &&
+																								       (mmioPlatform_reqBE[15:8] ==
+																									8'd0))
+																								      ? 64'd0
+																								      : ((mmioPlatform_reqBE[7:0] ==
+																									  8'd0)
+																									 ? mmioPlatform_reqData[127:64]
+																									 : mmioPlatform_reqData[63:0]))[23:16]
+																								   : mmioPlatform_mtimecmp_0[23:16], (((mmioPlatform_reqBE[7:0] ==
+																													8'd0) &&
+																												       (mmioPlatform_reqBE[15:8] ==
+																													8'd0))
+																												      ? 8'd0
+																												      : ((mmioPlatform_reqBE[7:0] ==
+																													  8'd0)
+																													 ? mmioPlatform_reqBE[15:8]
+																													 : mmioPlatform_reqBE[7:0]))[1]
+																												     ? (((mmioPlatform_reqBE[7:0] ==
+																													  8'd0) &&
+																													 (mmioPlatform_reqBE[15:8] ==
+																													  8'd0))
+																													? 64'd0
+																													: ((mmioPlatform_reqBE[7:0] ==
+																													    8'd0)
+																													   ? mmioPlatform_reqData[127:64]
+																													   : mmioPlatform_reqData[63:0]))[15:8]
+																												     : mmioPlatform_mtimecmp_0[15:8], (((mmioPlatform_reqBE[7:0] ==
+																																	 8'd0) &&
+																																	(mmioPlatform_reqBE[15:8] ==
+																																	 8'd0))
+																																       ? 8'd0
+																																       : ((mmioPlatform_reqBE[7:0] ==
+																																	   8'd0)
+																																	  ? mmioPlatform_reqBE[15:8]
+																																	  : mmioPlatform_reqBE[7:0]))[0]
+																																      ? (((mmioPlatform_reqBE[7:0] ==
+																																	   8'd0) &&
+																																	  (mmioPlatform_reqBE[15:8] ==
+																																	   8'd0))
+																																	 ? 64'd0
+																																	 : ((mmioPlatform_reqBE[7:0] ==
+																																	     8'd0)
+																																	    ? mmioPlatform_reqData[127:64]
+																																	    : mmioPlatform_reqData[63:0]))[7:0]
+																																      : mmioPlatform_mtimecmp_0[7:0]}) <=
+		     mmioPlatform_mtime)) &&
+		 mmioPlatform_mtip_0))
+	       ? core_0.RDY_mmioToPlatform_pRq_enq
+	       : core_0.RDY_mmioToPlatform_pRs_enq)) &&
+	   (mmioPlatform_curReq[67:64] == 4'd3) &&
+	   (mmioPlatform_state == 2'd2)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_waitMTimeCmpDone
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   core_0.RDY_mmioToPlatform_cRs_deq &&
+	   (mmioPlatform_curReq[67:64] == 4'd3) &&
+	   (mmioPlatform_state == 2'd3)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_processMTime
+Predicate: (((mmioPlatform_reqFunc[5:4] == 2'd0) ||
+	     (mmioPlatform_reqFunc[5:4] == 2'd1))
+	    ? core_0.RDY_mmioToPlatform_pRs_enq
+	    : ((((mmioPlatform_mtimecmp_0 <=
+		  ((mmioPlatform_reqFunc[5:4] == 2'd3)
+		   ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+								 8'd0) &&
+								(mmioPlatform_reqBE[15:8] ==
+								 8'd0))
+							       ? 8'd0
+							       : ((mmioPlatform_reqBE[7:0] ==
+								   8'd0)
+								  ? mmioPlatform_reqBE[15:8]
+								  : mmioPlatform_reqBE[7:0]))[4] &&
+							      (((mmioPlatform_reqBE[7:0] ==
+								 8'd0) &&
+								(mmioPlatform_reqBE[15:8] ==
+								 8'd0))
+							       ? 8'd0
+							       : ((mmioPlatform_reqBE[7:0] ==
+								   8'd0)
+								  ? mmioPlatform_reqBE[15:8]
+								  : mmioPlatform_reqBE[7:0]))[0])
+							     ? 2'd1
+							     : 2'd2, 2'd0},
+				 {1'd0, (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					  (mmioPlatform_reqBE[15:8] == 8'd0))
+					 ? 8'd0
+					 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					    ? mmioPlatform_reqBE[15:8]
+					    : mmioPlatform_reqBE[7:0]))[4] &&
+					(! (((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 8'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqBE[15:8]
+					       : mmioPlatform_reqBE[7:0]))[0])},
+				 {65'd0, mmioPlatform_mtime},
+				 {65'd0, ((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					  (mmioPlatform_reqBE[15:8] == 8'd0))
+					 ? 64'd0
+					 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					    ? mmioPlatform_reqData[127:64]
+					    : mmioPlatform_reqData[63:0])})[63:0]
+		   : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			(mmioPlatform_reqBE[15:8] == 8'd0))
+		       ? 8'd0
+		       : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			  ? mmioPlatform_reqBE[15:8]
+			  : mmioPlatform_reqBE[7:0]))[7]
+		      ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			  (mmioPlatform_reqBE[15:8] == 8'd0))
+			 ? 64'd0
+			 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			    ? mmioPlatform_reqData[127:64]
+			    : mmioPlatform_reqData[63:0]))[63:56]
+		      : mmioPlatform_mtime[63:56], (((mmioPlatform_reqBE[7:0] ==
+						      8'd0) &&
+						     (mmioPlatform_reqBE[15:8] ==
+						      8'd0))
+						    ? 8'd0
+						    : ((mmioPlatform_reqBE[7:0] ==
+							8'd0)
+						       ? mmioPlatform_reqBE[15:8]
+						       : mmioPlatform_reqBE[7:0]))[6]
+						   ? (((mmioPlatform_reqBE[7:0] ==
+							8'd0) &&
+						       (mmioPlatform_reqBE[15:8] ==
+							8'd0))
+						      ? 64'd0
+						      : ((mmioPlatform_reqBE[7:0] ==
+							  8'd0)
+							 ? mmioPlatform_reqData[127:64]
+							 : mmioPlatform_reqData[63:0]))[55:48]
+						   : mmioPlatform_mtime[55:48], (((mmioPlatform_reqBE[7:0] ==
+										   8'd0) &&
+										  (mmioPlatform_reqBE[15:8] ==
+										   8'd0))
+										 ? 8'd0
+										 : ((mmioPlatform_reqBE[7:0] ==
+										     8'd0)
+										    ? mmioPlatform_reqBE[15:8]
+										    : mmioPlatform_reqBE[7:0]))[5]
+										? (((mmioPlatform_reqBE[7:0] ==
+										     8'd0) &&
+										    (mmioPlatform_reqBE[15:8] ==
+										     8'd0))
+										   ? 64'd0
+										   : ((mmioPlatform_reqBE[7:0] ==
+										       8'd0)
+										      ? mmioPlatform_reqData[127:64]
+										      : mmioPlatform_reqData[63:0]))[47:40]
+										: mmioPlatform_mtime[47:40], (((mmioPlatform_reqBE[7:0] ==
+														8'd0) &&
+													       (mmioPlatform_reqBE[15:8] ==
+														8'd0))
+													      ? 8'd0
+													      : ((mmioPlatform_reqBE[7:0] ==
+														  8'd0)
+														 ? mmioPlatform_reqBE[15:8]
+														 : mmioPlatform_reqBE[7:0]))[4]
+													     ? (((mmioPlatform_reqBE[7:0] ==
+														  8'd0) &&
+														 (mmioPlatform_reqBE[15:8] ==
+														  8'd0))
+														? 64'd0
+														: ((mmioPlatform_reqBE[7:0] ==
+														    8'd0)
+														   ? mmioPlatform_reqData[127:64]
+														   : mmioPlatform_reqData[63:0]))[39:32]
+													     : mmioPlatform_mtime[39:32], (((mmioPlatform_reqBE[7:0] ==
+																	     8'd0) &&
+																	    (mmioPlatform_reqBE[15:8] ==
+																	     8'd0))
+																	   ? 8'd0
+																	   : ((mmioPlatform_reqBE[7:0] ==
+																	       8'd0)
+																	      ? mmioPlatform_reqBE[15:8]
+																	      : mmioPlatform_reqBE[7:0]))[3]
+																	  ? (((mmioPlatform_reqBE[7:0] ==
+																	       8'd0) &&
+																	      (mmioPlatform_reqBE[15:8] ==
+																	       8'd0))
+																	     ? 64'd0
+																	     : ((mmioPlatform_reqBE[7:0] ==
+																		 8'd0)
+																		? mmioPlatform_reqData[127:64]
+																		: mmioPlatform_reqData[63:0]))[31:24]
+																	  : mmioPlatform_mtime[31:24], (((mmioPlatform_reqBE[7:0] ==
+																					  8'd0) &&
+																					 (mmioPlatform_reqBE[15:8] ==
+																					  8'd0))
+																					? 8'd0
+																					: ((mmioPlatform_reqBE[7:0] ==
+																					    8'd0)
+																					   ? mmioPlatform_reqBE[15:8]
+																					   : mmioPlatform_reqBE[7:0]))[2]
+																				       ? (((mmioPlatform_reqBE[7:0] ==
+																					    8'd0) &&
+																					   (mmioPlatform_reqBE[15:8] ==
+																					    8'd0))
+																					  ? 64'd0
+																					  : ((mmioPlatform_reqBE[7:0] ==
+																					      8'd0)
+																					     ? mmioPlatform_reqData[127:64]
+																					     : mmioPlatform_reqData[63:0]))[23:16]
+																				       : mmioPlatform_mtime[23:16], (((mmioPlatform_reqBE[7:0] ==
+																								       8'd0) &&
+																								      (mmioPlatform_reqBE[15:8] ==
+																								       8'd0))
+																								     ? 8'd0
+																								     : ((mmioPlatform_reqBE[7:0] ==
+																									 8'd0)
+																									? mmioPlatform_reqBE[15:8]
+																									: mmioPlatform_reqBE[7:0]))[1]
+																								    ? (((mmioPlatform_reqBE[7:0] ==
+																									 8'd0) &&
+																									(mmioPlatform_reqBE[15:8] ==
+																									 8'd0))
+																								       ? 64'd0
+																								       : ((mmioPlatform_reqBE[7:0] ==
+																									   8'd0)
+																									  ? mmioPlatform_reqData[127:64]
+																									  : mmioPlatform_reqData[63:0]))[15:8]
+																								    : mmioPlatform_mtime[15:8], (((mmioPlatform_reqBE[7:0] ==
+																												   8'd0) &&
+																												  (mmioPlatform_reqBE[15:8] ==
+																												   8'd0))
+																												 ? 8'd0
+																												 : ((mmioPlatform_reqBE[7:0] ==
+																												     8'd0)
+																												    ? mmioPlatform_reqBE[15:8]
+																												    : mmioPlatform_reqBE[7:0]))[0]
+																												? (((mmioPlatform_reqBE[7:0] ==
+																												     8'd0) &&
+																												    (mmioPlatform_reqBE[15:8] ==
+																												     8'd0))
+																												   ? 64'd0
+																												   : ((mmioPlatform_reqBE[7:0] ==
+																												       8'd0)
+																												      ? mmioPlatform_reqData[127:64]
+																												      : mmioPlatform_reqData[63:0]))[7:0]
+																												: mmioPlatform_mtime[7:0]})) &&
+		 (! mmioPlatform_mtip_0))
+		? core_0.RDY_mmioToPlatform_pRq_enq
+		: ((mmioPlatform_mtimecmp_0 <=
+		    ((mmioPlatform_reqFunc[5:4] == 2'd3)
+		     ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+								   8'd0) &&
+								  (mmioPlatform_reqBE[15:8] ==
+								   8'd0))
+								 ? 8'd0
+								 : ((mmioPlatform_reqBE[7:0] ==
+								     8'd0)
+								    ? mmioPlatform_reqBE[15:8]
+								    : mmioPlatform_reqBE[7:0]))[4] &&
+								(((mmioPlatform_reqBE[7:0] ==
+								   8'd0) &&
+								  (mmioPlatform_reqBE[15:8] ==
+								   8'd0))
+								 ? 8'd0
+								 : ((mmioPlatform_reqBE[7:0] ==
+								     8'd0)
+								    ? mmioPlatform_reqBE[15:8]
+								    : mmioPlatform_reqBE[7:0]))[0])
+							       ? 2'd1
+							       : 2'd2, 2'd0},
+				   {1'd0, (((mmioPlatform_reqBE[7:0] ==
+					     8'd0) &&
+					    (mmioPlatform_reqBE[15:8] ==
+					     8'd0))
+					   ? 8'd0
+					   : ((mmioPlatform_reqBE[7:0] ==
+					       8'd0)
+					      ? mmioPlatform_reqBE[15:8]
+					      : mmioPlatform_reqBE[7:0]))[4] &&
+					  (! (((mmioPlatform_reqBE[7:0] ==
+						8'd0) &&
+					       (mmioPlatform_reqBE[15:8] ==
+						8'd0))
+					      ? 8'd0
+					      : ((mmioPlatform_reqBE[7:0] ==
+						  8'd0)
+						 ? mmioPlatform_reqBE[15:8]
+						 : mmioPlatform_reqBE[7:0]))[0])},
+				   {65'd0, mmioPlatform_mtime},
+				   {65'd0, ((mmioPlatform_reqBE[7:0] ==
+					     8'd0) &&
+					    (mmioPlatform_reqBE[15:8] ==
+					     8'd0))
+					   ? 64'd0
+					   : ((mmioPlatform_reqBE[7:0] ==
+					       8'd0)
+					      ? mmioPlatform_reqData[127:64]
+					      : mmioPlatform_reqData[63:0])})[63:0]
+		     : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			  (mmioPlatform_reqBE[15:8] == 8'd0))
+			 ? 8'd0
+			 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			    ? mmioPlatform_reqBE[15:8]
+			    : mmioPlatform_reqBE[7:0]))[7]
+			? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			    (mmioPlatform_reqBE[15:8] == 8'd0))
+			   ? 64'd0
+			   : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			      ? mmioPlatform_reqData[127:64]
+			      : mmioPlatform_reqData[63:0]))[63:56]
+			: mmioPlatform_mtime[63:56], (((mmioPlatform_reqBE[7:0] ==
+							8'd0) &&
+						       (mmioPlatform_reqBE[15:8] ==
+							8'd0))
+						      ? 8'd0
+						      : ((mmioPlatform_reqBE[7:0] ==
+							  8'd0)
+							 ? mmioPlatform_reqBE[15:8]
+							 : mmioPlatform_reqBE[7:0]))[6]
+						     ? (((mmioPlatform_reqBE[7:0] ==
+							  8'd0) &&
+							 (mmioPlatform_reqBE[15:8] ==
+							  8'd0))
+							? 64'd0
+							: ((mmioPlatform_reqBE[7:0] ==
+							    8'd0)
+							   ? mmioPlatform_reqData[127:64]
+							   : mmioPlatform_reqData[63:0]))[55:48]
+						     : mmioPlatform_mtime[55:48], (((mmioPlatform_reqBE[7:0] ==
+										     8'd0) &&
+										    (mmioPlatform_reqBE[15:8] ==
+										     8'd0))
+										   ? 8'd0
+										   : ((mmioPlatform_reqBE[7:0] ==
+										       8'd0)
+										      ? mmioPlatform_reqBE[15:8]
+										      : mmioPlatform_reqBE[7:0]))[5]
+										  ? (((mmioPlatform_reqBE[7:0] ==
+										       8'd0) &&
+										      (mmioPlatform_reqBE[15:8] ==
+										       8'd0))
+										     ? 64'd0
+										     : ((mmioPlatform_reqBE[7:0] ==
+											 8'd0)
+											? mmioPlatform_reqData[127:64]
+											: mmioPlatform_reqData[63:0]))[47:40]
+										  : mmioPlatform_mtime[47:40], (((mmioPlatform_reqBE[7:0] ==
+														  8'd0) &&
+														 (mmioPlatform_reqBE[15:8] ==
+														  8'd0))
+														? 8'd0
+														: ((mmioPlatform_reqBE[7:0] ==
+														    8'd0)
+														   ? mmioPlatform_reqBE[15:8]
+														   : mmioPlatform_reqBE[7:0]))[4]
+													       ? (((mmioPlatform_reqBE[7:0] ==
+														    8'd0) &&
+														   (mmioPlatform_reqBE[15:8] ==
+														    8'd0))
+														  ? 64'd0
+														  : ((mmioPlatform_reqBE[7:0] ==
+														      8'd0)
+														     ? mmioPlatform_reqData[127:64]
+														     : mmioPlatform_reqData[63:0]))[39:32]
+													       : mmioPlatform_mtime[39:32], (((mmioPlatform_reqBE[7:0] ==
+																	       8'd0) &&
+																	      (mmioPlatform_reqBE[15:8] ==
+																	       8'd0))
+																	     ? 8'd0
+																	     : ((mmioPlatform_reqBE[7:0] ==
+																		 8'd0)
+																		? mmioPlatform_reqBE[15:8]
+																		: mmioPlatform_reqBE[7:0]))[3]
+																	    ? (((mmioPlatform_reqBE[7:0] ==
+																		 8'd0) &&
+																		(mmioPlatform_reqBE[15:8] ==
+																		 8'd0))
+																	       ? 64'd0
+																	       : ((mmioPlatform_reqBE[7:0] ==
+																		   8'd0)
+																		  ? mmioPlatform_reqData[127:64]
+																		  : mmioPlatform_reqData[63:0]))[31:24]
+																	    : mmioPlatform_mtime[31:24], (((mmioPlatform_reqBE[7:0] ==
+																					    8'd0) &&
+																					   (mmioPlatform_reqBE[15:8] ==
+																					    8'd0))
+																					  ? 8'd0
+																					  : ((mmioPlatform_reqBE[7:0] ==
+																					      8'd0)
+																					     ? mmioPlatform_reqBE[15:8]
+																					     : mmioPlatform_reqBE[7:0]))[2]
+																					 ? (((mmioPlatform_reqBE[7:0] ==
+																					      8'd0) &&
+																					     (mmioPlatform_reqBE[15:8] ==
+																					      8'd0))
+																					    ? 64'd0
+																					    : ((mmioPlatform_reqBE[7:0] ==
+																						8'd0)
+																					       ? mmioPlatform_reqData[127:64]
+																					       : mmioPlatform_reqData[63:0]))[23:16]
+																					 : mmioPlatform_mtime[23:16], (((mmioPlatform_reqBE[7:0] ==
+																									 8'd0) &&
+																									(mmioPlatform_reqBE[15:8] ==
+																									 8'd0))
+																								       ? 8'd0
+																								       : ((mmioPlatform_reqBE[7:0] ==
+																									   8'd0)
+																									  ? mmioPlatform_reqBE[15:8]
+																									  : mmioPlatform_reqBE[7:0]))[1]
+																								      ? (((mmioPlatform_reqBE[7:0] ==
+																									   8'd0) &&
+																									  (mmioPlatform_reqBE[15:8] ==
+																									   8'd0))
+																									 ? 64'd0
+																									 : ((mmioPlatform_reqBE[7:0] ==
+																									     8'd0)
+																									    ? mmioPlatform_reqData[127:64]
+																									    : mmioPlatform_reqData[63:0]))[15:8]
+																								      : mmioPlatform_mtime[15:8], (((mmioPlatform_reqBE[7:0] ==
+																												     8'd0) &&
+																												    (mmioPlatform_reqBE[15:8] ==
+																												     8'd0))
+																												   ? 8'd0
+																												   : ((mmioPlatform_reqBE[7:0] ==
+																												       8'd0)
+																												      ? mmioPlatform_reqBE[15:8]
+																												      : mmioPlatform_reqBE[7:0]))[0]
+																												  ? (((mmioPlatform_reqBE[7:0] ==
+																												       8'd0) &&
+																												      (mmioPlatform_reqBE[15:8] ==
+																												       8'd0))
+																												     ? 64'd0
+																												     : ((mmioPlatform_reqBE[7:0] ==
+																													 8'd0)
+																													? mmioPlatform_reqData[127:64]
+																													: mmioPlatform_reqData[63:0]))[7:0]
+																												  : mmioPlatform_mtime[7:0]})) ||
+		   (! mmioPlatform_mtip_0) ||
+		   core_0.RDY_mmioToPlatform_pRq_enq)) &&
+	       (((mmioPlatform_mtimecmp_0 <=
+		  ((mmioPlatform_reqFunc[5:4] == 2'd3)
+		   ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+								 8'd0) &&
+								(mmioPlatform_reqBE[15:8] ==
+								 8'd0))
+							       ? 8'd0
+							       : ((mmioPlatform_reqBE[7:0] ==
+								   8'd0)
+								  ? mmioPlatform_reqBE[15:8]
+								  : mmioPlatform_reqBE[7:0]))[4] &&
+							      (((mmioPlatform_reqBE[7:0] ==
+								 8'd0) &&
+								(mmioPlatform_reqBE[15:8] ==
+								 8'd0))
+							       ? 8'd0
+							       : ((mmioPlatform_reqBE[7:0] ==
+								   8'd0)
+								  ? mmioPlatform_reqBE[15:8]
+								  : mmioPlatform_reqBE[7:0]))[0])
+							     ? 2'd1
+							     : 2'd2, 2'd0},
+				 {1'd0, (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					  (mmioPlatform_reqBE[15:8] == 8'd0))
+					 ? 8'd0
+					 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					    ? mmioPlatform_reqBE[15:8]
+					    : mmioPlatform_reqBE[7:0]))[4] &&
+					(! (((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 8'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqBE[15:8]
+					       : mmioPlatform_reqBE[7:0]))[0])},
+				 {65'd0, mmioPlatform_mtime},
+				 {65'd0, ((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					  (mmioPlatform_reqBE[15:8] == 8'd0))
+					 ? 64'd0
+					 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					    ? mmioPlatform_reqData[127:64]
+					    : mmioPlatform_reqData[63:0])})[63:0]
+		   : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			(mmioPlatform_reqBE[15:8] == 8'd0))
+		       ? 8'd0
+		       : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			  ? mmioPlatform_reqBE[15:8]
+			  : mmioPlatform_reqBE[7:0]))[7]
+		      ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			  (mmioPlatform_reqBE[15:8] == 8'd0))
+			 ? 64'd0
+			 : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			    ? mmioPlatform_reqData[127:64]
+			    : mmioPlatform_reqData[63:0]))[63:56]
+		      : mmioPlatform_mtime[63:56], (((mmioPlatform_reqBE[7:0] ==
+						      8'd0) &&
+						     (mmioPlatform_reqBE[15:8] ==
+						      8'd0))
+						    ? 8'd0
+						    : ((mmioPlatform_reqBE[7:0] ==
+							8'd0)
+						       ? mmioPlatform_reqBE[15:8]
+						       : mmioPlatform_reqBE[7:0]))[6]
+						   ? (((mmioPlatform_reqBE[7:0] ==
+							8'd0) &&
+						       (mmioPlatform_reqBE[15:8] ==
+							8'd0))
+						      ? 64'd0
+						      : ((mmioPlatform_reqBE[7:0] ==
+							  8'd0)
+							 ? mmioPlatform_reqData[127:64]
+							 : mmioPlatform_reqData[63:0]))[55:48]
+						   : mmioPlatform_mtime[55:48], (((mmioPlatform_reqBE[7:0] ==
+										   8'd0) &&
+										  (mmioPlatform_reqBE[15:8] ==
+										   8'd0))
+										 ? 8'd0
+										 : ((mmioPlatform_reqBE[7:0] ==
+										     8'd0)
+										    ? mmioPlatform_reqBE[15:8]
+										    : mmioPlatform_reqBE[7:0]))[5]
+										? (((mmioPlatform_reqBE[7:0] ==
+										     8'd0) &&
+										    (mmioPlatform_reqBE[15:8] ==
+										     8'd0))
+										   ? 64'd0
+										   : ((mmioPlatform_reqBE[7:0] ==
+										       8'd0)
+										      ? mmioPlatform_reqData[127:64]
+										      : mmioPlatform_reqData[63:0]))[47:40]
+										: mmioPlatform_mtime[47:40], (((mmioPlatform_reqBE[7:0] ==
+														8'd0) &&
+													       (mmioPlatform_reqBE[15:8] ==
+														8'd0))
+													      ? 8'd0
+													      : ((mmioPlatform_reqBE[7:0] ==
+														  8'd0)
+														 ? mmioPlatform_reqBE[15:8]
+														 : mmioPlatform_reqBE[7:0]))[4]
+													     ? (((mmioPlatform_reqBE[7:0] ==
+														  8'd0) &&
+														 (mmioPlatform_reqBE[15:8] ==
+														  8'd0))
+														? 64'd0
+														: ((mmioPlatform_reqBE[7:0] ==
+														    8'd0)
+														   ? mmioPlatform_reqData[127:64]
+														   : mmioPlatform_reqData[63:0]))[39:32]
+													     : mmioPlatform_mtime[39:32], (((mmioPlatform_reqBE[7:0] ==
+																	     8'd0) &&
+																	    (mmioPlatform_reqBE[15:8] ==
+																	     8'd0))
+																	   ? 8'd0
+																	   : ((mmioPlatform_reqBE[7:0] ==
+																	       8'd0)
+																	      ? mmioPlatform_reqBE[15:8]
+																	      : mmioPlatform_reqBE[7:0]))[3]
+																	  ? (((mmioPlatform_reqBE[7:0] ==
+																	       8'd0) &&
+																	      (mmioPlatform_reqBE[15:8] ==
+																	       8'd0))
+																	     ? 64'd0
+																	     : ((mmioPlatform_reqBE[7:0] ==
+																		 8'd0)
+																		? mmioPlatform_reqData[127:64]
+																		: mmioPlatform_reqData[63:0]))[31:24]
+																	  : mmioPlatform_mtime[31:24], (((mmioPlatform_reqBE[7:0] ==
+																					  8'd0) &&
+																					 (mmioPlatform_reqBE[15:8] ==
+																					  8'd0))
+																					? 8'd0
+																					: ((mmioPlatform_reqBE[7:0] ==
+																					    8'd0)
+																					   ? mmioPlatform_reqBE[15:8]
+																					   : mmioPlatform_reqBE[7:0]))[2]
+																				       ? (((mmioPlatform_reqBE[7:0] ==
+																					    8'd0) &&
+																					   (mmioPlatform_reqBE[15:8] ==
+																					    8'd0))
+																					  ? 64'd0
+																					  : ((mmioPlatform_reqBE[7:0] ==
+																					      8'd0)
+																					     ? mmioPlatform_reqData[127:64]
+																					     : mmioPlatform_reqData[63:0]))[23:16]
+																				       : mmioPlatform_mtime[23:16], (((mmioPlatform_reqBE[7:0] ==
+																								       8'd0) &&
+																								      (mmioPlatform_reqBE[15:8] ==
+																								       8'd0))
+																								     ? 8'd0
+																								     : ((mmioPlatform_reqBE[7:0] ==
+																									 8'd0)
+																									? mmioPlatform_reqBE[15:8]
+																									: mmioPlatform_reqBE[7:0]))[1]
+																								    ? (((mmioPlatform_reqBE[7:0] ==
+																									 8'd0) &&
+																									(mmioPlatform_reqBE[15:8] ==
+																									 8'd0))
+																								       ? 64'd0
+																								       : ((mmioPlatform_reqBE[7:0] ==
+																									   8'd0)
+																									  ? mmioPlatform_reqData[127:64]
+																									  : mmioPlatform_reqData[63:0]))[15:8]
+																								    : mmioPlatform_mtime[15:8], (((mmioPlatform_reqBE[7:0] ==
+																												   8'd0) &&
+																												  (mmioPlatform_reqBE[15:8] ==
+																												   8'd0))
+																												 ? 8'd0
+																												 : ((mmioPlatform_reqBE[7:0] ==
+																												     8'd0)
+																												    ? mmioPlatform_reqBE[15:8]
+																												    : mmioPlatform_reqBE[7:0]))[0]
+																												? (((mmioPlatform_reqBE[7:0] ==
+																												     8'd0) &&
+																												    (mmioPlatform_reqBE[15:8] ==
+																												     8'd0))
+																												   ? 64'd0
+																												   : ((mmioPlatform_reqBE[7:0] ==
+																												       8'd0)
+																												      ? mmioPlatform_reqData[127:64]
+																												      : mmioPlatform_reqData[63:0]))[7:0]
+																												: mmioPlatform_mtime[7:0]})) &&
+		 (! mmioPlatform_mtip_0)) ||
+		((! (mmioPlatform_mtimecmp_0 <=
+		     ((mmioPlatform_reqFunc[5:4] == 2'd3)
+		      ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+								    8'd0) &&
+								   (mmioPlatform_reqBE[15:8] ==
+								    8'd0))
+								  ? 8'd0
+								  : ((mmioPlatform_reqBE[7:0] ==
+								      8'd0)
+								     ? mmioPlatform_reqBE[15:8]
+								     : mmioPlatform_reqBE[7:0]))[4] &&
+								 (((mmioPlatform_reqBE[7:0] ==
+								    8'd0) &&
+								   (mmioPlatform_reqBE[15:8] ==
+								    8'd0))
+								  ? 8'd0
+								  : ((mmioPlatform_reqBE[7:0] ==
+								      8'd0)
+								     ? mmioPlatform_reqBE[15:8]
+								     : mmioPlatform_reqBE[7:0]))[0])
+								? 2'd1
+								: 2'd2, 2'd0},
+				    {1'd0, (((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 8'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqBE[15:8]
+					       : mmioPlatform_reqBE[7:0]))[4] &&
+					   (! (((mmioPlatform_reqBE[7:0] ==
+						 8'd0) &&
+						(mmioPlatform_reqBE[15:8] ==
+						 8'd0))
+					       ? 8'd0
+					       : ((mmioPlatform_reqBE[7:0] ==
+						   8'd0)
+						  ? mmioPlatform_reqBE[15:8]
+						  : mmioPlatform_reqBE[7:0]))[0])},
+				    {65'd0, mmioPlatform_mtime},
+				    {65'd0, ((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 64'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqData[127:64]
+					       : mmioPlatform_reqData[63:0])})[63:0]
+		      : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			   (mmioPlatform_reqBE[15:8] == 8'd0))
+			  ? 8'd0
+			  : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			     ? mmioPlatform_reqBE[15:8]
+			     : mmioPlatform_reqBE[7:0]))[7]
+			 ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			     (mmioPlatform_reqBE[15:8] == 8'd0))
+			    ? 64'd0
+			    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			       ? mmioPlatform_reqData[127:64]
+			       : mmioPlatform_reqData[63:0]))[63:56]
+			 : mmioPlatform_mtime[63:56], (((mmioPlatform_reqBE[7:0] ==
+							 8'd0) &&
+							(mmioPlatform_reqBE[15:8] ==
+							 8'd0))
+						       ? 8'd0
+						       : ((mmioPlatform_reqBE[7:0] ==
+							   8'd0)
+							  ? mmioPlatform_reqBE[15:8]
+							  : mmioPlatform_reqBE[7:0]))[6]
+						      ? (((mmioPlatform_reqBE[7:0] ==
+							   8'd0) &&
+							  (mmioPlatform_reqBE[15:8] ==
+							   8'd0))
+							 ? 64'd0
+							 : ((mmioPlatform_reqBE[7:0] ==
+							     8'd0)
+							    ? mmioPlatform_reqData[127:64]
+							    : mmioPlatform_reqData[63:0]))[55:48]
+						      : mmioPlatform_mtime[55:48], (((mmioPlatform_reqBE[7:0] ==
+										      8'd0) &&
+										     (mmioPlatform_reqBE[15:8] ==
+										      8'd0))
+										    ? 8'd0
+										    : ((mmioPlatform_reqBE[7:0] ==
+											8'd0)
+										       ? mmioPlatform_reqBE[15:8]
+										       : mmioPlatform_reqBE[7:0]))[5]
+										   ? (((mmioPlatform_reqBE[7:0] ==
+											8'd0) &&
+										       (mmioPlatform_reqBE[15:8] ==
+											8'd0))
+										      ? 64'd0
+										      : ((mmioPlatform_reqBE[7:0] ==
+											  8'd0)
+											 ? mmioPlatform_reqData[127:64]
+											 : mmioPlatform_reqData[63:0]))[47:40]
+										   : mmioPlatform_mtime[47:40], (((mmioPlatform_reqBE[7:0] ==
+														   8'd0) &&
+														  (mmioPlatform_reqBE[15:8] ==
+														   8'd0))
+														 ? 8'd0
+														 : ((mmioPlatform_reqBE[7:0] ==
+														     8'd0)
+														    ? mmioPlatform_reqBE[15:8]
+														    : mmioPlatform_reqBE[7:0]))[4]
+														? (((mmioPlatform_reqBE[7:0] ==
+														     8'd0) &&
+														    (mmioPlatform_reqBE[15:8] ==
+														     8'd0))
+														   ? 64'd0
+														   : ((mmioPlatform_reqBE[7:0] ==
+														       8'd0)
+														      ? mmioPlatform_reqData[127:64]
+														      : mmioPlatform_reqData[63:0]))[39:32]
+														: mmioPlatform_mtime[39:32], (((mmioPlatform_reqBE[7:0] ==
+																		8'd0) &&
+																	       (mmioPlatform_reqBE[15:8] ==
+																		8'd0))
+																	      ? 8'd0
+																	      : ((mmioPlatform_reqBE[7:0] ==
+																		  8'd0)
+																		 ? mmioPlatform_reqBE[15:8]
+																		 : mmioPlatform_reqBE[7:0]))[3]
+																	     ? (((mmioPlatform_reqBE[7:0] ==
+																		  8'd0) &&
+																		 (mmioPlatform_reqBE[15:8] ==
+																		  8'd0))
+																		? 64'd0
+																		: ((mmioPlatform_reqBE[7:0] ==
+																		    8'd0)
+																		   ? mmioPlatform_reqData[127:64]
+																		   : mmioPlatform_reqData[63:0]))[31:24]
+																	     : mmioPlatform_mtime[31:24], (((mmioPlatform_reqBE[7:0] ==
+																					     8'd0) &&
+																					    (mmioPlatform_reqBE[15:8] ==
+																					     8'd0))
+																					   ? 8'd0
+																					   : ((mmioPlatform_reqBE[7:0] ==
+																					       8'd0)
+																					      ? mmioPlatform_reqBE[15:8]
+																					      : mmioPlatform_reqBE[7:0]))[2]
+																					  ? (((mmioPlatform_reqBE[7:0] ==
+																					       8'd0) &&
+																					      (mmioPlatform_reqBE[15:8] ==
+																					       8'd0))
+																					     ? 64'd0
+																					     : ((mmioPlatform_reqBE[7:0] ==
+																						 8'd0)
+																						? mmioPlatform_reqData[127:64]
+																						: mmioPlatform_reqData[63:0]))[23:16]
+																					  : mmioPlatform_mtime[23:16], (((mmioPlatform_reqBE[7:0] ==
+																									  8'd0) &&
+																									 (mmioPlatform_reqBE[15:8] ==
+																									  8'd0))
+																									? 8'd0
+																									: ((mmioPlatform_reqBE[7:0] ==
+																									    8'd0)
+																									   ? mmioPlatform_reqBE[15:8]
+																									   : mmioPlatform_reqBE[7:0]))[1]
+																								       ? (((mmioPlatform_reqBE[7:0] ==
+																									    8'd0) &&
+																									   (mmioPlatform_reqBE[15:8] ==
+																									    8'd0))
+																									  ? 64'd0
+																									  : ((mmioPlatform_reqBE[7:0] ==
+																									      8'd0)
+																									     ? mmioPlatform_reqData[127:64]
+																									     : mmioPlatform_reqData[63:0]))[15:8]
+																								       : mmioPlatform_mtime[15:8], (((mmioPlatform_reqBE[7:0] ==
+																												      8'd0) &&
+																												     (mmioPlatform_reqBE[15:8] ==
+																												      8'd0))
+																												    ? 8'd0
+																												    : ((mmioPlatform_reqBE[7:0] ==
+																													8'd0)
+																												       ? mmioPlatform_reqBE[15:8]
+																												       : mmioPlatform_reqBE[7:0]))[0]
+																												   ? (((mmioPlatform_reqBE[7:0] ==
+																													8'd0) &&
+																												       (mmioPlatform_reqBE[15:8] ==
+																													8'd0))
+																												      ? 64'd0
+																												      : ((mmioPlatform_reqBE[7:0] ==
+																													  8'd0)
+																													 ? mmioPlatform_reqData[127:64]
+																													 : mmioPlatform_reqData[63:0]))[7:0]
+																												   : mmioPlatform_mtime[7:0]}))) &&
+		 mmioPlatform_mtip_0) ||
+		core_0.RDY_mmioToPlatform_pRs_enq))) &&
+	   (mmioPlatform_state == 2'd2) &&
+	   (mmioPlatform_curReq[67:64] == 4'd4)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_waitMTimeDone
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   ((! mmioPlatform_waitMTIPCRs) ||
+	    core_0.RDY_mmioToPlatform_cRs_deq) &&
+	   (mmioPlatform_state == 2'd3) &&
+	   (mmioPlatform_curReq[67:64] == 4'd4)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_processToHost
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   ((! (mmioPlatform_reqFunc[5:4] == 2'd2)) ||
+	    (! mmioPlatform_toHostQ_empty) ||
+	    (((mmioPlatform_reqFunc[5:4] == 2'd3)
+	      ? Amo.amoExec({mmioPlatform_reqFunc[3:0], ((((mmioPlatform_reqBE[7:0] ==
+							    8'd0) &&
+							   (mmioPlatform_reqBE[15:8] ==
+							    8'd0))
+							  ? 8'd0
+							  : ((mmioPlatform_reqBE[7:0] ==
+							      8'd0)
+							     ? mmioPlatform_reqBE[15:8]
+							     : mmioPlatform_reqBE[7:0]))[4] &&
+							 (((mmioPlatform_reqBE[7:0] ==
+							    8'd0) &&
+							   (mmioPlatform_reqBE[15:8] ==
+							    8'd0))
+							  ? 8'd0
+							  : ((mmioPlatform_reqBE[7:0] ==
+							      8'd0)
+							     ? mmioPlatform_reqBE[15:8]
+							     : mmioPlatform_reqBE[7:0]))[0])
+							? 2'd1
+							: 2'd2, 2'd0},
+			    {1'd0, (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+				     (mmioPlatform_reqBE[15:8] == 8'd0))
+				    ? 8'd0
+				    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+				       ? mmioPlatform_reqBE[15:8]
+				       : mmioPlatform_reqBE[7:0]))[4] &&
+				   (! (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+					(mmioPlatform_reqBE[15:8] == 8'd0))
+				       ? 8'd0
+				       : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					  ? mmioPlatform_reqBE[15:8]
+					  : mmioPlatform_reqBE[7:0]))[0])},
+			    129'd0,
+			    {65'd0, ((mmioPlatform_reqBE[7:0] == 8'd0) &&
+				     (mmioPlatform_reqBE[15:8] == 8'd0))
+				    ? 64'd0
+				    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+				       ? mmioPlatform_reqData[127:64]
+				       : mmioPlatform_reqData[63:0])})[63:0]
+	      : {(((mmioPlatform_reqBE[7:0] == 8'd0) &&
+		   (mmioPlatform_reqBE[15:8] == 8'd0))
+		  ? 8'd0
+		  : ((mmioPlatform_reqBE[7:0] == 8'd0)
+		     ? mmioPlatform_reqBE[15:8]
+		     : mmioPlatform_reqBE[7:0]))[7]
+		 ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+		     (mmioPlatform_reqBE[15:8] == 8'd0))
+		    ? 64'd0
+		    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+		       ? mmioPlatform_reqData[127:64]
+		       : mmioPlatform_reqData[63:0]))[63:56]
+		 : 8'd0, (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			   (mmioPlatform_reqBE[15:8] == 8'd0))
+			  ? 8'd0
+			  : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			     ? mmioPlatform_reqBE[15:8]
+			     : mmioPlatform_reqBE[7:0]))[6]
+			 ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+			     (mmioPlatform_reqBE[15:8] == 8'd0))
+			    ? 64'd0
+			    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+			       ? mmioPlatform_reqData[127:64]
+			       : mmioPlatform_reqData[63:0]))[55:48]
+			 : 8'd0, (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+				   (mmioPlatform_reqBE[15:8] == 8'd0))
+				  ? 8'd0
+				  : ((mmioPlatform_reqBE[7:0] == 8'd0)
+				     ? mmioPlatform_reqBE[15:8]
+				     : mmioPlatform_reqBE[7:0]))[5]
+				 ? (((mmioPlatform_reqBE[7:0] == 8'd0) &&
+				     (mmioPlatform_reqBE[15:8] == 8'd0))
+				    ? 64'd0
+				    : ((mmioPlatform_reqBE[7:0] == 8'd0)
+				       ? mmioPlatform_reqData[127:64]
+				       : mmioPlatform_reqData[63:0]))[47:40]
+				 : 8'd0, (((mmioPlatform_reqBE[7:0] ==
+					    8'd0) &&
+					   (mmioPlatform_reqBE[15:8] == 8'd0))
+					  ? 8'd0
+					  : ((mmioPlatform_reqBE[7:0] == 8'd0)
+					     ? mmioPlatform_reqBE[15:8]
+					     : mmioPlatform_reqBE[7:0]))[4]
+					 ? (((mmioPlatform_reqBE[7:0] ==
+					      8'd0) &&
+					     (mmioPlatform_reqBE[15:8] ==
+					      8'd0))
+					    ? 64'd0
+					    : ((mmioPlatform_reqBE[7:0] ==
+						8'd0)
+					       ? mmioPlatform_reqData[127:64]
+					       : mmioPlatform_reqData[63:0]))[39:32]
+					 : 8'd0, (((mmioPlatform_reqBE[7:0] ==
+						    8'd0) &&
+						   (mmioPlatform_reqBE[15:8] ==
+						    8'd0))
+						  ? 8'd0
+						  : ((mmioPlatform_reqBE[7:0] ==
+						      8'd0)
+						     ? mmioPlatform_reqBE[15:8]
+						     : mmioPlatform_reqBE[7:0]))[3]
+						 ? (((mmioPlatform_reqBE[7:0] ==
+						      8'd0) &&
+						     (mmioPlatform_reqBE[15:8] ==
+						      8'd0))
+						    ? 64'd0
+						    : ((mmioPlatform_reqBE[7:0] ==
+							8'd0)
+						       ? mmioPlatform_reqData[127:64]
+						       : mmioPlatform_reqData[63:0]))[31:24]
+						 : 8'd0, (((mmioPlatform_reqBE[7:0] ==
+							    8'd0) &&
+							   (mmioPlatform_reqBE[15:8] ==
+							    8'd0))
+							  ? 8'd0
+							  : ((mmioPlatform_reqBE[7:0] ==
+							      8'd0)
+							     ? mmioPlatform_reqBE[15:8]
+							     : mmioPlatform_reqBE[7:0]))[2]
+							 ? (((mmioPlatform_reqBE[7:0] ==
+							      8'd0) &&
+							     (mmioPlatform_reqBE[15:8] ==
+							      8'd0))
+							    ? 64'd0
+							    : ((mmioPlatform_reqBE[7:0] ==
+								8'd0)
+							       ? mmioPlatform_reqData[127:64]
+							       : mmioPlatform_reqData[63:0]))[23:16]
+							 : 8'd0, (((mmioPlatform_reqBE[7:0] ==
+								    8'd0) &&
+								   (mmioPlatform_reqBE[15:8] ==
+								    8'd0))
+								  ? 8'd0
+								  : ((mmioPlatform_reqBE[7:0] ==
+								      8'd0)
+								     ? mmioPlatform_reqBE[15:8]
+								     : mmioPlatform_reqBE[7:0]))[1]
+								 ? (((mmioPlatform_reqBE[7:0] ==
+								      8'd0) &&
+								     (mmioPlatform_reqBE[15:8] ==
+								      8'd0))
+								    ? 64'd0
+								    : ((mmioPlatform_reqBE[7:0] ==
+									8'd0)
+								       ? mmioPlatform_reqData[127:64]
+								       : mmioPlatform_reqData[63:0]))[15:8]
+								 : 8'd0, (((mmioPlatform_reqBE[7:0] ==
+									    8'd0) &&
+									   (mmioPlatform_reqBE[15:8] ==
+									    8'd0))
+									  ? 8'd0
+									  : ((mmioPlatform_reqBE[7:0] ==
+									      8'd0)
+									     ? mmioPlatform_reqBE[15:8]
+									     : mmioPlatform_reqBE[7:0]))[0]
+									 ? (((mmioPlatform_reqBE[7:0] ==
+									      8'd0) &&
+									     (mmioPlatform_reqBE[15:8] ==
+									      8'd0))
+									    ? 64'd0
+									    : ((mmioPlatform_reqBE[7:0] ==
+										8'd0)
+									       ? mmioPlatform_reqData[127:64]
+									       : mmioPlatform_reqData[63:0]))[7:0]
+									 : 8'd0}) ==
+	     64'd0) ||
+	    (! mmioPlatform_toHostQ_full)) &&
+	   (mmioPlatform_state == 2'd2) &&
+	   (mmioPlatform_curReq[67:64] == 4'd5)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_processFromHost
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   (mmioPlatform_state == 2'd2) &&
+	   (mmioPlatform_curReq[67:64] == 4'd6)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_rl_mmio_to_fabric_req
+Predicate: mmio_axi4_adapter_f_reqs_from_core.i_notFull &&
+	   (mmioPlatform_curReq[67:64] == 4'd7) &&
+	   (mmioPlatform_state == 2'd2) &&
+	   ((mmioPlatform_reqFunc[5:4] == 2'd1) ||
+	    (mmioPlatform_reqFunc[5:4] == 2'd2))
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_rl_mmio_from_fabric_rsp
+Predicate: core_0.RDY_mmioToPlatform_pRs_enq &&
+	   mmio_axi4_adapter_f_rsps_to_core.i_notEmpty &&
+	   (mmioPlatform_curReq[67:64] == 4'd7) &&
+	   (mmioPlatform_state == 2'd3) &&
+	   ((mmioPlatform_reqFunc[5:4] == 2'd1) ||
+	    (mmioPlatform_reqFunc[5:4] == 2'd2))
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_rl_mmio_to_fabric_amo_req
+Predicate: mmio_axi4_adapter_f_reqs_from_core.i_notFull &&
+	   (mmioPlatform_curReq[67:64] == 4'd7) &&
+	   (mmioPlatform_state == 2'd2) && (mmioPlatform_reqFunc[5:4] == 2'd3)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_rl_mmio_from_fabric_amo_rsp
+Predicate: mmio_axi4_adapter_f_rsps_to_core.i_notEmpty &&
+	   (mmioPlatform_amoWaitWriteResp ||
+	    (core_0.RDY_mmioToPlatform_pRs_enq &&
+	     ((! mmio_axi4_adapter_f_rsps_to_core.first[129]) ||
+	      mmio_axi4_adapter_f_reqs_from_core.i_notFull))) &&
+	   (mmioPlatform_curReq[67:64] == 4'd7) &&
+	   (mmioPlatform_state == 2'd3) && (mmioPlatform_reqFunc[5:4] == 2'd3)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_rl_mmio_to_fabric_ifetch_req
+Predicate: mmio_axi4_adapter_f_reqs_from_core.i_notFull &&
+	   (mmioPlatform_curReq[67:64] == 4'd7) &&
+	   (mmioPlatform_state == 2'd2) && (mmioPlatform_reqFunc[5:4] == 2'd0)
+Blocking rules: (none)
+ 
+Rule: mmioPlatform_rl_mmio_from_fabric_ifetch_rsp
+Predicate: mmio_axi4_adapter_f_rsps_to_core.i_notEmpty &&
+	   (mmio_axi4_adapter_f_rsps_to_core.first[129]
+	    ? (mmioPlatform_fetchingWay <
+	       ((mmioPlatform_reqFunc[5:4] == 2'd0)
+		? (mmioPlatform_reqFunc[5:4] == 2'd0)
+		  ? mmioPlatform_reqFunc[1:0]
+		  : (_ :: Bit 2)
+		: 2'd0)) ||
+	      core_0.RDY_mmioToPlatform_pRs_enq
+	    : core_0.RDY_mmioToPlatform_pRs_enq) &&
+	   (mmioPlatform_curReq[67:64] == 4'd7) &&
+	   (mmioPlatform_state == 2'd3) && (mmioPlatform_reqFunc[5:4] == 2'd0)
+Blocking rules: (none)
+ 
+Rule: propDstIdx_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: propDstIdx_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: propDstData_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: propDstData_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: enqDst_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: srcPropose
+Predicate: core_0.RDY_dCacheToParent_rqToP_deq &&
+	   core_0.RDY_dCacheToParent_rqToP_first &&
+	   (! propDstIdx_0_rl)
+Blocking rules: (none)
+ 
+Rule: srcPropose_1
+Predicate: core_0.RDY_iCacheToParent_rqToP_deq &&
+	   core_0.RDY_iCacheToParent_rqToP_first &&
+	   (! propDstIdx_1_rl)
+Blocking rules: (none)
+ 
+Rule: dstSelectSrc
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: doEnq
+Predicate: llc.RDY_to_child_rqFromC_enq &&
+	   (enqDst_0_lat_0.whas
+	    ? enqDst_0_lat_0.wget[75]
+	    : enqDst_0_rl[75])
+Blocking rules: (none)
+ 
+Rule: propDstIdx_1_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: propDstIdx_1_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: propDstData_1_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: propDstData_1_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: enqDst_1_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: srcPropose_2
+Predicate: core_0.RDY_dCacheToParent_rsToP_deq &&
+	   core_0.RDY_dCacheToParent_rsToP_first &&
+	   (! propDstIdx_1_0_rl)
+Blocking rules: (none)
+ 
+Rule: srcPropose_3
+Predicate: core_0.RDY_iCacheToParent_rsToP_deq &&
+	   core_0.RDY_iCacheToParent_rsToP_first &&
+	   (! propDstIdx_1_1_rl)
+Blocking rules: (none)
+ 
+Rule: dstSelectSrc_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: doEnq_1
+Predicate: llc.RDY_to_child_rsFromC_enq &&
+	   (enqDst_1_0_lat_0.whas
+	    ? enqDst_1_0_lat_0.wget[585]
+	    : enqDst_1_0_rl[585])
+Blocking rules: (none)
+ 
+Rule: sendPRq
+Predicate: llc.RDY_to_child_toC_deq &&
+	   llc.RDY_to_child_toC_first &&
+	   core_0.RDY_dCacheToParent_fromP_enq &&
+	   (! llc.to_child_toC_first[587]) && (! llc.to_child_toC_first[0])
+Blocking rules: (none)
+ 
+Rule: sendPRs
+Predicate: llc.RDY_to_child_toC_deq &&
+	   llc.RDY_to_child_toC_first &&
+	   core_0.RDY_dCacheToParent_fromP_enq &&
+	   llc.to_child_toC_first[587] && (! llc.to_child_toC_first[519])
+Blocking rules: (none)
+ 
+Rule: sendPRq_1
+Predicate: llc.RDY_to_child_toC_deq &&
+	   llc.RDY_to_child_toC_first &&
+	   core_0.RDY_iCacheToParent_fromP_enq &&
+	   (! llc.to_child_toC_first[587]) && llc.to_child_toC_first[0]
+Blocking rules: (none)
+ 
+Rule: sendPRs_1
+Predicate: llc.RDY_to_child_toC_deq &&
+	   llc.RDY_to_child_toC_first &&
+	   core_0.RDY_iCacheToParent_fromP_enq &&
+	   llc.to_child_toC_first[587] && llc.to_child_toC_first[519]
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_rl_client_st
+Predicate: llc.RDY_dma_memReq_enq &&
+	   llc_mem_server_slavePortShim_shim_awff.notEmpty &&
+	   llc_mem_server_slavePortShim_shim_awff.i_notEmpty &&
+	   llc_mem_server_slavePortShim_shim_wff.notEmpty &&
+	   llc_mem_server_slavePortShim_shim_wff.i_notEmpty &&
+	   llc_mem_server_internal_aw_ff.i_notFull
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_rl_client_st_rsp
+Predicate: llc.RDY_dma_respSt_deq &&
+	   llc.RDY_dma_respSt_first &&
+	   llc_mem_server_internal_aw_ff.i_notEmpty &&
+	   llc_mem_server_slavePortShim_shim_bff.i_notFull &&
+	   (! llc.dma_respSt_first[4])
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_rl_client_ld_req
+Predicate: llc.RDY_dma_memReq_enq &&
+	   llc_mem_server_slavePortShim_shim_arff.notEmpty &&
+	   llc_mem_server_slavePortShim_shim_arff.i_notEmpty &&
+	   llc_mem_server_internal_ar_ff.i_notFull
+Blocking rules: llc_mem_server_rl_client_st
+ 
+Rule: llc_mem_server_rl_client_ld_rsp
+Predicate: llc.RDY_dma_respLd_deq &&
+	   llc.RDY_dma_respLd_first &&
+	   llc_mem_server_internal_ar_ff.i_notEmpty &&
+	   llc_mem_server_slavePortShim_shim_rff.i_notFull &&
+	   (! llc.dma_respLd_first[4])
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_propDstIdx_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_propDstData_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_enqDst_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_srcPropose
+Predicate: core_0.RDY_tlbToMem_memReq_deq &&
+	   core_0.RDY_tlbToMem_memReq_first &&
+	   (! llc_mem_server_propDstIdx_0_rl)
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_dstSelectSrc
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_doEnq
+Predicate: llc_mem_server_tlbQ.i_notFull &&
+	   (llc_mem_server_enqDst_0_lat_0.whas
+	    ? llc_mem_server_enqDst_0_lat_0.wget[65]
+	    : llc_mem_server_enqDst_0_rl[65])
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_sendTlbReqToLLC
+Predicate: llc.RDY_dma_memReq_enq && llc_mem_server_tlbQ.i_notEmpty
+Blocking rules: llc_mem_server_rl_client_ld_req, llc_mem_server_rl_client_st
+ 
+Rule: llc_mem_server_sendLdRespToTlb
+Predicate: llc.RDY_dma_respLd_deq &&
+	   llc.RDY_dma_respLd_first && core_0.RDY_tlbToMem_respLd_enq &&
+	   llc.dma_respLd_first[4]
+Blocking rules: (none)
+ 
+Rule: llc_mem_server_sendStRespToTlb
+Predicate: llc.RDY_dma_respSt_deq && llc.RDY_dma_respSt_first &&
+	   llc.dma_respSt_first[4]
+Blocking rules: (none)
+ 
+Rule: llc_axi4_adapter_outstandingWrites_updateBag
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: llc_axi4_adapter_rl_handle_read_req
+Predicate: llc.RDY_to_mem_toM_deq &&
+	   llc.RDY_to_mem_toM_first &&
+	   llc_axi4_adapter_masterPortShim_shim_arff.i_notFull &&
+	   (! llc.to_mem_toM_first[644]) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[367]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[360:345] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[344]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[337:322] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[321]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[314:299] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[298]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[291:276] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[275]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[268:253] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[252]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[245:230] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[229]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[222:207] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[206]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[199:184] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[183]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[176:161] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[160]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[153:138] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc.to_mem_toM_first[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[137]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[130:115] ==
+		(llc.to_mem_toM_first[27:12] ^ llc.to_mem_toM_first[43:28] ^
+		 llc.to_mem_toM_first[59:44] ^
+		 {6'd0, llc_to_mem_toM_first____d2689(...)[69:60]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[114]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[107:92] ==
+		(llc_to_mem_toM_first____d2689(...)[27:12] ^
+		 llc_to_mem_toM_first____d2689(...)[43:28] ^
+		 llc_to_mem_toM_first____d2689(...)[59:44] ^
+		 {6'd0, in_BITS_57_TO_48___h192162(...)})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[91]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[84:69] ==
+		(x__h192000(...) ^ y__h192001(...) ^
+		 x__h192101(...) ^ y__h192102(...))))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[68]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag__h182309(...)[61:46] ==
+		(x__h191989(...) ^ y__h191990(...))))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag__h182309(...)[45]) ||
+	    (! (n_d_dat__h183227(...) == x__h191630(...)))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag__h182309(...)[22]) ||
+	    (! (n_d_dat__h183291(...) == x__h191630(...))))
+Blocking rules: (none)
+ 
+Rule: llc_axi4_adapter_rl_handle_read_rsps
+Predicate: llc.RDY_to_mem_rsFromM_enq &&
+	   llc_axi4_adapter_masterPortShim_shim_rff.notEmpty &&
+	   llc_axi4_adapter_masterPortShim_shim_rff.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: llc_axi4_adapter_rl_handle_write_req
+Predicate: (! (llc_axi4_adapter_ctr_wr_rsps_pending_crg.port0__read ==
+	       4'd15)) &&
+	   llc.RDY_to_mem_toM_deq &&
+	   llc.RDY_to_mem_toM_first &&
+	   llc_axi4_adapter_masterPortShim_shim_awff.i_notFull &&
+	   llc_axi4_adapter_masterPortShim_shim_wff.i_notFull &&
+	   llc.to_mem_toM_first[644] &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[367]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[366:361] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[344]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[343:338] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[321]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[320:315] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[298]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[297:292] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[275]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[274:269] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[252]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[251:246] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[229]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[228:223] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[206]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[205:200] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[183]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[182:177] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[160]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[159:154] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[137]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[136:131] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[114]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[113:108] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[91]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag__h182309(...)[90:85] ==
+		llc_axi4_adapter_wid_reg))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag__h182309(...)[68]) ||
+	    (! (x__h183146(...) == x__h212777(...)))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag_BIT_45___h185761(...)) ||
+	    (! llc_axi4_adapter_outstandingWrites_bag_687_BIT_ETC___d2932(...))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag_BIT_22___h185812(...)) ||
+	    (! llc_axi4_adapter_outstandingWrites_bag_687_BIT_ETC___d2935(...))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[367]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[360:345] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[344]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[337:322] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[321]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[314:299] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[298]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[291:276] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[275]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[268:253] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[252]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[245:230] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[229]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[222:207] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[206]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[199:184] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[183]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[176:161] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc.to_mem_toM_first[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[160]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[153:138] ==
+		(llc.to_mem_toM_first[601:586] ^
+		 llc.to_mem_toM_first[617:602] ^
+		 llc.to_mem_toM_first[633:618] ^
+		 {6'd0, llc_to_mem_toM_first____d2689(...)[643:634]})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[137]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[130:115] ==
+		(llc_to_mem_toM_first____d2689(...)[601:586] ^
+		 llc_to_mem_toM_first____d2689(...)[617:602] ^
+		 llc_to_mem_toM_first____d2689(...)[633:618] ^
+		 {6'd0, in_BITS_57_TO_48___h198519(...)})))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[114]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag[107:92] ==
+		(x__h198360(...) ^ y__h198361(...) ^
+		 x__h198458(...) ^ y__h198459(...))))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag[91]) ||
+	    (! (llc_axi4_adapter_outstandingWrites_bag__h182309(...)[84:69] ==
+		(x__h198349(...) ^ y__h198350(...))))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag__h182309(...)[68]) ||
+	    (! (n_d_dat__h183163(...) == x__h197992(...)))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag_BIT_45___h185761(...)) ||
+	    (! llc_axi4_adapter_outstandingWrites_bag_687_BIT_ETC___d3003(...))) &&
+	   ((! llc_axi4_adapter_outstandingWrites_bag_BIT_22___h185812(...)) ||
+	    (! llc_axi4_adapter_outstandingWrites_bag_687_BIT_ETC___d3006(...)))
+Blocking rules: (none)
+ 
+Rule: llc_axi4_adapter_rl_discard_write_rsp
+Predicate: (! (llc_axi4_adapter_ctr_wr_rsps_pending_crg.port1__read ==
+	       4'd0)) &&
+	   llc_axi4_adapter_masterPortShim_shim_bff.notEmpty &&
+	   llc_axi4_adapter_masterPortShim_shim_bff.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: recvStatReq
+Predicate: core_0.RDY_sendDoStats && statReqs.i_notFull
+Blocking rules: (none)
+ 
+Rule: broadcastStats
+Predicate: statReqs.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: broadcastPerfEvents
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_dummy1
+Predicate: core_0.RDY_deadlock_dCacheCRqStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy2
+Predicate: core_0.RDY_deadlock_dCachePRqStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy3
+Predicate: core_0.RDY_deadlock_iCacheCRqStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy4
+Predicate: core_0.RDY_deadlock_iCachePRqStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy5
+Predicate: core_0.RDY_deadlock_renameInstStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy6
+Predicate: core_0.RDY_deadlock_renameCorrectPathStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy7
+Predicate: core_0.RDY_deadlock_commitInstStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy8
+Predicate: core_0.RDY_deadlock_commitUserInstStuck_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy9
+Predicate: core_0.RDY_deadlock_checkStarted_get
+Blocking rules: (none)
+ 
+Rule: rl_dummy20
+Predicate: core_0.RDY_renameDebug_renameErr_get
+Blocking rules: (none)
+ 
+Rule: rl_terminate
+Predicate: core_0.RDY_coreIndInv_terminate
+Blocking rules: (none)
+ 
+Rule: rl_tohost
+Predicate: ! mmioPlatform_toHostQ_empty
+Blocking rules: (none)
+ 
+Logical execution order: master0_aw_canPeek,
+			 master0_aw_peek,
+			 master0_aw_drop,
+			 master0_w_canPeek,
+			 master0_w_peek,
+			 master0_w_drop,
+			 master0_b_canPut,
+			 master0_ar_canPeek,
+			 master0_ar_peek,
+			 master0_ar_drop,
+			 master0_r_canPut,
+			 master1_aw_canPeek,
+			 master1_aw_peek,
+			 master1_aw_drop,
+			 master1_w_canPeek,
+			 master1_w_peek,
+			 master1_w_drop,
+			 master1_b_canPut,
+			 master1_ar_canPeek,
+			 master1_ar_peek,
+			 master1_ar_drop,
+			 master1_r_canPut,
+			 m_external_interrupt_req,
+			 s_external_interrupt_req,
+			 non_maskable_interrupt_req,
+			 set_verbosity,
+			 debug_module_mem_server_aw_canPut,
+			 debug_module_mem_server_w_canPut,
+			 debug_module_mem_server_b_canPeek,
+			 debug_module_mem_server_b_peek,
+			 debug_module_mem_server_b_drop,
+			 debug_module_mem_server_ar_canPut,
+			 debug_module_mem_server_r_canPeek,
+			 debug_module_mem_server_r_peek,
+			 debug_module_mem_server_r_drop,
+			 srcPropose,
+			 srcPropose_1,
+			 dstSelectSrc,
+			 doEnq,
+			 srcPropose_2,
+			 srcPropose_3,
+			 dstSelectSrc_1,
+			 doEnq_1,
+			 sendPRq,
+			 sendPRs,
+			 sendPRq_1,
+			 sendPRs_1,
+			 recvStatReq,
+			 broadcastStats,
+			 broadcastPerfEvents,
+			 events_tgc,
+			 rl_dummy1,
+			 rl_dummy2,
+			 rl_dummy3,
+			 rl_dummy4,
+			 rl_dummy5,
+			 rl_dummy6,
+			 rl_dummy7,
+			 rl_dummy8,
+			 rl_dummy9,
+			 rl_dummy20,
+			 rl_terminate,
+			 rl_tohost,
+			 mmio_axi4_adapter_rl_handle_read_rsps,
+			 master1_r_put,
+			 mmio_axi4_adapter_rl_handle_write_req,
+			 mmio_axi4_adapter_rl_handle_read_req,
+			 mmio_axi4_adapter_rl_discard_write_rsp,
+			 master1_b_put,
+			 mmio_axi4_adapter_rl_handle_non_Ld_St,
+			 mmioPlatform_propagateTime,
+			 mmioPlatform_incCycle,
+			 mmioPlatform_incTime,
+			 mmioPlatform_selectReq,
+			 mmioPlatform_waitTimerInterruptDone,
+			 mmioPlatform_processLoadTags,
+			 mmioPlatform_processMSIP,
+			 mmioPlatform_waitMSIPDone,
+			 mmioPlatform_processMTimeCmp,
+			 mmioPlatform_waitMTimeCmpDone,
+			 mmioPlatform_processMTime,
+			 mmioPlatform_waitMTimeDone,
+			 mmioPlatform_processToHost,
+			 mmioPlatform_processFromHost,
+			 start,
+			 mmioPlatform_rl_mmio_to_fabric_req,
+			 mmioPlatform_rl_mmio_from_fabric_rsp,
+			 mmioPlatform_rl_mmio_to_fabric_amo_req,
+			 mmioPlatform_rl_mmio_from_fabric_amo_rsp,
+			 mmioPlatform_rl_mmio_to_fabric_ifetch_req,
+			 mmioPlatform_rl_mmio_from_fabric_ifetch_rsp,
+			 mmioPlatform_toHostQ_canonicalize,
+			 mmioPlatform_toHostQ_enqReq_canon,
+			 mmioPlatform_toHostQ_deqReq_canon,
+			 mmioPlatform_toHostQ_clearReq_canon,
+			 mmioPlatform_fromHostQ_canonicalize,
+			 mmioPlatform_fromHostQ_enqReq_canon,
+			 mmioPlatform_fromHostQ_deqReq_canon,
+			 mmioPlatform_fromHostQ_clearReq_canon,
+			 propDstIdx_0_canon,
+			 propDstIdx_1_canon,
+			 propDstData_0_canon,
+			 propDstData_1_canon,
+			 enqDst_0_canon,
+			 propDstIdx_1_0_canon,
+			 propDstIdx_1_1_canon,
+			 propDstData_1_0_canon,
+			 propDstData_1_1_canon,
+			 enqDst_1_0_canon,
+			 llc_mem_server_rl_client_st,
+			 debug_module_mem_server_aw_put,
+			 debug_module_mem_server_w_put,
+			 llc_mem_server_rl_client_st_rsp,
+			 llc_mem_server_rl_client_ld_req,
+			 debug_module_mem_server_ar_put,
+			 llc_mem_server_rl_client_ld_rsp,
+			 llc_mem_server_srcPropose,
+			 llc_mem_server_dstSelectSrc,
+			 llc_mem_server_doEnq,
+			 llc_mem_server_sendTlbReqToLLC,
+			 llc_mem_server_sendLdRespToTlb,
+			 llc_mem_server_sendStRespToTlb,
+			 llc_mem_server_propDstIdx_0_canon,
+			 llc_mem_server_propDstData_0_canon,
+			 llc_mem_server_enqDst_0_canon,
+			 llc_axi4_adapter_rl_handle_read_req,
+			 llc_axi4_adapter_rl_handle_read_rsps,
+			 master0_r_put,
+			 llc_axi4_adapter_rl_handle_write_req,
+			 llc_axi4_adapter_rl_discard_write_rsp,
+			 master0_b_put,
+			 llc_axi4_adapter_outstandingWrites_updateBag
+
+======================================
