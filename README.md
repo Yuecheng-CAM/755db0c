@@ -5,7 +5,7 @@ This is a repository of all artifacts associated with our CHERI-D paper submissi
 ## Relevant Files
 ### CHERI-Toooba: 
 - `Toooba/src_Core/RISCY_OOO/procs`, contains the implementations of CHERI-D related instructions, ID buffer and ID detection logic on both load and store. 
-- `Toooba/libs/cheri-cap-lib`, contains the implementation of CHERI-D changes to CHERI capability format
+- `cheri-cap-lib`, contains the implementation of CHERI-D changes to CHERI capability format
 
 ### QEMU: 
 - `qemu/target/cheri-common/`,  contains the implementation of CHERI-D extended CHERI capability format, CHERI-D added instructions and check on memory access
