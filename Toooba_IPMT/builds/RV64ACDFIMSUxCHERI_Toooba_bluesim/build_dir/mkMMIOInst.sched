@@ -1,0 +1,208 @@
+=== Generated schedule for mkMMIOInst ===
+
+Method schedule
+---------------
+Method: getFetchTarget
+Ready signal: True
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+ 
+Method: bootRomReq
+Ready signal: (! reqQ_full) && (! pendQ_full)
+Conflict-free: getFetchTarget,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+Conflicts: bootRomReq
+ 
+Method: bootRomResp
+Ready signal: (! respQ_empty) && (! pendQ_empty)
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+Conflicts: bootRomResp
+ 
+Method: toCore_instReq_notEmpty
+Ready signal: True
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+ 
+Method: toCore_instReq_deq
+Ready signal: ! reqQ_empty
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+Conflicts: toCore_instReq_deq
+ 
+Method: toCore_instReq_first_fst
+Ready signal: ! reqQ_empty
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+ 
+Method: toCore_instReq_first_snd
+Ready signal: ! reqQ_empty
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+ 
+Method: toCore_instResp_notFull
+Ready signal: True
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq,
+	       toCore_setHtifAddrs
+ 
+Method: toCore_instResp_enq
+Ready signal: ! respQ_full
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_setHtifAddrs
+Conflicts: toCore_instResp_enq
+ 
+Method: toCore_setHtifAddrs
+Ready signal: True
+Conflict-free: getFetchTarget,
+	       bootRomReq,
+	       bootRomResp,
+	       toCore_instReq_notEmpty,
+	       toCore_instReq_deq,
+	       toCore_instReq_first_fst,
+	       toCore_instReq_first_snd,
+	       toCore_instResp_notFull,
+	       toCore_instResp_enq
+Sequenced before (restricted): toCore_setHtifAddrs
+ 
+Rule schedule
+-------------
+Rule: reqQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: reqQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: reqQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: reqQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: respQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: respQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: respQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: respQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pendQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pendQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pendQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pendQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: getFetchTarget,
+			 bootRomReq,
+			 bootRomResp,
+			 toCore_instReq_notEmpty,
+			 toCore_instReq_deq,
+			 toCore_instReq_first_fst,
+			 toCore_instReq_first_snd,
+			 toCore_instResp_notFull,
+			 toCore_instResp_enq,
+			 toCore_setHtifAddrs,
+			 reqQ_canonicalize,
+			 reqQ_enqReq_canon,
+			 reqQ_deqReq_canon,
+			 reqQ_clearReq_canon,
+			 respQ_canonicalize,
+			 respQ_enqReq_canon,
+			 respQ_deqReq_canon,
+			 respQ_clearReq_canon,
+			 pendQ_canonicalize,
+			 pendQ_enqReq_canon,
+			 pendQ_deqReq_canon,
+			 pendQ_clearReq_canon
+
+==========================================

@@ -1,0 +1,88 @@
+:toc: macro
+:toclevels: 4
+:toc-title:
+:toc-placement!:
+:source-highlighter:
+
+[discrete]
+= CHERI CAP LIB
+
+The https://github.com/CTSRD-CHERI/cheri-cap-lib[cheri-cap-lib] repository
+provides an RTL API for CHERI capabilities, as well as a reference
+implementation of it. It aims to serve as a central implementation providing
+various wrappers to avoid the need for multiplicity of implementation efforts.
+This is particularly desirable when considering the verification work already
+spent and the overall tricky nature of the algorithms involved.
+
+The explicit goal of CHERI CAP LIB is to provide a set of relatively low level
+operations to interact with CHERI capabilities, and allow the user to abstract
+away the specifics of the published
+https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/2019tc-cheri-concentrate.pdf[capability format]
+and its subsequent iterations as much as reasonably possible. Other
+implementations should easily be able to comply with the CHERI CAP LIB API.
+In particular, implementations exploring alterations to the underlying
+capability format will benefit from adhering to this API for easy integration
+with codebases already making use of the exisitng CHERI capability implementation.
+If some genuinely new behaviour is necessary, generalising the CHERI CAP API should
+be considered.
+
+The CHERI CAP LIB API is here to guaranty that subtleties in capability
+manipulations are handled correctly. This means that direct bit manipulation on
+CHERI capabilities bypassing the provided functions are greatly discouraged as
+they will very easily lead to nonsense capabilities. For this reason, the CHERI
+CAP LIB API is more in the style of a set of accessors (java interface / haskell
+typeclass, etc...) than in that of a simple struct-style interface with direct
+field manipulation. Again, this is deliberate and necessary to easily enforce
+well behaved capability manipulations.
+
+Currently, the implementation of the API is in Bluespec System Verilog and
+wrappers are available in Verilog and Blarney.
+
+[discrete]
+== Contents
+
+toc::[]
+
+:sectnums:
+
+== The CHERI CAP LIB API
+
+include::CHERI_CAP_API.adoc[]
+
+== FuseSoC
+
+``cheri-cap-lib`` supports being used as a generator within FuseSoC. The scripts
+and cores for this are within the ``fusesoc`` directory, and the file
+``cheri-cap-lib-test.core`` shows how a core can declare a dependency on and
+use the ``cheri-cap-lib`` generator.
+
+The FuseSoC generator will generate Verilog modules for each of the functions
+in ``CHERICapWrap.bsv``, as well as a SystemVerilog package and module to
+make working with these modules _slightly_ simpler in SystemVerilog.
+
+To generate both the 64bit and 128bit wrappers and packages, run
+``fusesoc --cores-root . run --target test --setup ucam:cheri:cheri-cap-lib-test``
+
+The files will be generated in
+``build/ucam_cheri_cheri-cap-lib-test_0/src/ucam_cheri_cheri-cap-lib-verilog-autogen-64_0/``
+and
+``build/ucam_cheri_cheri-cap-lib-test_0/src/ucam_cheri_cheri-cap-lib-verilog-autogen-128_0/``
+
+These fusesoc cores and instructions work using fusesoc 0.3 as installed
+by running
+``pip3 install -r python-requirements.txt``
+within the OpenTitan GitHub repository as of commit
+https://github.com/lowRISC/opentitan/commit/2438b17afe4fef0d815be2e890763c288c449918
+
+== Formal Verification
+
+A small number of properties have been specified in `CHERICapProp.bsv`.
+These can be verfied using SymbiYosys, e.g.
+
+```
+wget https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-07-17/oss-cad-suite-linux-x64-20240717.tgz
+tar xzf oss-cad-suite-linux-x64-20240717.tgz
+export PATH=`pwd`/oss-cad-suite/bin:$PATH
+make verilog-props
+sby -f check.sby
+```

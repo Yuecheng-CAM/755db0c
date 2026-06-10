@@ -1,0 +1,105 @@
+=== Generated schedule for mkSpecTagManager ===
+
+Method schedule
+---------------
+Method: currentSpecBits
+Ready signal: True
+Conflict-free: currentSpecBits,
+	       nextSpecTag,
+	       claimSpecTag,
+	       canClaim,
+	       specUpdate_incorrectSpeculation,
+	       specUpdate_correctSpeculation,
+	       isFull_ehrPort0
+ 
+Method: nextSpecTag
+Ready signal: (! current_spec_bits_ehr_rl[0]) ||
+	      (! current_spec_bits_ehr_rl[1]) ||
+	      (! current_spec_bits_ehr_rl[2]) ||
+	      (! current_spec_bits_ehr_rl[3]) ||
+	      (! current_spec_bits_ehr_rl[4]) ||
+	      (! current_spec_bits_ehr_rl[5]) ||
+	      (! current_spec_bits_ehr_rl[6]) ||
+	      (! current_spec_bits_ehr_rl[7]) ||
+	      (! current_spec_bits_ehr_rl[8]) ||
+	      (! current_spec_bits_ehr_rl[9]) ||
+	      (! current_spec_bits_ehr_rl[10]) ||
+	      (! current_spec_bits_ehr_rl[11])
+Conflict-free: currentSpecBits,
+	       nextSpecTag,
+	       claimSpecTag,
+	       canClaim,
+	       specUpdate_incorrectSpeculation,
+	       specUpdate_correctSpeculation,
+	       isFull_ehrPort0
+ 
+Method: claimSpecTag
+Ready signal: (! current_spec_bits_ehr_rl[0]) ||
+	      (! current_spec_bits_ehr_rl[1]) ||
+	      (! current_spec_bits_ehr_rl[2]) ||
+	      (! current_spec_bits_ehr_rl[3]) ||
+	      (! current_spec_bits_ehr_rl[4]) ||
+	      (! current_spec_bits_ehr_rl[5]) ||
+	      (! current_spec_bits_ehr_rl[6]) ||
+	      (! current_spec_bits_ehr_rl[7]) ||
+	      (! current_spec_bits_ehr_rl[8]) ||
+	      (! current_spec_bits_ehr_rl[9]) ||
+	      (! current_spec_bits_ehr_rl[10]) ||
+	      (! current_spec_bits_ehr_rl[11])
+Conflict-free: currentSpecBits, nextSpecTag, canClaim, isFull_ehrPort0
+Sequenced before: specUpdate_correctSpeculation
+Conflicts: claimSpecTag, specUpdate_incorrectSpeculation
+ 
+Method: canClaim
+Ready signal: True
+Conflict-free: currentSpecBits,
+	       nextSpecTag,
+	       claimSpecTag,
+	       canClaim,
+	       specUpdate_incorrectSpeculation,
+	       specUpdate_correctSpeculation,
+	       isFull_ehrPort0
+ 
+Method: specUpdate_incorrectSpeculation
+Ready signal: True
+Conflict-free: currentSpecBits, nextSpecTag, canClaim, isFull_ehrPort0
+Sequenced before: specUpdate_correctSpeculation
+Conflicts: claimSpecTag, specUpdate_incorrectSpeculation
+ 
+Method: specUpdate_correctSpeculation
+Ready signal: True
+Conflict-free: currentSpecBits, nextSpecTag, canClaim, isFull_ehrPort0
+Sequenced after: claimSpecTag, specUpdate_incorrectSpeculation
+Conflicts: specUpdate_correctSpeculation
+ 
+Method: isFull_ehrPort0
+Ready signal: True
+Conflict-free: currentSpecBits,
+	       nextSpecTag,
+	       claimSpecTag,
+	       canClaim,
+	       specUpdate_incorrectSpeculation,
+	       specUpdate_correctSpeculation,
+	       isFull_ehrPort0
+ 
+Rule schedule
+-------------
+Rule: current_spec_bits_ehr_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: debugSt
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: currentSpecBits,
+			 nextSpecTag,
+			 claimSpecTag,
+			 canClaim,
+			 specUpdate_incorrectSpeculation,
+			 specUpdate_correctSpeculation,
+			 isFull_ehrPort0,
+			 debugSt,
+			 current_spec_bits_ehr_canon
+
+================================================

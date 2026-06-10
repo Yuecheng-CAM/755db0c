@@ -1,0 +1,127 @@
+=== Generated schedule for mkBtb ===
+
+Method schedule
+---------------
+Method: put_pc
+Ready signal: True
+Conflict-free: update, flush, flush_done
+Sequenced after: pred
+Conflicts: put_pc
+ 
+Method: pred
+Ready signal: True
+Conflict-free: pred, update, flush, flush_done
+Sequenced before: put_pc
+ 
+Method: update
+Ready signal: True
+Conflict-free: put_pc, pred, flush, flush_done
+Sequenced before (restricted): update
+ 
+Method: flush
+Ready signal: True
+Conflict-free: put_pc, pred, update, flush, flush_done
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: put_pc, pred, update, flush, flush_done
+ 
+Rule schedule
+-------------
+Rule: btb_fullRecords_0_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_0_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_1_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_1_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_2_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_2_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_3_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_fullRecords_3_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_0_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_0_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_1_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_1_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_2_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_2_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_3_updateFresh__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_compressedRecords_3_updateCanon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_updateEn__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: btb_canonUpdate
+Predicate: btb_updateEn[259]
+Blocking rules: (none)
+ 
+Logical execution order: pred,
+			 put_pc,
+			 update,
+			 flush,
+			 flush_done,
+			 btb_fullRecords_0_updateCanon,
+			 btb_fullRecords_1_updateCanon,
+			 btb_fullRecords_2_updateCanon,
+			 btb_fullRecords_3_updateCanon,
+			 btb_compressedRecords_0_updateCanon,
+			 btb_compressedRecords_1_updateCanon,
+			 btb_compressedRecords_2_updateCanon,
+			 btb_compressedRecords_3_updateCanon,
+			 btb_canonUpdate,
+			 btb_fullRecords_0_updateFresh__dreg_update,
+			 btb_fullRecords_1_updateFresh__dreg_update,
+			 btb_fullRecords_2_updateFresh__dreg_update,
+			 btb_compressedRecords_0_updateFresh__dreg_update,
+			 btb_fullRecords_3_updateFresh__dreg_update,
+			 btb_compressedRecords_1_updateFresh__dreg_update,
+			 btb_compressedRecords_2_updateFresh__dreg_update,
+			 btb_compressedRecords_3_updateFresh__dreg_update,
+			 btb_updateEn__dreg_update
+
+=====================================

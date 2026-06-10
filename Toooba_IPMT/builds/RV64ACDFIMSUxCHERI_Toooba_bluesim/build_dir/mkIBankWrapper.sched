@@ -1,0 +1,556 @@
+=== Generated schedule for mkIBankWrapper ===
+
+Method schedule
+---------------
+Method: to_parent_rsToP_notEmpty
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: to_parent_rsToP_deq
+Ready signal: ! m_rsToPQ_empty
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+Conflicts: to_parent_rsToP_deq
+ 
+Method: to_parent_rsToP_first
+Ready signal: ! m_rsToPQ_empty
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: to_parent_rqToP_notEmpty
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: to_parent_rqToP_deq
+Ready signal: ! m_rqToPQ_empty
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+Conflicts: to_parent_rqToP_deq
+ 
+Method: to_parent_rqToP_first
+Ready signal: ! m_rqToPQ_empty
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: to_parent_fromP_notFull
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: to_parent_fromP_enq
+Ready signal: ! m_fromPQ_full
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+Conflicts: to_parent_fromP_enq
+ 
+Method: to_proc_req_put
+Ready signal: ! m_rqFromCQ_full_rl
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+Conflicts: to_proc_req_put
+ 
+Method: to_proc_resp_get
+Ready signal: m_cRqIndexQ.i_notEmpty &&
+	      m_cRqMshr.sendRsToC_getResult(m_cRqIndexQ.first)[68] &&
+	      m_cRqMshr.RDY_sendRsToC_releaseEntry
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+Conflicts: to_proc_resp_get
+ 
+Method: cRqStuck_get
+Ready signal: m_cRqMshr.RDY_stuck_get
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: pRqStuck_get
+Ready signal: m_pRqMshr.RDY_stuck_get
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: flush
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: setPerfStatus
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: getPerfData
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Method: events
+Ready signal: True
+Conflict-free: to_parent_rsToP_notEmpty,
+	       to_parent_rsToP_deq,
+	       to_parent_rsToP_first,
+	       to_parent_rqToP_notEmpty,
+	       to_parent_rqToP_deq,
+	       to_parent_rqToP_first,
+	       to_parent_fromP_notFull,
+	       to_parent_fromP_enq,
+	       to_proc_req_put,
+	       to_proc_resp_get,
+	       cRqStuck_get,
+	       pRqStuck_get,
+	       flush,
+	       flush_done,
+	       setPerfStatus,
+	       getPerfData,
+	       events
+ 
+Rule schedule
+-------------
+Rule: m_rqFromCQ_data_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rqFromCQ_empty_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rqFromCQ_full_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rsToPQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rsToPQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rsToPQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rsToPQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rqToPQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rqToPQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rqToPQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rqToPQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_fromPQ_enqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_fromPQ_deqReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_fromPQ_clearReq_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_fromPQ_canonicalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_latTimer_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_perf_events_update_reg
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_cRqTransfer
+Predicate: (m_rqFromCQ_empty_lat_0.whas
+	    ? ! m_rqFromCQ_empty_lat_0.wget
+	    : (! m_rqFromCQ_empty_rl)) &&
+	   m_pipeline.RDY_send &&
+	   m_cRqMshr.RDY_getEmptyEntryInit && m_cRqIndexQ.i_notFull
+Blocking rules: m_pRsTransfer, m_pRqTransfer
+ 
+Rule: m_pRqTransfer
+Predicate: (! m_fromPQ_empty) &&
+	   m_pipeline.RDY_send && m_pRqMshr.RDY_getEmptyEntryInit &&
+	   (PrimArrayDynSelect (PrimBuildArray (! m_fromPQ_data_0[586])
+					       (! m_fromPQ_data_1[586]))
+			       m_fromPQ_deqP)
+Blocking rules: (none)
+ 
+Rule: m_pRsTransfer
+Predicate: (! m_fromPQ_empty) && m_pipeline.RDY_send &&
+	   (PrimArrayDynSelect (PrimBuildArray m_fromPQ_data_0[586]
+					       m_fromPQ_data_1[586])
+			       m_fromPQ_deqP)
+Blocking rules: (none)
+ 
+Rule: m_sendRsToP_cRq
+Predicate: (! m_rsToPQ_full) &&
+	   m_rsToPIndexQ.i_notEmpty && m_rqToPIndexQ_sendRsToP.i_notFull &&
+	   (! m_rsToPIndexQ.first[2])
+Blocking rules: (none)
+ 
+Rule: m_sendRsToP_pRq
+Predicate: (! m_rsToPQ_full) &&
+	   m_pRqMshr.RDY_sendRsToP_pRq_releaseEntry &&
+	   m_rsToPIndexQ.i_notEmpty &&
+	   m_rsToPIndexQ.first[2]
+Blocking rules: (none)
+ 
+Rule: m_sendRqToP
+Predicate: (! m_rqToPQ_full) && m_rqToPIndexQ.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: m_pipelineResp_cRq
+Predicate: m_pipeline.RDY_first &&
+	   m_pipeline.RDY_deqWrite &&
+	   (m_pipeline.first[521] ||
+	    (((m_pipeline.first[524:522] == 3'd0) ||
+	      (m_pipeline.first[575:525] ==
+	       m_cRqMshr.pipelineResp_getRq((m_pipeline.first[582:581] ==
+					     2'd0)
+					    ? (m_pipeline.first[582:581] ==
+					       2'd0)
+					      ? m_pipeline.first[580:579]
+					      : (_ :: Bit 2)
+					    : (m_pipeline.first[521]
+					       ? m_pipeline.first[521]
+						 ? m_pipeline.first[520:519]
+						 : (_ :: Bit 2)
+					       : 2'd0))[63:13]))
+	     ? (! (m_pipeline.first[524:522] == 3'd0)) ||
+	       m_rqToPIndexQ_pipelineResp.i_notFull
+	     : m_rsToPIndexQ.i_notFull)) &&
+	   (m_pipeline.first[582:581] == 2'd0)
+Blocking rules: (none)
+ 
+Rule: m_pipelineResp_pRs
+Predicate: m_pipeline.RDY_first &&
+	   ((! m_pipeline.first[521]) || m_pipeline.RDY_deqWrite) &&
+	   (m_pipeline.first[582:581] == 2'd2)
+Blocking rules: (none)
+ 
+Rule: m_pipelineResp_pRq
+Predicate: m_pipeline.RDY_first &&
+	   m_pipeline.RDY_deqWrite &&
+	   (m_pipeline.first[576]
+	    ? m_pRqMshr.RDY_pipelineResp_releaseEntry
+	    : m_rsToPIndexQ.i_notFull) &&
+	   (m_pipeline.first[582:581] == 2'd1)
+Blocking rules: (none)
+ 
+Rule: m_discardPrefetchRqResult
+Predicate: m_cRqMshr.RDY_prefetcher_releaseEntry &&
+	   m_prefetchIndexQ.i_notEmpty &&
+	   m_cRqMshr.prefetcher_getResult(m_prefetchIndexQ.first)[68]
+Blocking rules: to_proc_resp_get
+ 
+Rule: m_rqIndexFromPipelineResp
+Predicate: m_rqToPIndexQ_pipelineResp.i_notEmpty && m_rqToPIndexQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: m_rqIndexFromSendRsToP
+Predicate: m_rqToPIndexQ.i_notFull && m_rqToPIndexQ_sendRsToP.i_notEmpty
+Blocking rules: m_rqIndexFromPipelineResp
+ 
+Logical execution order: to_parent_rsToP_notEmpty,
+			 to_parent_rsToP_deq,
+			 to_parent_rsToP_first,
+			 to_parent_rqToP_notEmpty,
+			 to_parent_rqToP_deq,
+			 to_parent_rqToP_first,
+			 to_parent_fromP_notFull,
+			 to_parent_fromP_enq,
+			 to_proc_req_put,
+			 cRqStuck_get,
+			 pRqStuck_get,
+			 flush,
+			 flush_done,
+			 setPerfStatus,
+			 getPerfData,
+			 events,
+			 m_pRqTransfer,
+			 m_pRsTransfer,
+			 m_sendRsToP_cRq,
+			 m_sendRsToP_pRq,
+			 m_sendRqToP,
+			 m_pipelineResp_cRq,
+			 m_pipelineResp_pRs,
+			 to_proc_resp_get,
+			 m_cRqTransfer,
+			 m_pipelineResp_pRq,
+			 m_discardPrefetchRqResult,
+			 m_rqIndexFromPipelineResp,
+			 m_rqIndexFromSendRsToP,
+			 m_rqFromCQ_data_0_canon,
+			 m_rqFromCQ_empty_canon,
+			 m_rqFromCQ_full_canon,
+			 m_rsToPQ_canonicalize,
+			 m_rsToPQ_enqReq_canon,
+			 m_rsToPQ_deqReq_canon,
+			 m_rsToPQ_clearReq_canon,
+			 m_rqToPQ_canonicalize,
+			 m_rqToPQ_enqReq_canon,
+			 m_rqToPQ_deqReq_canon,
+			 m_rqToPQ_clearReq_canon,
+			 m_fromPQ_canonicalize,
+			 m_fromPQ_enqReq_canon,
+			 m_fromPQ_deqReq_canon,
+			 m_fromPQ_clearReq_canon,
+			 m_latTimer_canon,
+			 m_perf_events_update_reg
+
+==============================================

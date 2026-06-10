@@ -1,0 +1,17 @@
+=== Generated schedule for mkMem_Model ===
+
+Method schedule
+---------------
+Method: mem_server_request_put
+Ready signal: reset_done && f_raw_mem_rsps.i_notFull
+Conflict-free: mem_server_response_get
+Conflicts: mem_server_request_put
+ 
+Method: mem_server_response_get
+Ready signal: f_raw_mem_rsps.i_notEmpty
+Conflict-free: mem_server_request_put
+Conflicts: mem_server_response_get
+ 
+Logical execution order: mem_server_request_put, mem_server_response_get
+
+===========================================

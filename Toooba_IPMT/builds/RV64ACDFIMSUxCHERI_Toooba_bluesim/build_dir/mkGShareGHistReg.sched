@@ -1,0 +1,35 @@
+=== Generated schedule for mkGShareGHistReg ===
+
+Method schedule
+---------------
+Method: history
+Ready signal: True
+Conflict-free: history, addHistory, redirect
+ 
+Method: addHistory
+Ready signal: True
+Conflict-free: history, redirect
+Conflicts: addHistory
+ 
+Method: redirect
+Ready signal: True
+Conflict-free: history, addHistory
+Conflicts: redirect
+ 
+Rule schedule
+-------------
+Rule: m_canon_redirect
+Predicate: m_redirectHist.whas
+Blocking rules: (none)
+ 
+Rule: m_canon_addHistory
+Predicate: (! m_redirectHist.whas) && m_addHist.whas
+Blocking rules: (none)
+ 
+Logical execution order: history,
+			 addHistory,
+			 redirect,
+			 m_canon_redirect,
+			 m_canon_addHistory
+
+================================================

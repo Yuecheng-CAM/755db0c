@@ -1,0 +1,41 @@
+=== Generated schedule for mkBht ===
+
+Method schedule
+---------------
+Method: nextPc
+Ready signal: True
+Conflict-free: update, flush, flush_done
+Sequenced before (restricted): nextPc
+Sequenced after: pred_0_pred, pred_1_pred
+ 
+Method: pred_0_pred
+Ready signal: True
+Conflict-free: pred_0_pred, pred_1_pred, update, flush, flush_done
+Sequenced before: nextPc
+ 
+Method: pred_1_pred
+Ready signal: True
+Conflict-free: pred_0_pred, pred_1_pred, update, flush, flush_done
+Sequenced before: nextPc
+ 
+Method: update
+Ready signal: True
+Conflict-free: nextPc, pred_0_pred, pred_1_pred, flush, flush_done
+Conflicts: update
+ 
+Method: flush
+Ready signal: True
+Conflict-free: nextPc, pred_0_pred, pred_1_pred, update, flush, flush_done
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: nextPc, pred_0_pred, pred_1_pred, update, flush, flush_done
+ 
+Logical execution order: pred_0_pred,
+			 pred_1_pred,
+			 nextPc,
+			 update,
+			 flush,
+			 flush_done
+
+=====================================

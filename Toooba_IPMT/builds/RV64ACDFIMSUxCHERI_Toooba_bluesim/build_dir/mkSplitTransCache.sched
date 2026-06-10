@@ -1,0 +1,116 @@
+=== Generated schedule for mkSplitTransCache ===
+
+Method schedule
+---------------
+Method: req
+Ready signal: (caches_0_updRepIdx_lat_0.whas
+	       ? ! caches_0_updRepIdx_lat_0.wget[5]
+	       : (! caches_0_updRepIdx_rl[5])) &&
+	      (! caches_0_flushEn.whas) &&
+	      (caches_1_updRepIdx_lat_0.whas
+	       ? ! caches_1_updRepIdx_lat_0.wget[5]
+	       : (! caches_1_updRepIdx_rl[5])) &&
+	      (! caches_1_flushEn.whas) &&
+	      (respQ_full_lat_0.whas
+	       ? ! respQ_full_lat_0.wget
+	       : (! respQ_full_rl))
+Conflict-free: flush_done
+Sequenced after: resp, deqResp
+Conflicts: req, addEntry, flush
+ 
+Method: resp
+Ready signal: ! respQ_empty_rl
+Conflict-free: resp, deqResp, addEntry, flush, flush_done
+Sequenced before: req
+ 
+Method: deqResp
+Ready signal: ! respQ_empty_rl
+Conflict-free: resp, flush, flush_done
+Sequenced before: req, addEntry
+Conflicts: deqResp
+ 
+Method: addEntry
+Ready signal: (respQ_full_lat_0.whas
+	       ? ! respQ_full_lat_0.wget
+	       : (! respQ_full_rl)) &&
+	      (caches_0_updRepIdx_lat_0.whas
+	       ? ! caches_0_updRepIdx_lat_0.wget[5]
+	       : (! caches_0_updRepIdx_rl[5])) &&
+	      (! caches_0_flushEn.whas) &&
+	      (caches_1_updRepIdx_lat_0.whas
+	       ? ! caches_1_updRepIdx_lat_0.wget[5]
+	       : (! caches_1_updRepIdx_rl[5])) &&
+	      (! caches_1_flushEn.whas)
+Conflict-free: resp, flush_done
+Sequenced after: deqResp
+Conflicts: req, addEntry, flush
+ 
+Method: flush
+Ready signal: True
+Conflict-free: resp, deqResp, flush_done
+Conflicts: req, addEntry, flush
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: req, resp, deqResp, addEntry, flush, flush_done
+ 
+Rule schedule
+-------------
+Rule: caches_0_lruBit_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: caches_0_updRepIdx_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: caches_0_incRandIdx
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: caches_0_doUpdateRep
+Predicate: caches_0_updRepIdx_rl[5] && (! caches_0_flushEn.whas)
+Blocking rules: flush
+ 
+Rule: caches_1_lruBit_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: caches_1_updRepIdx_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: caches_1_incRandIdx
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: caches_1_doUpdateRep
+Predicate: caches_1_updRepIdx_rl[5] && (! caches_1_flushEn.whas)
+Blocking rules: flush
+ 
+Rule: respQ_empty_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: respQ_full_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: resp,
+			 deqResp,
+			 flush,
+			 flush_done,
+			 caches_0_doUpdateRep,
+			 caches_1_doUpdateRep,
+			 req,
+			 addEntry,
+			 caches_0_incRandIdx,
+			 caches_0_lruBit_canon,
+			 caches_0_updRepIdx_canon,
+			 caches_1_incRandIdx,
+			 caches_1_lruBit_canon,
+			 caches_1_updRepIdx_canon,
+			 respQ_empty_canon,
+			 respQ_full_canon
+
+=================================================

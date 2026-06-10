@@ -1,0 +1,17 @@
+=== Generated schedule for mkXilinxFpFma ===
+
+Method schedule
+---------------
+Method: request_put
+Ready signal: m.RDY_request_put
+Conflict-free: response_get
+Conflicts: request_put
+ 
+Method: response_get
+Ready signal: m.RDY_response_get
+Conflict-free: request_put
+Conflicts: response_get
+ 
+Logical execution order: request_put, response_get
+
+=============================================

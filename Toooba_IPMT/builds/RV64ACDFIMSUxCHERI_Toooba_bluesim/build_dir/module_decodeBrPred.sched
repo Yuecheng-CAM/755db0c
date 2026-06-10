@@ -1,0 +1,11 @@
+=== Generated schedule for module_decodeBrPred ===
+
+Method schedule
+---------------
+Method: decodeBrPred
+Ready signal: True
+Conflict-free: decodeBrPred
+ 
+Logical execution order: decodeBrPred
+
+===================================================

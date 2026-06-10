@@ -1,0 +1,54 @@
+=== Generated schedule for mkNullTransCache ===
+
+Method schedule
+---------------
+Method: req
+Ready signal: reqQ_full_lat_0.whas
+	      ? ! reqQ_full_lat_0.wget
+	      : (! reqQ_full_rl)
+Conflict-free: resp, addEntry, flush, flush_done
+Sequenced after: deqResp
+Conflicts: req
+ 
+Method: resp
+Ready signal: ! reqQ_empty_rl
+Conflict-free: req, resp, deqResp, addEntry, flush, flush_done
+ 
+Method: deqResp
+Ready signal: ! reqQ_empty_rl
+Conflict-free: resp, addEntry, flush, flush_done
+Sequenced before: req
+Conflicts: deqResp
+ 
+Method: addEntry
+Ready signal: True
+Conflict-free: req, resp, deqResp, addEntry, flush, flush_done
+ 
+Method: flush
+Ready signal: True
+Conflict-free: req, resp, deqResp, addEntry, flush, flush_done
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: req, resp, deqResp, addEntry, flush, flush_done
+ 
+Rule schedule
+-------------
+Rule: reqQ_empty_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: reqQ_full_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: resp,
+			 deqResp,
+			 req,
+			 addEntry,
+			 flush,
+			 flush_done,
+			 reqQ_empty_canon,
+			 reqQ_full_canon
+
+================================================

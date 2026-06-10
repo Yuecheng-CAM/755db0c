@@ -1,0 +1,900 @@
+=== Generated schedule for mkScoreboardCons ===
+
+Method schedule
+---------------
+Method: eagerLookup_0_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setBusy_1_set,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced after: setReady_0_put,
+		 setReady_1_put,
+		 setReady_2_put,
+		 setReady_3_put,
+		 setReady_4_put
+ 
+Method: eagerLookup_1_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_1_set,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced after: setBusy_0_set,
+		 setReady_0_put,
+		 setReady_1_put,
+		 setReady_2_put,
+		 setReady_3_put,
+		 setReady_4_put
+ 
+Method: setBusy_0_set
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced before: eagerLookup_1_get
+Conflicts: setBusy_0_set
+ 
+Method: setBusy_1_set
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Conflicts: setBusy_1_set
+ 
+Method: setReady_0_put
+Ready signal: True
+Conflict-free: setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced before: eagerLookup_0_get, eagerLookup_1_get
+Conflicts: setReady_0_put
+ 
+Method: setReady_1_put
+Ready signal: True
+Conflict-free: setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced before: eagerLookup_0_get, eagerLookup_1_get
+Conflicts: setReady_1_put
+ 
+Method: setReady_2_put
+Ready signal: True
+Conflict-free: setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced before: eagerLookup_0_get, eagerLookup_1_get
+Conflicts: setReady_2_put
+ 
+Method: setReady_3_put
+Ready signal: True
+Conflict-free: setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced before: eagerLookup_0_get, eagerLookup_1_get
+Conflicts: setReady_3_put
+ 
+Method: setReady_4_put
+Ready signal: True
+Conflict-free: setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+Sequenced before: eagerLookup_0_get, eagerLookup_1_get
+Conflicts: setReady_4_put
+ 
+Method: lazyLookup_0_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+ 
+Method: lazyLookup_1_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+ 
+Method: lazyLookup_2_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+ 
+Method: lazyLookup_3_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+ 
+Method: lazyLookup_4_get
+Ready signal: True
+Conflict-free: eagerLookup_0_get,
+	       eagerLookup_1_get,
+	       setBusy_0_set,
+	       setBusy_1_set,
+	       setReady_0_put,
+	       setReady_1_put,
+	       setReady_2_put,
+	       setReady_3_put,
+	       setReady_4_put,
+	       lazyLookup_0_get,
+	       lazyLookup_1_get,
+	       lazyLookup_2_get,
+	       lazyLookup_3_get,
+	       lazyLookup_4_get
+ 
+Rule schedule
+-------------
+Rule: m_sb_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_4_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_5_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_6_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_7_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_8_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_9_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_10_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_11_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_12_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_13_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_14_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_15_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_16_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_17_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_18_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_19_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_20_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_21_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_22_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_23_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_24_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_25_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_26_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_27_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_28_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_29_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_30_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_31_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_32_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_33_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_34_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_35_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_36_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_37_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_38_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_39_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_40_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_41_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_42_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_43_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_44_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_45_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_46_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_47_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_48_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_49_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_50_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_51_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_52_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_53_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_54_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_55_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_56_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_57_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_58_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_59_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_60_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_61_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_62_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_63_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_64_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_65_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_66_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_67_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_68_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_69_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_70_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_71_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_72_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_73_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_74_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_75_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_76_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_77_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_78_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_79_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_80_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_81_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_82_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_83_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_84_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_85_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_86_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_87_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_88_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_89_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_90_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_91_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_92_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_93_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_94_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_95_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_96_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_97_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_98_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_99_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_100_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_101_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_102_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_103_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_104_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_105_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_106_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_107_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_108_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_109_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_110_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_111_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_112_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_113_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_114_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_115_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_116_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_117_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_118_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_119_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_120_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_121_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_122_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_123_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_124_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_125_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_126_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_sb_127_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_setSbWire
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: setBusy_0_set,
+			 setBusy_1_set,
+			 setReady_0_put,
+			 setReady_1_put,
+			 setReady_2_put,
+			 setReady_3_put,
+			 setReady_4_put,
+			 eagerLookup_0_get,
+			 eagerLookup_1_get,
+			 m_setSbWire,
+			 lazyLookup_0_get,
+			 lazyLookup_1_get,
+			 lazyLookup_2_get,
+			 lazyLookup_3_get,
+			 lazyLookup_4_get,
+			 m_sb_0_canon,
+			 m_sb_1_canon,
+			 m_sb_2_canon,
+			 m_sb_3_canon,
+			 m_sb_4_canon,
+			 m_sb_5_canon,
+			 m_sb_6_canon,
+			 m_sb_7_canon,
+			 m_sb_8_canon,
+			 m_sb_9_canon,
+			 m_sb_10_canon,
+			 m_sb_11_canon,
+			 m_sb_12_canon,
+			 m_sb_13_canon,
+			 m_sb_14_canon,
+			 m_sb_15_canon,
+			 m_sb_16_canon,
+			 m_sb_17_canon,
+			 m_sb_18_canon,
+			 m_sb_19_canon,
+			 m_sb_20_canon,
+			 m_sb_21_canon,
+			 m_sb_22_canon,
+			 m_sb_23_canon,
+			 m_sb_24_canon,
+			 m_sb_25_canon,
+			 m_sb_26_canon,
+			 m_sb_27_canon,
+			 m_sb_28_canon,
+			 m_sb_29_canon,
+			 m_sb_30_canon,
+			 m_sb_31_canon,
+			 m_sb_32_canon,
+			 m_sb_33_canon,
+			 m_sb_34_canon,
+			 m_sb_35_canon,
+			 m_sb_36_canon,
+			 m_sb_37_canon,
+			 m_sb_38_canon,
+			 m_sb_39_canon,
+			 m_sb_40_canon,
+			 m_sb_41_canon,
+			 m_sb_42_canon,
+			 m_sb_43_canon,
+			 m_sb_44_canon,
+			 m_sb_45_canon,
+			 m_sb_46_canon,
+			 m_sb_47_canon,
+			 m_sb_48_canon,
+			 m_sb_49_canon,
+			 m_sb_50_canon,
+			 m_sb_51_canon,
+			 m_sb_52_canon,
+			 m_sb_53_canon,
+			 m_sb_54_canon,
+			 m_sb_55_canon,
+			 m_sb_56_canon,
+			 m_sb_57_canon,
+			 m_sb_58_canon,
+			 m_sb_59_canon,
+			 m_sb_60_canon,
+			 m_sb_61_canon,
+			 m_sb_62_canon,
+			 m_sb_63_canon,
+			 m_sb_64_canon,
+			 m_sb_65_canon,
+			 m_sb_66_canon,
+			 m_sb_67_canon,
+			 m_sb_68_canon,
+			 m_sb_69_canon,
+			 m_sb_70_canon,
+			 m_sb_71_canon,
+			 m_sb_72_canon,
+			 m_sb_73_canon,
+			 m_sb_74_canon,
+			 m_sb_75_canon,
+			 m_sb_76_canon,
+			 m_sb_77_canon,
+			 m_sb_78_canon,
+			 m_sb_79_canon,
+			 m_sb_80_canon,
+			 m_sb_81_canon,
+			 m_sb_82_canon,
+			 m_sb_83_canon,
+			 m_sb_84_canon,
+			 m_sb_85_canon,
+			 m_sb_86_canon,
+			 m_sb_87_canon,
+			 m_sb_88_canon,
+			 m_sb_89_canon,
+			 m_sb_90_canon,
+			 m_sb_91_canon,
+			 m_sb_92_canon,
+			 m_sb_93_canon,
+			 m_sb_94_canon,
+			 m_sb_95_canon,
+			 m_sb_96_canon,
+			 m_sb_97_canon,
+			 m_sb_98_canon,
+			 m_sb_99_canon,
+			 m_sb_100_canon,
+			 m_sb_101_canon,
+			 m_sb_102_canon,
+			 m_sb_103_canon,
+			 m_sb_104_canon,
+			 m_sb_105_canon,
+			 m_sb_106_canon,
+			 m_sb_107_canon,
+			 m_sb_108_canon,
+			 m_sb_109_canon,
+			 m_sb_110_canon,
+			 m_sb_111_canon,
+			 m_sb_112_canon,
+			 m_sb_113_canon,
+			 m_sb_114_canon,
+			 m_sb_115_canon,
+			 m_sb_116_canon,
+			 m_sb_117_canon,
+			 m_sb_118_canon,
+			 m_sb_119_canon,
+			 m_sb_120_canon,
+			 m_sb_121_canon,
+			 m_sb_122_canon,
+			 m_sb_123_canon,
+			 m_sb_124_canon,
+			 m_sb_125_canon,
+			 m_sb_126_canon,
+			 m_sb_127_canon
+
+================================================

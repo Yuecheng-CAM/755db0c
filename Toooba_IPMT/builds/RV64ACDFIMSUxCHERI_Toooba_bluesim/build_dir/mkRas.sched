@@ -1,0 +1,309 @@
+=== Generated schedule for mkRas ===
+
+Method schedule
+---------------
+Method: ras_0_first
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       push,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+ 
+Method: ras_0_pop
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_1_first,
+	       pendingPush,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+Sequenced before: ras_1_pop, push
+Conflicts: ras_0_pop
+ 
+Method: ras_1_first
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       push,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+ 
+Method: ras_1_pop
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_1_first,
+	       pendingPush,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+Sequenced before: push
+Sequenced after: ras_0_pop
+Conflicts: ras_1_pop
+ 
+Method: pendingPush
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       push,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+ 
+Method: push
+Ready signal: True
+Conflict-free: ras_0_first, ras_1_first, pendingPush, flush, flush_done
+Sequenced after: ras_0_pop, ras_1_pop, setHead
+Conflicts: push, write
+ 
+Method: write
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       setHead,
+	       flush,
+	       flush_done
+Conflicts: push, write
+ 
+Method: setHead
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       write,
+	       flush,
+	       flush_done
+Sequenced before: push
+Conflicts: setHead
+ 
+Method: flush
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       push,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+ 
+Method: flush_done
+Ready signal: True
+Conflict-free: ras_0_first,
+	       ras_0_pop,
+	       ras_1_first,
+	       ras_1_pop,
+	       pendingPush,
+	       push,
+	       write,
+	       setHead,
+	       flush,
+	       flush_done
+ 
+Rule schedule
+-------------
+Rule: stack_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_4_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_5_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_6_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_7_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_8_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_9_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_10_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_11_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_12_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_13_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_14_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: stack_15_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_4_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_5_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_6_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_7_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_8_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_9_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_10_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_11_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_12_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_13_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_14_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valids_15_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: head_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: resetValidHead
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: ras_0_first,
+			 ras_0_pop,
+			 ras_1_first,
+			 ras_1_pop,
+			 pendingPush,
+			 write,
+			 setHead,
+			 push,
+			 flush,
+			 flush_done,
+			 resetValidHead,
+			 stack_0_canon,
+			 stack_1_canon,
+			 stack_2_canon,
+			 stack_3_canon,
+			 stack_4_canon,
+			 stack_5_canon,
+			 stack_6_canon,
+			 stack_7_canon,
+			 stack_8_canon,
+			 stack_9_canon,
+			 stack_10_canon,
+			 stack_11_canon,
+			 stack_12_canon,
+			 stack_13_canon,
+			 stack_14_canon,
+			 stack_15_canon,
+			 valids_0_canon,
+			 valids_1_canon,
+			 valids_2_canon,
+			 valids_3_canon,
+			 valids_4_canon,
+			 valids_5_canon,
+			 valids_6_canon,
+			 valids_7_canon,
+			 valids_8_canon,
+			 valids_9_canon,
+			 valids_10_canon,
+			 valids_11_canon,
+			 valids_12_canon,
+			 valids_13_canon,
+			 valids_14_canon,
+			 valids_15_canon,
+			 head_canon
+
+=====================================

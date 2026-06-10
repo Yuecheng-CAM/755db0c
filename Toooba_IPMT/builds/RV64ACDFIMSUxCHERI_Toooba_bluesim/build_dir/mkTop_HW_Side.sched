@@ -1,0 +1,34 @@
+=== Generated schedule for mkTop_HW_Side ===
+
+Rule schedule
+-------------
+Rule: memCnx_ClientServerRequest
+Predicate: soc_top.RDY_to_raw_mem_request_get &&
+	   mem_model.RDY_mem_server_request_put
+Blocking rules: (none)
+ 
+Rule: memCnx_ClientServerResponse
+Predicate: soc_top.RDY_to_raw_mem_response_put &&
+	   mem_model.RDY_mem_server_response_get
+Blocking rules: (none)
+ 
+Rule: rl_step0
+Predicate: soc_top.RDY_start && (! rg_banner_printed)
+Blocking rules: (none)
+ 
+Rule: rl_relay_console_out
+Predicate: soc_top.RDY_get_to_console_get
+Blocking rules: (none)
+ 
+Rule: rl_relay_console_in
+Predicate: (! (rg_console_in_poll == 12'd0)) ||
+	   soc_top.RDY_put_from_console_put
+Blocking rules: (none)
+ 
+Logical execution order: rl_step0,
+			 rl_relay_console_out,
+			 rl_relay_console_in,
+			 memCnx_ClientServerRequest,
+			 memCnx_ClientServerResponse
+
+=============================================

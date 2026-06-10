@@ -1,0 +1,279 @@
+=== Generated schedule for mkRobRowSynth ===
+
+Method schedule
+---------------
+Method: write_enq
+Ready signal: True
+Conflict-free: setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       getOrigPredPC,
+	       dependsOn_wrongSpec
+Sequenced before: correctSpeculation
+Sequenced after: read_deq,
+		 setExecuted_doFinishAlu_0_set,
+		 setExecuted_doFinishAlu_1_set,
+		 setExecuted_doFinishMem,
+		 getOrigPC,
+		 getOrig_Inst
+Conflicts: write_enq
+ 
+Method: read_deq
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Sequenced before: write_enq
+ 
+Method: setLSQAtCommitNotified
+Ready signal: True
+Conflict-free: write_enq,
+	       read_deq,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Conflicts: setLSQAtCommitNotified
+ 
+Method: setExecuted_deqLSQ
+Ready signal: True
+Conflict-free: write_enq,
+	       read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Conflicts: setExecuted_deqLSQ
+ 
+Method: setExecuted_doFinishAlu_0_set
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Sequenced before: write_enq
+Conflicts: setExecuted_doFinishAlu_0_set
+ 
+Method: setExecuted_doFinishAlu_1_set
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Sequenced before: write_enq
+Conflicts: setExecuted_doFinishAlu_1_set
+ 
+Method: setExecuted_doFinishFpuMulDiv_0_set
+Ready signal: True
+Conflict-free: write_enq,
+	       read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Conflicts: setExecuted_doFinishFpuMulDiv_0_set
+ 
+Method: setExecuted_doFinishMem
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Sequenced before: write_enq
+Conflicts: setExecuted_doFinishMem
+ 
+Method: getOrigPC
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Sequenced before: write_enq
+ 
+Method: getOrigPredPC
+Ready signal: True
+Conflict-free: write_enq,
+	       read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+ 
+Method: getOrig_Inst
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+Sequenced before: write_enq
+ 
+Method: dependsOn_wrongSpec
+Ready signal: True
+Conflict-free: write_enq,
+	       read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec,
+	       correctSpeculation
+ 
+Method: correctSpeculation
+Ready signal: True
+Conflict-free: read_deq,
+	       setLSQAtCommitNotified,
+	       setExecuted_deqLSQ,
+	       setExecuted_doFinishAlu_0_set,
+	       setExecuted_doFinishAlu_1_set,
+	       setExecuted_doFinishFpuMulDiv_0_set,
+	       setExecuted_doFinishMem,
+	       getOrigPC,
+	       getOrigPredPC,
+	       getOrig_Inst,
+	       dependsOn_wrongSpec
+Sequenced after: write_enq
+Conflicts: correctSpeculation
+ 
+Rule schedule
+-------------
+Rule: m_trap_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_ppc_vaddr_csrData_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_fflags_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_rob_inst_state_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_ldKilled_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_memAccessAtCommit_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_lsqAtCommitNotified_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_nonMMIOStDone_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_spec_bits_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: m_setPcWires
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: read_deq,
+			 setLSQAtCommitNotified,
+			 setExecuted_deqLSQ,
+			 setExecuted_doFinishAlu_0_set,
+			 setExecuted_doFinishAlu_1_set,
+			 setExecuted_doFinishFpuMulDiv_0_set,
+			 setExecuted_doFinishMem,
+			 getOrigPC,
+			 getOrig_Inst,
+			 write_enq,
+			 dependsOn_wrongSpec,
+			 correctSpeculation,
+			 m_setPcWires,
+			 getOrigPredPC,
+			 m_trap_canon,
+			 m_ppc_vaddr_csrData_canon,
+			 m_fflags_canon,
+			 m_rob_inst_state_canon,
+			 m_ldKilled_canon,
+			 m_memAccessAtCommit_canon,
+			 m_lsqAtCommitNotified_canon,
+			 m_nonMMIOStDone_canon,
+			 m_spec_bits_canon
+
+=============================================

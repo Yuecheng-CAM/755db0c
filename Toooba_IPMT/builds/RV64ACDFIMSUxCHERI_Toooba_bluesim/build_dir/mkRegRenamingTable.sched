@@ -1,0 +1,1568 @@
+=== Generated schedule for mkRegRenamingTable ===
+
+Method schedule
+---------------
+Method: rename_0_getRename
+Ready signal: PrimArrayDynSelect (PrimBuildArray (! valid_0_rl)
+						 (! valid_1_rl)
+						 (! valid_2_rl)
+						 (! valid_3_rl)
+						 (! valid_4_rl)
+						 (! valid_5_rl)
+						 (! valid_6_rl)
+						 (! valid_7_rl)
+						 (! valid_8_rl)
+						 (! valid_9_rl)
+						 (! valid_10_rl)
+						 (! valid_11_rl)
+						 (! valid_12_rl)
+						 (! valid_13_rl)
+						 (! valid_14_rl)
+						 (! valid_15_rl)
+						 (! valid_16_rl)
+						 (! valid_17_rl)
+						 (! valid_18_rl)
+						 (! valid_19_rl)
+						 (! valid_20_rl)
+						 (! valid_21_rl)
+						 (! valid_22_rl)
+						 (! valid_23_rl)
+						 (! valid_24_rl)
+						 (! valid_25_rl)
+						 (! valid_26_rl)
+						 (! valid_27_rl)
+						 (! valid_28_rl)
+						 (! valid_29_rl)
+						 (! valid_30_rl)
+						 (! valid_31_rl)
+						 (! valid_32_rl)
+						 (! valid_33_rl)
+						 (! valid_34_rl)
+						 (! valid_35_rl)
+						 (! valid_36_rl)
+						 (! valid_37_rl)
+						 (! valid_38_rl)
+						 (! valid_39_rl)
+						 (! valid_40_rl)
+						 (! valid_41_rl)
+						 (! valid_42_rl)
+						 (! valid_43_rl)
+						 (! valid_44_rl)
+						 (! valid_45_rl)
+						 (! valid_46_rl)
+						 (! valid_47_rl)
+						 (! valid_48_rl)
+						 (! valid_49_rl)
+						 (! valid_50_rl)
+						 (! valid_51_rl)
+						 (! valid_52_rl)
+						 (! valid_53_rl)
+						 (! valid_54_rl)
+						 (! valid_55_rl)
+						 (! valid_56_rl)
+						 (! valid_57_rl)
+						 (! valid_58_rl)
+						 (! valid_59_rl)
+						 (! valid_60_rl)
+						 (! valid_61_rl)
+						 (! valid_62_rl)
+						 (! valid_63_rl))
+				 (({1'd0, enqP} < 7'd64)
+				  ? {1'd0, enqP}
+				  : ({1'd0, enqP} - 7'd64))[5:0]
+Conflict-free: rename_0_getRename,
+	       rename_0_claimRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_claimRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit,
+	       specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+ 
+Method: rename_0_claimRename
+Ready signal: PrimArrayDynSelect (PrimBuildArray (! valid_0_rl)
+						 (! valid_1_rl)
+						 (! valid_2_rl)
+						 (! valid_3_rl)
+						 (! valid_4_rl)
+						 (! valid_5_rl)
+						 (! valid_6_rl)
+						 (! valid_7_rl)
+						 (! valid_8_rl)
+						 (! valid_9_rl)
+						 (! valid_10_rl)
+						 (! valid_11_rl)
+						 (! valid_12_rl)
+						 (! valid_13_rl)
+						 (! valid_14_rl)
+						 (! valid_15_rl)
+						 (! valid_16_rl)
+						 (! valid_17_rl)
+						 (! valid_18_rl)
+						 (! valid_19_rl)
+						 (! valid_20_rl)
+						 (! valid_21_rl)
+						 (! valid_22_rl)
+						 (! valid_23_rl)
+						 (! valid_24_rl)
+						 (! valid_25_rl)
+						 (! valid_26_rl)
+						 (! valid_27_rl)
+						 (! valid_28_rl)
+						 (! valid_29_rl)
+						 (! valid_30_rl)
+						 (! valid_31_rl)
+						 (! valid_32_rl)
+						 (! valid_33_rl)
+						 (! valid_34_rl)
+						 (! valid_35_rl)
+						 (! valid_36_rl)
+						 (! valid_37_rl)
+						 (! valid_38_rl)
+						 (! valid_39_rl)
+						 (! valid_40_rl)
+						 (! valid_41_rl)
+						 (! valid_42_rl)
+						 (! valid_43_rl)
+						 (! valid_44_rl)
+						 (! valid_45_rl)
+						 (! valid_46_rl)
+						 (! valid_47_rl)
+						 (! valid_48_rl)
+						 (! valid_49_rl)
+						 (! valid_50_rl)
+						 (! valid_51_rl)
+						 (! valid_52_rl)
+						 (! valid_53_rl)
+						 (! valid_54_rl)
+						 (! valid_55_rl)
+						 (! valid_56_rl)
+						 (! valid_57_rl)
+						 (! valid_58_rl)
+						 (! valid_59_rl)
+						 (! valid_60_rl)
+						 (! valid_61_rl)
+						 (! valid_62_rl)
+						 (! valid_63_rl))
+				 (({1'd0, enqP} < 7'd64)
+				  ? {1'd0, enqP}
+				  : ({1'd0, enqP} - 7'd64))[5:0]
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_claimRename,
+	       rename_1_canRename
+Sequenced before: rename_1_getRename
+Sequenced before (restricted): specUpdate_correctSpeculation
+Sequenced after: commit_0_commit,
+		 commit_0_canCommit,
+		 commit_1_commit,
+		 commit_1_canCommit
+Conflicts: rename_0_claimRename, specUpdate_incorrectSpeculation
+ 
+Method: rename_0_canRename
+Ready signal: True
+Conflict-free: rename_0_getRename,
+	       rename_0_claimRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_claimRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit,
+	       specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+ 
+Method: rename_1_getRename
+Ready signal: PrimArrayDynSelect (PrimBuildArray (! valid_0_rl)
+						 (! valid_1_rl)
+						 (! valid_2_rl)
+						 (! valid_3_rl)
+						 (! valid_4_rl)
+						 (! valid_5_rl)
+						 (! valid_6_rl)
+						 (! valid_7_rl)
+						 (! valid_8_rl)
+						 (! valid_9_rl)
+						 (! valid_10_rl)
+						 (! valid_11_rl)
+						 (! valid_12_rl)
+						 (! valid_13_rl)
+						 (! valid_14_rl)
+						 (! valid_15_rl)
+						 (! valid_16_rl)
+						 (! valid_17_rl)
+						 (! valid_18_rl)
+						 (! valid_19_rl)
+						 (! valid_20_rl)
+						 (! valid_21_rl)
+						 (! valid_22_rl)
+						 (! valid_23_rl)
+						 (! valid_24_rl)
+						 (! valid_25_rl)
+						 (! valid_26_rl)
+						 (! valid_27_rl)
+						 (! valid_28_rl)
+						 (! valid_29_rl)
+						 (! valid_30_rl)
+						 (! valid_31_rl)
+						 (! valid_32_rl)
+						 (! valid_33_rl)
+						 (! valid_34_rl)
+						 (! valid_35_rl)
+						 (! valid_36_rl)
+						 (! valid_37_rl)
+						 (! valid_38_rl)
+						 (! valid_39_rl)
+						 (! valid_40_rl)
+						 (! valid_41_rl)
+						 (! valid_42_rl)
+						 (! valid_43_rl)
+						 (! valid_44_rl)
+						 (! valid_45_rl)
+						 (! valid_46_rl)
+						 (! valid_47_rl)
+						 (! valid_48_rl)
+						 (! valid_49_rl)
+						 (! valid_50_rl)
+						 (! valid_51_rl)
+						 (! valid_52_rl)
+						 (! valid_53_rl)
+						 (! valid_54_rl)
+						 (! valid_55_rl)
+						 (! valid_56_rl)
+						 (! valid_57_rl)
+						 (! valid_58_rl)
+						 (! valid_59_rl)
+						 (! valid_60_rl)
+						 (! valid_61_rl)
+						 (! valid_62_rl)
+						 (! valid_63_rl))
+				 ((({1'd0, enqP} + 7'd1) < 7'd64)
+				  ? {1'd0, enqP} + 7'd1
+				  : (({1'd0, enqP} + 7'd1) - 7'd64))[5:0]
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_claimRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit,
+	       specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+Sequenced after: rename_0_claimRename
+ 
+Method: rename_1_claimRename
+Ready signal: PrimArrayDynSelect (PrimBuildArray (! valid_0_rl)
+						 (! valid_1_rl)
+						 (! valid_2_rl)
+						 (! valid_3_rl)
+						 (! valid_4_rl)
+						 (! valid_5_rl)
+						 (! valid_6_rl)
+						 (! valid_7_rl)
+						 (! valid_8_rl)
+						 (! valid_9_rl)
+						 (! valid_10_rl)
+						 (! valid_11_rl)
+						 (! valid_12_rl)
+						 (! valid_13_rl)
+						 (! valid_14_rl)
+						 (! valid_15_rl)
+						 (! valid_16_rl)
+						 (! valid_17_rl)
+						 (! valid_18_rl)
+						 (! valid_19_rl)
+						 (! valid_20_rl)
+						 (! valid_21_rl)
+						 (! valid_22_rl)
+						 (! valid_23_rl)
+						 (! valid_24_rl)
+						 (! valid_25_rl)
+						 (! valid_26_rl)
+						 (! valid_27_rl)
+						 (! valid_28_rl)
+						 (! valid_29_rl)
+						 (! valid_30_rl)
+						 (! valid_31_rl)
+						 (! valid_32_rl)
+						 (! valid_33_rl)
+						 (! valid_34_rl)
+						 (! valid_35_rl)
+						 (! valid_36_rl)
+						 (! valid_37_rl)
+						 (! valid_38_rl)
+						 (! valid_39_rl)
+						 (! valid_40_rl)
+						 (! valid_41_rl)
+						 (! valid_42_rl)
+						 (! valid_43_rl)
+						 (! valid_44_rl)
+						 (! valid_45_rl)
+						 (! valid_46_rl)
+						 (! valid_47_rl)
+						 (! valid_48_rl)
+						 (! valid_49_rl)
+						 (! valid_50_rl)
+						 (! valid_51_rl)
+						 (! valid_52_rl)
+						 (! valid_53_rl)
+						 (! valid_54_rl)
+						 (! valid_55_rl)
+						 (! valid_56_rl)
+						 (! valid_57_rl)
+						 (! valid_58_rl)
+						 (! valid_59_rl)
+						 (! valid_60_rl)
+						 (! valid_61_rl)
+						 (! valid_62_rl)
+						 (! valid_63_rl))
+				 ((({1'd0, enqP} + 7'd1) < 7'd64)
+				  ? {1'd0, enqP} + 7'd1
+				  : (({1'd0, enqP} + 7'd1) - 7'd64))[5:0]
+Conflict-free: rename_0_getRename,
+	       rename_0_claimRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_canRename
+Sequenced before (restricted): specUpdate_correctSpeculation
+Sequenced after: commit_0_commit,
+		 commit_0_canCommit,
+		 commit_1_commit,
+		 commit_1_canCommit
+Conflicts: rename_1_claimRename, specUpdate_incorrectSpeculation
+ 
+Method: rename_1_canRename
+Ready signal: True
+Conflict-free: rename_0_getRename,
+	       rename_0_claimRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_claimRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit,
+	       specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+ 
+Method: commit_0_commit
+Ready signal: (PrimArrayDynSelect (PrimBuildArray valid_0_rl
+						  valid_1_rl
+						  valid_2_rl
+						  valid_3_rl
+						  valid_4_rl
+						  valid_5_rl
+						  valid_6_rl
+						  valid_7_rl
+						  valid_8_rl
+						  valid_9_rl
+						  valid_10_rl
+						  valid_11_rl
+						  valid_12_rl
+						  valid_13_rl
+						  valid_14_rl
+						  valid_15_rl
+						  valid_16_rl
+						  valid_17_rl
+						  valid_18_rl
+						  valid_19_rl
+						  valid_20_rl
+						  valid_21_rl
+						  valid_22_rl
+						  valid_23_rl
+						  valid_24_rl
+						  valid_25_rl
+						  valid_26_rl
+						  valid_27_rl
+						  valid_28_rl
+						  valid_29_rl
+						  valid_30_rl
+						  valid_31_rl
+						  valid_32_rl
+						  valid_33_rl
+						  valid_34_rl
+						  valid_35_rl
+						  valid_36_rl
+						  valid_37_rl
+						  valid_38_rl
+						  valid_39_rl
+						  valid_40_rl
+						  valid_41_rl
+						  valid_42_rl
+						  valid_43_rl
+						  valid_44_rl
+						  valid_45_rl
+						  valid_46_rl
+						  valid_47_rl
+						  valid_48_rl
+						  valid_49_rl
+						  valid_50_rl
+						  valid_51_rl
+						  valid_52_rl
+						  valid_53_rl
+						  valid_54_rl
+						  valid_55_rl
+						  valid_56_rl
+						  valid_57_rl
+						  valid_58_rl
+						  valid_59_rl
+						  valid_60_rl
+						  valid_61_rl
+						  valid_62_rl
+						  valid_63_rl)
+				  (({1'd0, deqP} < 7'd64)
+				   ? {1'd0, deqP}
+				   : ({1'd0, deqP} - 7'd64))[5:0]) &&
+	      commit_SB_rename_0.read && commit_SB_rename_1.read &&
+	      commit_SB_wrongSpec.read
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_canRename,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit
+Sequenced before: rename_0_claimRename,
+		  rename_1_claimRename,
+		  specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+Conflicts: commit_0_commit
+ 
+Method: commit_0_canCommit
+Ready signal: True
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit
+Sequenced before: rename_0_claimRename,
+		  rename_1_claimRename,
+		  specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+ 
+Method: commit_1_commit
+Ready signal: (PrimArrayDynSelect (PrimBuildArray valid_0_rl
+						  valid_1_rl
+						  valid_2_rl
+						  valid_3_rl
+						  valid_4_rl
+						  valid_5_rl
+						  valid_6_rl
+						  valid_7_rl
+						  valid_8_rl
+						  valid_9_rl
+						  valid_10_rl
+						  valid_11_rl
+						  valid_12_rl
+						  valid_13_rl
+						  valid_14_rl
+						  valid_15_rl
+						  valid_16_rl
+						  valid_17_rl
+						  valid_18_rl
+						  valid_19_rl
+						  valid_20_rl
+						  valid_21_rl
+						  valid_22_rl
+						  valid_23_rl
+						  valid_24_rl
+						  valid_25_rl
+						  valid_26_rl
+						  valid_27_rl
+						  valid_28_rl
+						  valid_29_rl
+						  valid_30_rl
+						  valid_31_rl
+						  valid_32_rl
+						  valid_33_rl
+						  valid_34_rl
+						  valid_35_rl
+						  valid_36_rl
+						  valid_37_rl
+						  valid_38_rl
+						  valid_39_rl
+						  valid_40_rl
+						  valid_41_rl
+						  valid_42_rl
+						  valid_43_rl
+						  valid_44_rl
+						  valid_45_rl
+						  valid_46_rl
+						  valid_47_rl
+						  valid_48_rl
+						  valid_49_rl
+						  valid_50_rl
+						  valid_51_rl
+						  valid_52_rl
+						  valid_53_rl
+						  valid_54_rl
+						  valid_55_rl
+						  valid_56_rl
+						  valid_57_rl
+						  valid_58_rl
+						  valid_59_rl
+						  valid_60_rl
+						  valid_61_rl
+						  valid_62_rl
+						  valid_63_rl)
+				  ((({1'd0, deqP} + 7'd1) < 7'd64)
+				   ? {1'd0, deqP} + 7'd1
+				   : (({1'd0, deqP} + 7'd1) - 7'd64))[5:0]) &&
+	      commit_SB_rename_0.read && commit_SB_rename_1.read &&
+	      commit_SB_wrongSpec.read
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_canCommit
+Sequenced before: rename_0_claimRename,
+		  rename_1_claimRename,
+		  specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+Conflicts: commit_1_commit
+ 
+Method: commit_1_canCommit
+Ready signal: True
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_canRename,
+	       commit_0_commit,
+	       commit_0_canCommit,
+	       commit_1_commit,
+	       commit_1_canCommit
+Sequenced before: rename_0_claimRename,
+		  rename_1_claimRename,
+		  specUpdate_incorrectSpeculation
+Sequenced before (restricted): specUpdate_correctSpeculation
+ 
+Method: specUpdate_incorrectSpeculation
+Ready signal: True
+Conflict-free: rename_0_getRename,
+	       rename_0_canRename,
+	       rename_1_getRename,
+	       rename_1_canRename
+Sequenced before (restricted): specUpdate_correctSpeculation
+Sequenced after: commit_0_commit,
+		 commit_0_canCommit,
+		 commit_1_commit,
+		 commit_1_canCommit
+Conflicts: rename_0_claimRename,
+	   rename_1_claimRename,
+	   specUpdate_incorrectSpeculation
+ 
+Method: specUpdate_correctSpeculation
+Ready signal: True
+Sequenced after (restricted): rename_0_getRename,
+			      rename_0_claimRename,
+			      rename_0_canRename,
+			      rename_1_getRename,
+			      rename_1_claimRename,
+			      rename_1_canRename,
+			      commit_0_commit,
+			      commit_0_canCommit,
+			      commit_1_commit,
+			      commit_1_canCommit,
+			      specUpdate_incorrectSpeculation
+Conflicts: specUpdate_correctSpeculation
+ 
+Rule schedule
+-------------
+Rule: renaming_table_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_4_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_5_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_6_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_7_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_8_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_9_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_10_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_11_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_12_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_13_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_14_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_15_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_16_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_17_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_18_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_19_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_20_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_21_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_22_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_23_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_24_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_25_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_26_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_27_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_28_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_29_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_30_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_31_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_32_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_33_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_34_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_35_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_36_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_37_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_38_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_39_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_40_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_41_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_42_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_43_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_44_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_45_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_46_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_47_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_48_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_49_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_50_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_51_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_52_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_53_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_54_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_55_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_56_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_57_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_58_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_59_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_60_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_61_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_62_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: renaming_table_63_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_4_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_5_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_6_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_7_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_8_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_9_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_10_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_11_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_12_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_13_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_14_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_15_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_16_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_17_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_18_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_19_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_20_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_21_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_22_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_23_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_24_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_25_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_26_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_27_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_28_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_29_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_30_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_31_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_32_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_33_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_34_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_35_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_36_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_37_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_38_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_39_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_40_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_41_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_42_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_43_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_44_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_45_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_46_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_47_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_48_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_49_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_50_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_51_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_52_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_53_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_54_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_55_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_56_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_57_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_58_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_59_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_60_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_61_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_62_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: valid_63_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_0_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_1_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_2_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_3_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_4_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_5_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_6_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_7_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_8_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_9_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_10_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_11_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_12_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_13_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_14_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_15_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_16_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_17_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_18_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_19_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_20_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_21_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_22_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_23_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_24_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_25_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_26_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_27_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_28_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_29_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_30_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_31_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_32_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_33_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_34_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_35_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_36_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_37_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_38_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_39_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_40_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_41_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_42_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_43_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_44_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_45_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_46_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_47_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_48_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_49_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_50_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_51_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_52_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_53_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_54_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_55_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_56_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_57_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_58_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_59_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_60_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_61_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_62_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: spec_bits_63_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: sanityCheck
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: rename_0_getRename,
+			 rename_0_canRename,
+			 rename_1_canRename,
+			 commit_0_commit,
+			 commit_0_canCommit,
+			 commit_1_commit,
+			 commit_1_canCommit,
+			 rename_0_claimRename,
+			 rename_1_getRename,
+			 rename_1_claimRename,
+			 specUpdate_incorrectSpeculation,
+			 sanityCheck,
+			 canon,
+			 specUpdate_correctSpeculation,
+			 renaming_table_0_canon,
+			 renaming_table_1_canon,
+			 renaming_table_2_canon,
+			 renaming_table_3_canon,
+			 renaming_table_4_canon,
+			 renaming_table_5_canon,
+			 renaming_table_6_canon,
+			 renaming_table_7_canon,
+			 renaming_table_8_canon,
+			 renaming_table_9_canon,
+			 renaming_table_10_canon,
+			 renaming_table_11_canon,
+			 renaming_table_12_canon,
+			 renaming_table_13_canon,
+			 renaming_table_14_canon,
+			 renaming_table_15_canon,
+			 renaming_table_16_canon,
+			 renaming_table_17_canon,
+			 renaming_table_18_canon,
+			 renaming_table_19_canon,
+			 renaming_table_20_canon,
+			 renaming_table_21_canon,
+			 renaming_table_22_canon,
+			 renaming_table_23_canon,
+			 renaming_table_24_canon,
+			 renaming_table_25_canon,
+			 renaming_table_26_canon,
+			 renaming_table_27_canon,
+			 renaming_table_28_canon,
+			 renaming_table_29_canon,
+			 renaming_table_30_canon,
+			 renaming_table_31_canon,
+			 renaming_table_32_canon,
+			 renaming_table_33_canon,
+			 renaming_table_34_canon,
+			 renaming_table_35_canon,
+			 renaming_table_36_canon,
+			 renaming_table_37_canon,
+			 renaming_table_38_canon,
+			 renaming_table_39_canon,
+			 renaming_table_40_canon,
+			 renaming_table_41_canon,
+			 renaming_table_42_canon,
+			 renaming_table_43_canon,
+			 renaming_table_44_canon,
+			 renaming_table_45_canon,
+			 renaming_table_46_canon,
+			 renaming_table_47_canon,
+			 renaming_table_48_canon,
+			 renaming_table_49_canon,
+			 renaming_table_50_canon,
+			 renaming_table_51_canon,
+			 renaming_table_52_canon,
+			 renaming_table_53_canon,
+			 renaming_table_54_canon,
+			 renaming_table_55_canon,
+			 renaming_table_56_canon,
+			 renaming_table_57_canon,
+			 renaming_table_58_canon,
+			 renaming_table_59_canon,
+			 renaming_table_60_canon,
+			 renaming_table_61_canon,
+			 renaming_table_62_canon,
+			 renaming_table_63_canon,
+			 valid_0_canon,
+			 valid_1_canon,
+			 valid_2_canon,
+			 valid_3_canon,
+			 valid_4_canon,
+			 valid_5_canon,
+			 valid_6_canon,
+			 valid_7_canon,
+			 valid_8_canon,
+			 valid_9_canon,
+			 valid_10_canon,
+			 valid_11_canon,
+			 valid_12_canon,
+			 valid_13_canon,
+			 valid_14_canon,
+			 valid_15_canon,
+			 valid_16_canon,
+			 valid_17_canon,
+			 valid_18_canon,
+			 valid_19_canon,
+			 valid_20_canon,
+			 valid_21_canon,
+			 valid_22_canon,
+			 valid_23_canon,
+			 valid_24_canon,
+			 valid_25_canon,
+			 valid_26_canon,
+			 valid_27_canon,
+			 valid_28_canon,
+			 valid_29_canon,
+			 valid_30_canon,
+			 valid_31_canon,
+			 valid_32_canon,
+			 valid_33_canon,
+			 valid_34_canon,
+			 valid_35_canon,
+			 valid_36_canon,
+			 valid_37_canon,
+			 valid_38_canon,
+			 valid_39_canon,
+			 valid_40_canon,
+			 valid_41_canon,
+			 valid_42_canon,
+			 valid_43_canon,
+			 valid_44_canon,
+			 valid_45_canon,
+			 valid_46_canon,
+			 valid_47_canon,
+			 valid_48_canon,
+			 valid_49_canon,
+			 valid_50_canon,
+			 valid_51_canon,
+			 valid_52_canon,
+			 valid_53_canon,
+			 valid_54_canon,
+			 valid_55_canon,
+			 valid_56_canon,
+			 valid_57_canon,
+			 valid_58_canon,
+			 valid_59_canon,
+			 valid_60_canon,
+			 valid_61_canon,
+			 valid_62_canon,
+			 valid_63_canon,
+			 spec_bits_0_canon,
+			 spec_bits_1_canon,
+			 spec_bits_2_canon,
+			 spec_bits_3_canon,
+			 spec_bits_4_canon,
+			 spec_bits_5_canon,
+			 spec_bits_6_canon,
+			 spec_bits_7_canon,
+			 spec_bits_8_canon,
+			 spec_bits_9_canon,
+			 spec_bits_10_canon,
+			 spec_bits_11_canon,
+			 spec_bits_12_canon,
+			 spec_bits_13_canon,
+			 spec_bits_14_canon,
+			 spec_bits_15_canon,
+			 spec_bits_16_canon,
+			 spec_bits_17_canon,
+			 spec_bits_18_canon,
+			 spec_bits_19_canon,
+			 spec_bits_20_canon,
+			 spec_bits_21_canon,
+			 spec_bits_22_canon,
+			 spec_bits_23_canon,
+			 spec_bits_24_canon,
+			 spec_bits_25_canon,
+			 spec_bits_26_canon,
+			 spec_bits_27_canon,
+			 spec_bits_28_canon,
+			 spec_bits_29_canon,
+			 spec_bits_30_canon,
+			 spec_bits_31_canon,
+			 spec_bits_32_canon,
+			 spec_bits_33_canon,
+			 spec_bits_34_canon,
+			 spec_bits_35_canon,
+			 spec_bits_36_canon,
+			 spec_bits_37_canon,
+			 spec_bits_38_canon,
+			 spec_bits_39_canon,
+			 spec_bits_40_canon,
+			 spec_bits_41_canon,
+			 spec_bits_42_canon,
+			 spec_bits_43_canon,
+			 spec_bits_44_canon,
+			 spec_bits_45_canon,
+			 spec_bits_46_canon,
+			 spec_bits_47_canon,
+			 spec_bits_48_canon,
+			 spec_bits_49_canon,
+			 spec_bits_50_canon,
+			 spec_bits_51_canon,
+			 spec_bits_52_canon,
+			 spec_bits_53_canon,
+			 spec_bits_54_canon,
+			 spec_bits_55_canon,
+			 spec_bits_56_canon,
+			 spec_bits_57_canon,
+			 spec_bits_58_canon,
+			 spec_bits_59_canon,
+			 spec_bits_60_canon,
+			 spec_bits_61_canon,
+			 spec_bits_62_canon,
+			 spec_bits_63_canon
+
+==================================================
